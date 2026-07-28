@@ -1,0 +1,43 @@
+<!--
+  components/empty-states.html
+  PATTERN LIBRARY — the specific empty-state copy patterns that recur across
+  every list page, so wording stays consistent instead of rewritten per page.
+-->
+
+<section style="padding:24px; display:flex; flex-direction:column; gap:20px;">
+
+  <div class="state-card" style="max-width:340px;">
+    <div class="state-icon-box">
+      <svg class="gi" width="26" height="26" viewBox="0 0 24 24"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg>
+    </div>
+    <div class="state-title">لا توجد مشاريع بعد</div>
+    <div class="state-desc">ابدأ بإضافة أول عنصر لعرضه هنا.</div>
+    <button class="btn btn-primary">+ إنشاء مشروع</button>
+  </div>
+
+  <div class="state-card" style="max-width:340px;">
+    <div class="state-icon-box">
+      <svg class="gi" width="26" height="26" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.5-4.5"/></svg>
+    </div>
+    <div class="state-title">لا توجد نتائج مطابقة</div>
+    <div class="state-desc">جرّب كلمات بحث مختلفة أو تحقق من الإملاء.</div>
+  </div>
+
+  <div class="state-card" style="max-width:340px;">
+    <div class="state-icon-box">
+      <svg class="gi" width="26" height="26" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+    </div>
+    <div class="state-title">لا توجد عناصر تطابق عوامل التصفية الحالية</div>
+    <div class="state-desc">جرّب إزالة بعض الفلاتر لعرض المزيد من النتائج.</div>
+    <button class="btn btn-ghost" data-clear-filters>مسح الفلاتر</button>
+  </div>
+
+  <div class="state-card" style="max-width:340px;">
+    <div class="state-icon-box" style="background:var(--warning-tint);">
+      <svg class="gi" width="26" height="26" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+    </div>
+    <div class="state-title">لا تملك صلاحية الوصول إلى هذا القسم</div>
+    <div class="state-desc">تواصل مع المدير التنفيذي لطلب صلاحية الوصول.</div>
+  </div>
+
+</section>

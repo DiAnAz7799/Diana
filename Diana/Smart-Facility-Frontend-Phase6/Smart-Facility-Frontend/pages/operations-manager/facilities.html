@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>المنشآت — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-facilities"
+      data-search-placeholder="ابحث عن منشأة..."
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"المنشآت","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">المنشآت</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">إدارة جميع المنشآت التشغيلية — 46 منشأة</div></div>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث عن منشأة..." data-live-search="#fac-grid"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="status" data-filter-value="operational">تشغيلي بالكامل</button>
+            <button data-filter="status" data-filter-value="partial">تشغيل جزئي</button>
+            <button data-filter="status" data-filter-value="attention">يتطلب تدخلاً</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="entity-grid" id="fac-grid" data-stagger>
+
+        <a href="facility-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="operational" data-search-text="برج الواحة الذكي">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg><span class="badge badge-success entity-card-badge">تشغيلي</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">برج الواحة الذكي</div><div class="entity-card-meta">مبنى تجاري · الرياض · 128 أصلاً</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:92%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">صحة 92%</span></div></div>
+        </a>
+
+        <a href="facility-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="operational" data-search-text="مجمع سكني الشمال">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg><span class="badge badge-success entity-card-badge">تشغيلي</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مجمع سكني الشمال</div><div class="entity-card-meta">مبنى سكني · الدمام · 96 أصلاً</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:88%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">صحة 88%</span></div></div>
+        </a>
+
+        <a href="facility-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="partial" data-search-text="مجمع مستشفى النور">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg><span class="badge badge-warning entity-card-badge">تشغيل جزئي</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مجمع مستشفى النور</div><div class="entity-card-meta">منشأة صحية · جدة · 210 أصلاً</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:78%; background:var(--primary);"></span></div><div class="entity-card-foot"><span class="text-micro">صحة 78%</span></div></div>
+        </a>
+
+        <a href="facility-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="attention" data-search-text="مصنع الرياض الصناعي">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg><span class="badge badge-warning entity-card-badge">صيانة مجدولة</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مصنع الرياض الصناعي</div><div class="entity-card-meta">منشأة صناعية · الرياض · 154 أصلاً</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:65%; background:var(--warning);"></span></div><div class="entity-card-foot"><span class="text-micro">صحة 65%</span></div></div>
+        </a>
+
+        <a href="facility-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="attention" data-search-text="مركز البيانات الذكي">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg><span class="badge badge-critical entity-card-badge">يتطلب تدخلاً</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مركز البيانات الذكي</div><div class="entity-card-meta">بنية تحتية · الرياض · 88 أصلاً</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:54%; background:var(--critical);"></span></div><div class="entity-card-foot"><span class="text-micro">صحة 54%</span></div></div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "المنشآت", group: "التنقّل", url: "facilities.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

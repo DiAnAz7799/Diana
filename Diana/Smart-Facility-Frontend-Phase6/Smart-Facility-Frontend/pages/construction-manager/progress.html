@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>متابعة التقدم — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<style>
+  .gantt-row{ display:grid; grid-template-columns:150px 1fr; align-items:center; gap:12px; margin-bottom:12px; }
+  .gantt-track{ position:relative; height:22px; background:var(--surface-alt); border-radius:8px; overflow:hidden; }
+  .gantt-planned{ position:absolute; top:0; bottom:0; background:var(--border-strong); border-radius:8px; opacity:.6; }
+  .gantt-actual{ position:absolute; top:3px; bottom:3px; border-radius:6px; display:flex; align-items:center; padding-inline-start:8px; font-size:10px; font-weight:700; color:#fff; white-space:nowrap; overflow:hidden; }
+</style>
+</head>
+<body data-role="construction_manager" data-active-page="construction-progress"
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"متابعة التقدم","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">متابعة التقدم</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">مقارنة الجدول المخطط بالتنفيذ الفعلي عبر جميع المشاريع والمراحل</div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">الجدول الزمني — برج الواحة الذكي</div><div class="panel-sub">مقارنة الجدول المخطط بالتنفيذ الفعلي للمراحل</div></div>
+            <div class="panel-legend"><div class="legend-item"><span class="legend-dot" style="background:var(--border-strong);"></span>مخطط</div><div class="legend-item"><span class="legend-dot" style="background:var(--primary-dark);"></span>فعلي</div></div>
+          </div>
+          <div class="gantt-row"><div style="font-size:12px; font-weight:700;">التأسيس والحفر</div><div class="gantt-track"><div class="gantt-planned" style="right:70%; left:0;"></div><div class="gantt-actual" style="right:70%; left:0; background:var(--success);">مكتمل</div></div></div>
+          <div class="gantt-row"><div style="font-size:12px; font-weight:700;">الهيكل الخرساني</div><div class="gantt-track"><div class="gantt-planned" style="right:38%; left:22%;"></div><div class="gantt-actual" style="right:35%; left:22%; background:var(--success);">92%</div></div></div>
+          <div class="gantt-row"><div style="font-size:12px; font-weight:700;">الأعمال الكهروميكانيكية</div><div class="gantt-track"><div class="gantt-planned" style="right:15%; left:45%;"></div><div class="gantt-actual" style="right:20%; left:45%; background:var(--primary);">88%</div></div></div>
+          <div class="gantt-row"><div style="font-size:12px; font-weight:700;">التشطيبات الداخلية</div><div class="gantt-track"><div class="gantt-planned" style="right:0; left:65%;"></div><div class="gantt-actual" style="right:25%; left:65%; background:var(--warning);">61%</div></div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">تقدّم الإنجاز التراكمي</div><div class="panel-sub">جميع المشاريع النشطة</div></div></div>
+            <div data-chart='{"type":"area","values":[38,44,49,55,61,68],"color":"var(--primary-dark)"}'></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">مؤشرات التأخير</div></div></div>
+            <div style="display:flex; gap:12px; padding:13px 0; border-bottom:1px solid var(--border);"><div style="width:4px; background:var(--critical); border-radius:999px;"></div><div style="flex:1;"><div style="font-size:13px; font-weight:700;">الهيكل الخرساني — مجمع مستشفى النور</div><div class="text-micro">انحراف 18 يومًا عن الخطة</div></div></div>
+            <div style="display:flex; gap:12px; padding:13px 0;"><div style="width:4px; background:var(--warning); border-radius:999px;"></div><div style="flex:1;"><div style="font-size:13px; font-weight:700;">التشطيبات الداخلية — برج الواحة</div><div class="text-micro">انحراف 6 أيام عن الخطة</div></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "متابعة التقدم", group: "التنقّل", url: "progress.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

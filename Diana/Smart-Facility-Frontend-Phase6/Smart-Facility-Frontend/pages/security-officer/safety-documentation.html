@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الوثائق والسلامة — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-documents"
+      data-search-placeholder="ابحث عن وثيقة..."
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"الوثائق والسلامة","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">الوثائق والسلامة</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">سياسات الأمن، إجراءات الطوارئ، وملفات الحوادث</div></div>
+        <button class="btn btn-primary" data-modal-trigger="upload-safety-doc-modal">+ رفع ملف</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث..." data-live-search="#sd-table-body"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="category" data-filter-value="policies">سياسات</button>
+            <button data-filter="category" data-filter-value="procedures">إجراءات</button>
+            <button data-filter="category" data-filter-value="incidents">ملفات حوادث</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <table class="data-table">
+          <thead><tr><th>اسم الملف</th><th>الفئة</th><th>الحجم</th><th>آخر تحديث</th><th></th></tr></thead>
+          <tbody id="sd-table-body">
+            <tr data-searchable data-search-text="سياسة التحكم بالوصول" data-filterable data-filter-category="policies">
+              <td style="display:flex; align-items:center; gap:10px;"><svg class="gi" width="17" height="17" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/></svg>سياسة التحكم بالوصول.pdf</td>
+              <td><span class="badge badge-info">سياسات</span></td><td>1.4 MB</td><td>10 يونيو 2026</td>
+              <td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;">معاينة</button></td>
+            </tr>
+            <tr data-searchable data-search-text="إجراءات إخلاء الطوارئ" data-filterable data-filter-category="procedures">
+              <td style="display:flex; align-items:center; gap:10px;"><svg class="gi" width="17" height="17" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/></svg>إجراءات إخلاء الطوارئ.pdf</td>
+              <td><span class="badge" style="background:var(--accent-tint); color:var(--accent-dark);">إجراءات</span></td><td>2.1 MB</td><td>2 يوليو 2026</td>
+              <td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;">معاينة</button></td>
+            </tr>
+            <tr data-searchable data-search-text="ملف حادثة اقتحام" data-filterable data-filter-category="incidents">
+              <td style="display:flex; align-items:center; gap:10px;"><svg class="gi" width="17" height="17" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/></svg>ملف حادثة INC-0847 المغلقة.pdf</td>
+              <td><span class="badge badge-critical">ملفات حوادث</span></td><td>3.6 MB</td><td>4 يوليو 2026</td>
+              <td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;">معاينة</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="upload-safety-doc-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">رفع وثيقة جديدة</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div style="border:2px dashed var(--border-strong); border-radius:var(--radius-md); padding:28px 16px; text-align:center; background:var(--surface-alt); margin-bottom:16px;">
+      <svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="margin:0 auto 10px; display:block;"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+      <div style="font-size:12.5px; font-weight:700;">اسحب ملفًا أو اضغط للرفع</div>
+      <div class="text-micro">PDF حتى 20MB</div>
+    </div>
+    <div class="field"><label>الفئة</label><select><option>سياسات</option><option>إجراءات</option><option>ملفات حوادث</option></select></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="upload-safety-doc-submit">رفع الملف</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "الوثائق والسلامة", group: "التنقّل", url: "safety-documentation.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('upload-safety-doc-submit')?.addEventListener('click', () => {
+      document.getElementById('upload-safety-doc-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم رفع الوثيقة بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

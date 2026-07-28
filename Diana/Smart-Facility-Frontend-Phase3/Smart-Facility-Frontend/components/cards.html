@@ -1,0 +1,64 @@
+<!--
+  components/cards.html
+  PATTERN LIBRARY. Copy the block you need into your page.
+-->
+
+<section style="display:flex; flex-direction:column; gap:24px; padding:24px;">
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">KPI Card</h3>
+    <div style="max-width:260px;">
+      <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);">
+        <div class="kpi-card-top">
+          <div>
+            <div class="kpi-label">إجمالي المشاريع</div>
+            <div class="kpi-value" data-counter="128">0</div>
+          </div>
+          <div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg></div>
+        </div>
+        <div class="kpi-foot" style="color:#0F7A54;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0F7A54" stroke-width="2.2" stroke-linecap="round"><path d="M6 15l6-6 6 6"/></svg>
+          +6 هذا الشهر
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">Panel (chart/list container)</h3>
+    <div class="panel" style="max-width:400px;">
+      <div class="panel-head">
+        <div>
+          <div class="panel-title">عنوان اللوحة</div>
+          <div class="panel-sub">وصف فرعي مختصر</div>
+        </div>
+      </div>
+      <p class="text-body-sm text-muted">محتوى اللوحة — رسم بياني أو قائمة.</p>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">Empty state</h3>
+    <div class="state-card" style="max-width:320px;">
+      <div class="state-icon-box">
+        <svg class="gi" width="26" height="26" viewBox="0 0 24 24"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg>
+      </div>
+      <div class="state-title">لا توجد بيانات بعد</div>
+      <div class="state-desc">ابدأ بإنشاء أول عنصر لعرضه هنا.</div>
+      <button class="btn btn-primary">+ إنشاء مشروع</button>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">Error state</h3>
+    <div class="state-card" style="max-width:320px;">
+      <div class="state-icon-box is-critical">
+        <svg class="gi" width="26" height="26" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+      </div>
+      <div class="state-title">تعذّر تحميل البيانات</div>
+      <div class="state-desc">حدث خطأ أثناء الاتصال بالخادم.</div>
+      <button class="btn btn-ghost" onclick="window.location.reload()">إعادة المحاولة</button>
+    </div>
+  </div>
+
+</section>

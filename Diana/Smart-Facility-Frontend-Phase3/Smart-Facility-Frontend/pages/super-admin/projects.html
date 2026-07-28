@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>المشاريع — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-projects"
+      data-search-placeholder="ابحث عن مشروع..."
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"المشاريع","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">المشاريع</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">إدارة ومتابعة جميع المشاريع الإنشائية عبر المنصة — 128 مشروعًا</div>
+        </div>
+        <a href="create-project.html" class="btn btn-primary">+ مشروع جديد</a>
+      </div>
+
+      <!-- ---------- Toolbar: search, filters, view toggle ---------- -->
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;">
+            <input type="text" placeholder="ابحث عن مشروع..." data-live-search="#projects-grid, #projects-table-body">
+          </div>
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+              <button data-filter="status" data-filter-value="active">قيد التنفيذ</button>
+              <button data-filter="status" data-filter-value="delayed">متأخر</button>
+              <button data-filter="status" data-filter-value="completed">مكتمل</button>
+              <button data-filter="status" data-filter-value="stalled">متوقف</button>
+            </div>
+            <div class="view-toggle">
+              <div class="view-toggle-btn is-active" data-view-btn="grid"><svg class="gi" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
+              <div class="view-toggle-btn" data-view-btn="list"><svg class="gi" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------- Grid view (default) ---------- -->
+      <div class="entity-grid" id="projects-grid" data-stagger>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="active">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">قيد التنفيذ</span></div>
+          <div class="entity-card-body">
+            <div class="entity-card-title">برج الواحة الذكي</div>
+            <div class="entity-card-meta">مبنى تجاري · الرياض</div>
+            <div class="kpi-bar" style="margin-top:12px;"><span style="width:82%; background:var(--success);"></span></div>
+            <div class="entity-card-foot"><span class="text-micro">82% مكتمل</span><span class="text-micro">خالد الشمري</span></div>
+          </div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="delayed">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-warning entity-card-badge">متأخر</span></div>
+          <div class="entity-card-body">
+            <div class="entity-card-title">مجمع مستشفى النور</div>
+            <div class="entity-card-meta">منشأة صحية · جدة</div>
+            <div class="kpi-bar" style="margin-top:12px;"><span style="width:45%; background:var(--warning);"></span></div>
+            <div class="entity-card-foot"><span class="text-micro">45% مكتمل</span><span class="text-micro">منى الحربي</span></div>
+          </div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="completed">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-info entity-card-badge">مكتمل</span></div>
+          <div class="entity-card-body">
+            <div class="entity-card-title">مصنع الرياض الصناعي</div>
+            <div class="entity-card-meta">منشأة صناعية · الرياض</div>
+            <div class="kpi-bar" style="margin-top:12px;"><span style="width:100%; background:var(--info);"></span></div>
+            <div class="entity-card-foot"><span class="text-micro">100% مكتمل</span><span class="text-micro">عبدالله القحطاني</span></div>
+          </div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="stalled">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-critical entity-card-badge">متوقف</span></div>
+          <div class="entity-card-body">
+            <div class="entity-card-title">مركز البيانات الذكي</div>
+            <div class="entity-card-meta">بنية تحتية · الرياض</div>
+            <div class="kpi-bar" style="margin-top:12px;"><span style="width:12%; background:var(--critical);"></span></div>
+            <div class="entity-card-foot"><span class="text-micro">12% مكتمل</span><span class="text-micro">ريم الدوسري</span></div>
+          </div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="active">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">قيد التنفيذ</span></div>
+          <div class="entity-card-body">
+            <div class="entity-card-title">مجمع سكني الشمال</div>
+            <div class="entity-card-meta">مبنى سكني · الدمام</div>
+            <div class="kpi-bar" style="margin-top:12px;"><span style="width:68%; background:var(--success);"></span></div>
+            <div class="entity-card-foot"><span class="text-micro">68% مكتمل</span><span class="text-micro">خالد الشمري</span></div>
+          </div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="active">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">قيد التنفيذ</span></div>
+          <div class="entity-card-body">
+            <div class="entity-card-title">مجمع مكاتب الخليج التجاري</div>
+            <div class="entity-card-meta">مبنى تجاري · الخبر</div>
+            <div class="kpi-bar" style="margin-top:12px;"><span style="width:37%; background:var(--success);"></span></div>
+            <div class="entity-card-foot"><span class="text-micro">37% مكتمل</span><span class="text-micro">منى الحربي</span></div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ---------- List (table) view — hidden by default ---------- -->
+      <div class="table-card" id="projects-list-view" style="display:none;">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>اسم المشروع</th><th>النوع</th><th>المدير</th><th>نسبة الإنجاز</th><th>الحالة</th><th></th></tr></thead>
+            <tbody id="projects-table-body">
+              <tr data-searchable data-search-text="برج الواحة الذكي" data-filterable data-filter-status="active" onclick="window.location.href='project-details.html'" style="cursor:pointer;">
+                <td>برج الواحة الذكي</td><td>مبنى تجاري</td><td>خالد الشمري</td><td>82%</td><td><span class="badge badge-success">قيد التنفيذ</span></td><td>⋯</td>
+              </tr>
+              <tr data-searchable data-search-text="مجمع مستشفى النور" data-filterable data-filter-status="delayed" onclick="window.location.href='project-details.html'" style="cursor:pointer;">
+                <td>مجمع مستشفى النور</td><td>منشأة صحية</td><td>منى الحربي</td><td>45%</td><td><span class="badge badge-warning">متأخر</span></td><td>⋯</td>
+              </tr>
+              <tr data-searchable data-search-text="مصنع الرياض الصناعي" data-filterable data-filter-status="completed" onclick="window.location.href='project-details.html'" style="cursor:pointer;">
+                <td>مصنع الرياض الصناعي</td><td>منشأة صناعية</td><td>عبدالله القحطاني</td><td>100%</td><td><span class="badge badge-info">مكتمل</span></td><td>⋯</td>
+              </tr>
+              <tr data-searchable data-search-text="مركز البيانات الذكي" data-filterable data-filter-status="stalled" onclick="window.location.href='project-details.html'" style="cursor:pointer;">
+                <td>مركز البيانات الذكي</td><td>بنية تحتية</td><td>ريم الدوسري</td><td>12%</td><td><span class="badge badge-critical">متوقف</span></td><td>⋯</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [
+    { label: "لوحة القيادة التنفيذية", group: "لوحة التحكم", url: "dashboard.html" },
+    { label: "المشاريع", group: "المشاريع", url: "projects.html" },
+    { label: "إنشاء مشروع", group: "المشاريع", url: "create-project.html" }
+  ];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const gridBtn = document.querySelector('[data-view-btn="grid"]');
+    const listBtn = document.querySelector('[data-view-btn="list"]');
+    const grid = document.getElementById('projects-grid');
+    const list = document.getElementById('projects-list-view');
+    gridBtn?.addEventListener('click', () => {
+      grid.style.display = ''; list.style.display = 'none';
+      gridBtn.classList.add('is-active'); listBtn.classList.remove('is-active');
+    });
+    listBtn?.addEventListener('click', () => {
+      grid.style.display = 'none'; list.style.display = '';
+      listBtn.classList.add('is-active'); gridBtn.classList.remove('is-active');
+    });
+  });
+</script>
+</body>
+</html>

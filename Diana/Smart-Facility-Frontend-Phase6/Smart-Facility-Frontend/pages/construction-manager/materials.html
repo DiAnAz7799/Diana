@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>إدارة المواد — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-materials"
+      data-search-placeholder="ابحث عن مادة..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"إدارة المواد","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">إدارة المواد</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">مخزون المواد الإنشائية عبر جميع المواقع النشطة</div>
+        </div>
+        <button class="btn btn-primary" data-modal-trigger="add-material-modal">+ إضافة مادة</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div class="field" style="margin:0; max-width:280px;"><input type="text" placeholder="ابحث عن مادة..." data-live-search="#materials-table-body"></div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>المادة</th><th>الفئة</th><th>الوحدة</th><th>المطلوب</th><th>المستخدم</th><th>المتبقي</th><th>الحالة</th></tr></thead>
+            <tbody id="materials-table-body">
+
+              <tr data-searchable data-search-text="حديد التسليح">
+                <td>حديد التسليح</td><td>هيكلية</td><td>طن</td><td>420</td><td>382</td>
+                <td><div style="display:flex; align-items:center; gap:8px;"><div style="width:70px; height:6px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:38%; background:var(--critical); border-radius:999px;"></div></div><span class="text-micro">38%</span></div></td>
+                <td><span class="badge badge-critical">حرج</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="الأسمنت">
+                <td>الأسمنت</td><td>هيكلية</td><td>طن</td><td>860</td><td>619</td>
+                <td><div style="display:flex; align-items:center; gap:8px;"><div style="width:70px; height:6px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:72%; background:var(--warning); border-radius:999px;"></div></div><span class="text-micro">72%</span></div></td>
+                <td><span class="badge badge-warning">منخفض</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="كابلات كهربائية">
+                <td>كابلات كهربائية</td><td>كهروميكانيكية</td><td>لفة</td><td>150</td><td>135</td>
+                <td><div style="display:flex; align-items:center; gap:8px;"><div style="width:70px; height:6px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:90%; background:var(--success); border-radius:999px;"></div></div><span class="text-micro">90%</span></div></td>
+                <td><span class="badge badge-success">جيد</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="مواد العزل">
+                <td>مواد العزل المائي</td><td>تشطيبات</td><td>م²</td><td>4200</td><td>3990</td>
+                <td><div style="display:flex; align-items:center; gap:8px;"><div style="width:70px; height:6px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:95%; background:var(--success); border-radius:999px;"></div></div><span class="text-micro">95%</span></div></td>
+                <td><span class="badge badge-success">جيد</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="بلاط">
+                <td>بلاط وتشطيبات أرضية</td><td>تشطيبات</td><td>م²</td><td>5600</td><td>3360</td>
+                <td><div style="display:flex; align-items:center; gap:8px;"><div style="width:70px; height:6px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:60%; background:var(--primary); border-radius:999px;"></div></div><span class="text-micro">60%</span></div></td>
+                <td><span class="badge badge-info">متوسط</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="add-material-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">إضافة مادة جديدة</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>اسم المادة</label><input type="text" placeholder="مثال: طوب حراري"></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="field"><label>الفئة</label><select><option>هيكلية</option><option>كهروميكانيكية</option><option>تشطيبات</option></select></div>
+      <div class="field"><label>الوحدة</label><input type="text" placeholder="طن / م² / لفة"></div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="field"><label>الكمية المطلوبة</label><input type="number" placeholder="0"></div>
+      <div class="field"><label>الحد الأدنى للمخزون</label><input type="number" placeholder="0"></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="add-material-submit">إضافة</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "إدارة المواد", group: "التنقّل", url: "materials.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('add-material-submit')?.addEventListener('click', () => {
+      document.getElementById('add-material-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم إضافة المادة بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

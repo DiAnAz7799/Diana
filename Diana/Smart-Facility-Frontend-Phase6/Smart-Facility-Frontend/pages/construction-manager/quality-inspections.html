@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>فحوصات الجودة — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-quality"
+      data-search-placeholder="ابحث عن فحص..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"فحوصات الجودة","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">فحوصات الجودة</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">سجل فحوصات الجودة عبر جميع المراحل — متوسط النتيجة 87/100</div>
+        </div>
+        <button class="btn btn-primary" data-modal-trigger="new-inspection-modal">+ فحص جديد</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث..." data-live-search="#qi-grid"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="status" data-filter-value="approved">معتمد</button>
+            <button data-filter="status" data-filter-value="review">قيد المراجعة</button>
+            <button data-filter="status" data-filter-value="rejected">مرفوض</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="entity-grid" id="qi-grid" data-stagger>
+
+        <div class="panel" data-filterable data-filter-status="approved" data-search-text="الأعمدة">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><span class="badge badge-success">معتمد</span><div style="font-size:20px; font-weight:800; font-family:var(--font-display); color:var(--success);">91</div></div>
+          <div style="font-weight:700; font-size:13.5px;">فحص الأعمدة — طوابق 1-10</div>
+          <div class="text-micro" style="margin-top:2px;">برج الواحة الذكي · الهيكل الخرساني</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="text-micro">عبدالله القحطاني</span><span class="text-micro">قبل يومين</span></div>
+        </div>
+
+        <div class="panel" data-filterable data-filter-status="review" data-search-text="الجسور">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><span class="badge badge-warning">قيد المراجعة</span><div style="font-size:20px; font-weight:800; font-family:var(--font-display); color:var(--text-faint);">—</div></div>
+          <div style="font-weight:700; font-size:13.5px;">فحص الجسور — طوابق 11-18</div>
+          <div class="text-micro" style="margin-top:2px;">برج الواحة الذكي · الهيكل الخرساني</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="text-micro">عبدالله القحطاني</span><span class="text-micro">اليوم</span></div>
+        </div>
+
+        <div class="panel" data-filterable data-filter-status="approved" data-search-text="العزل المائي">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><span class="badge badge-success">معتمد</span><div style="font-size:20px; font-weight:800; font-family:var(--font-display); color:var(--success);">95</div></div>
+          <div style="font-weight:700; font-size:13.5px;">فحص العزل المائي — السطح</div>
+          <div class="text-micro" style="margin-top:2px;">مجمع سكني الشمال · التشطيبات</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="text-micro">منى الحربي</span><span class="text-micro">قبل 5 أيام</span></div>
+        </div>
+
+        <div class="panel" data-filterable data-filter-status="rejected" data-search-text="الأساسات">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;"><span class="badge badge-critical">مرفوض</span><div style="font-size:20px; font-weight:800; font-family:var(--font-display); color:var(--critical);">54</div></div>
+          <div style="font-weight:700; font-size:13.5px;">فحص أساسات المضخات — الطابق السفلي</div>
+          <div class="text-micro" style="margin-top:2px;">مجمع مستشفى النور · التأسيس</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="text-micro">عبدالله القحطاني</span><span class="text-micro">قبل أسبوع</span></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="new-inspection-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">فحص جودة جديد</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>المرحلة</label><select><option>الهيكل الخرساني</option><option>التشطيبات الداخلية</option></select></div>
+    <div class="field"><label>المفتش</label><select><option>عبدالله القحطاني</option><option>منى الحربي</option></select></div>
+    <div class="field"><label>ملاحظات</label><textarea rows="3" placeholder="أضف ملاحظات الفحص..."></textarea></div>
+    <div class="field"><label>المرفقات</label>
+      <div style="border:2px dashed var(--border-strong); border-radius:var(--radius-md); padding:20px; text-align:center; background:var(--surface-alt); cursor:pointer;">
+        <svg class="gi" width="24" height="24" viewBox="0 0 24 24" style="margin:0 auto 6px; display:block;"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+        <div class="text-micro">اسحب صورًا أو اضغط للرفع</div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="new-inspection-submit">إنشاء الفحص</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "فحوصات الجودة", group: "التنقّل", url: "quality-inspections.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('new-inspection-submit')?.addEventListener('click', () => {
+      document.getElementById('new-inspection-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم إنشاء فحص الجودة بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

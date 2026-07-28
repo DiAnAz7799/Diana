@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>صور الموقع والمرفقات — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<style>
+  .photo-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(180px,1fr)); gap:14px; }
+  .photo-tile{ position:relative; border-radius:var(--radius-md); overflow:hidden; aspect-ratio:4/3; background:linear-gradient(135deg,var(--primary-tint),var(--accent-tint)); display:flex; align-items:center; justify-content:center; cursor:pointer; border:1px solid var(--border); transition:transform var(--duration-base); }
+  .photo-tile:hover{ transform:scale(1.02); }
+  .photo-tile-caption{ position:absolute; bottom:0; inset-inline:0; background:linear-gradient(to top, rgba(20,30,45,.65), transparent); padding:16px 10px 8px; color:#fff; font-size:11px; }
+</style>
+</head>
+<body data-role="construction_manager" data-active-page="construction-photos"
+      data-search-placeholder="ابحث في الصور..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"صور الموقع والمرفقات","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">صور الموقع والمرفقات</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">توثيق بصري لتقدّم الأعمال عبر جميع المواقع</div>
+        </div>
+        <button class="btn btn-primary" data-modal-trigger="upload-photo-modal">+ رفع صور</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+          <button data-filter="project" data-filter-value="waha">برج الواحة الذكي</button>
+          <button data-filter="project" data-filter-value="noor">مجمع مستشفى النور</button>
+          <button data-filter="project" data-filter-value="north">مجمع سكني الشمال</button>
+        </div>
+      </div>
+
+      <div class="photo-grid" data-stagger>
+        <div class="photo-tile" data-filterable data-filter-project="waha"><svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="opacity:.4;"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><div class="photo-tile-caption">صب خرسانة الطابق 19 · 28 يوليو</div></div>
+        <div class="photo-tile" data-filterable data-filter-project="waha"><svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="opacity:.4;"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><div class="photo-tile-caption">أعمال التشطيبات — الطابق 12 · 27 يوليو</div></div>
+        <div class="photo-tile" data-filterable data-filter-project="noor"><svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="opacity:.4;"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><div class="photo-tile-caption">القسم الشرقي — الأعمدة · 26 يوليو</div></div>
+        <div class="photo-tile" data-filterable data-filter-project="north"><svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="opacity:.4;"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><div class="photo-tile-caption">أعمال العزل — السطح · 25 يوليو</div></div>
+        <div class="photo-tile" data-filterable data-filter-project="waha"><svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="opacity:.4;"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><div class="photo-tile-caption">الواجهة الخارجية · 24 يوليو</div></div>
+        <div class="photo-tile" data-filterable data-filter-project="noor"><svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="opacity:.4;"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><div class="photo-tile-caption">موقع التخزين المؤقت · 23 يوليو</div></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="upload-photo-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">رفع صور الموقع</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div style="border:2px dashed var(--border-strong); border-radius:var(--radius-md); padding:28px 16px; text-align:center; background:var(--surface-alt); margin-bottom:16px;">
+      <svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="margin:0 auto 10px; display:block;"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+      <div style="font-size:12.5px; font-weight:700;">اسحب صورًا أو اضغط للرفع</div>
+      <div class="text-micro">يمكن رفع عدة صور دفعة واحدة</div>
+    </div>
+    <div class="field"><label>المشروع</label><select><option>برج الواحة الذكي</option><option>مجمع مستشفى النور</option></select></div>
+    <div class="field"><label>وصف مختصر</label><input type="text" placeholder="مثال: صب خرسانة الطابق 19"></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="upload-photo-submit">رفع الصور</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "صور الموقع والمرفقات", group: "التنقّل", url: "site-photos.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('upload-photo-submit')?.addEventListener('click', () => {
+      document.getElementById('upload-photo-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم رفع الصور بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

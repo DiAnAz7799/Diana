@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>المراقبة الطارئة — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-emergency"
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"المراقبة الطارئة","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">المراقبة الطارئة</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">لوحة تحكم مخصصة للحالات الطارئة عبر جميع المنشآت</div></div>
+        <button class="btn btn-critical" data-modal-trigger="declare-emergency-modal">إعلان حالة طوارئ</button>
+      </div>
+
+      <div class="section">
+        <div class="panel" style="text-align:center; padding:32px; background:linear-gradient(120deg, var(--success-tint) 0%, var(--surface) 60%);">
+          <div style="width:60px; height:60px; margin:0 auto 14px; border-radius:50%; background:var(--success-tint); display:flex; align-items:center; justify-content:center; position:relative;">
+            <div style="position:absolute; inset:-6px; border-radius:50%; border:2px solid var(--success); opacity:.5; animation:soft-pulse 2s ease-in-out infinite;"></div>
+            <svg class="gi" width="26" height="26" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div style="font-size:18px; font-weight:800; font-family:var(--font-display); color:#0F7A54;">لا توجد حالات طوارئ نشطة</div>
+          <div class="text-micro" style="margin-top:4px;">جميع المنشآت تعمل ضمن الحدود الآمنة</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">خريطة المنشآت</div><div class="panel-sub">تمثيل مبسّط لحالة كل منشأة</div></div></div>
+            <div class="strip-grid">
+              <div style="display:flex; align-items:center; gap:10px; padding:12px; border:1px solid var(--border); border-radius:10px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--success);"></div><span style="font-size:12.5px; font-weight:700;">برج الواحة الذكي</span></div>
+              <div style="display:flex; align-items:center; gap:10px; padding:12px; border:1px solid var(--border); border-radius:10px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--success);"></div><span style="font-size:12.5px; font-weight:700;">مجمع سكني الشمال</span></div>
+              <div style="display:flex; align-items:center; gap:10px; padding:12px; border:1px solid var(--border); border-radius:10px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--warning);"></div><span style="font-size:12.5px; font-weight:700;">مصنع الرياض الصناعي</span></div>
+              <div style="display:flex; align-items:center; gap:10px; padding:12px; border:1px solid var(--border); border-radius:10px;"><div style="width:9px; height:9px; border-radius:50%; background:var(--success);"></div><span style="font-size:12.5px; font-weight:700;">مركز البيانات الذكي</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">تنبيهات حرجة</div></div></div>
+            <div style="display:flex; gap:12px; padding:12px 0;"><div style="width:4px; background:var(--critical); border-radius:999px;"></div><div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">تنبيه اقتحام — مصنع الرياض الصناعي</div><div class="text-micro">منذ 4 دقائق · فريق الاستجابة في الطريق</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">السجل الزمني لآخر حالة طوارئ</div></div></div>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">تم إغلاق حالة الطوارئ السابقة — تسريب غاز مشتبه به (كاذب)</div><div class="tl-meta">3 يوليو 2026</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="declare-emergency-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">إعلان حالة طوارئ</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>نوع الطوارئ</label><select><option>حريق</option><option>اقتحام مسلح</option><option>تسرب غاز</option><option>حالة طبية طارئة</option></select></div>
+    <div class="field"><label>المنشأة</label><select><option>برج الواحة الذكي</option><option>مصنع الرياض الصناعي</option></select></div>
+    <div class="field"><label>وصف الحالة</label><textarea rows="3" placeholder="اشرح طبيعة حالة الطوارئ..."></textarea></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-critical" id="declare-submit">إعلان الطوارئ</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "المراقبة الطارئة", group: "التنقّل", url: "emergency-monitoring.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('declare-submit')?.addEventListener('click', () => {
+      document.getElementById('declare-emergency-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'critical', title: 'تم إعلان حالة الطوارئ — جارٍ إخطار الفرق المعنية' });
+    });
+  });
+</script>
+</body>
+</html>

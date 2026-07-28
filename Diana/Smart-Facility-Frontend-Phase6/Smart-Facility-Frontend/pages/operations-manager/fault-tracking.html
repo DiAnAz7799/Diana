@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تتبع الأعطال — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-faults"
+      data-search-placeholder="ابحث عن عطل..."
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"تتبع الأعطال","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">تتبع الأعطال</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">سجل الأعطال المسجّلة عبر جميع المنشآت — 46 عطلاً هذا الشهر</div></div>
+        <button class="btn btn-primary" data-modal-trigger="new-fault-modal">+ تسجيل عطل</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث..." data-live-search="#faults-table-body"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="severity" data-filter-value="critical">حرج</button>
+            <button data-filter="severity" data-filter-value="high">عالي</button>
+            <button data-filter="severity" data-filter-value="medium">متوسط</button>
+            <button data-filter="severity" data-filter-value="low">منخفض</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>الأصل</th><th>السبب الجذري</th><th>الشدة</th><th>المهندس المسؤول</th><th>وقت الاكتشاف</th><th>الحالة</th></tr></thead>
+            <tbody id="faults-table-body">
+              <tr data-searchable data-search-text="مبرد رئيسي" data-filterable data-filter-severity="critical">
+                <td>مبرّد رئيسي — غرفة الخوادم</td><td>تآكل في دائرة الضاغط</td><td><span class="badge badge-critical">حرج</span></td><td>سعيد المطيري</td><td>منذ ساعة</td><td><span class="badge badge-warning">قيد الإصلاح</span></td>
+              </tr>
+              <tr data-searchable data-search-text="مصعد" data-filterable data-filter-severity="high">
+                <td>مصعد ركاب رقم 3</td><td>تآكل كابلات الجر</td><td><span class="badge badge-warning">عالي</span></td><td>أحمد باوزير</td><td>منذ يوم</td><td><span class="badge badge-info">تحت التحقيق</span></td>
+              </tr>
+              <tr data-searchable data-search-text="مولد كهربائي" data-filterable data-filter-severity="medium">
+                <td>مولد كهربائي احتياطي</td><td>ضعف في بطارية التشغيل</td><td><span class="badge badge-info">متوسط</span></td><td>ريان عسيري</td><td>منذ 3 أيام</td><td><span class="badge badge-success">تم الحل</span></td>
+              </tr>
+              <tr data-searchable data-search-text="إنارة" data-filterable data-filter-severity="low">
+                <td>إنارة الممرات — الطابق 8</td><td>عطل في وحدة التحكم</td><td><span class="badge badge-neutral">منخفض</span></td><td>سعيد المطيري</td><td>منذ 5 أيام</td><td><span class="badge badge-success">تم الحل</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="new-fault-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">تسجيل عطل جديد</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>الأصل</label><select><option>مبرّد رئيسي — غرفة الخوادم</option><option>مصعد ركاب رقم 3</option></select></div>
+    <div class="field"><label>وصف العطل</label><textarea rows="3" placeholder="اشرح طبيعة العطل..."></textarea></div>
+    <div class="field"><label>الشدة</label><select><option>منخفض</option><option>متوسط</option><option>عالي</option><option>حرج</option></select></div>
+    <div class="field"><label>المهندس المسؤول</label><select><option>سعيد المطيري</option><option>أحمد باوزير</option><option>ريان عسيري</option></select></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="new-fault-submit">تسجيل العطل</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "تتبع الأعطال", group: "التنقّل", url: "fault-tracking.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('new-fault-submit')?.addEventListener('click', () => {
+      document.getElementById('new-fault-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم تسجيل العطل بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مراحل التنفيذ — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-stages"
+      data-search-placeholder="ابحث عن مرحلة..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"مراحل التنفيذ","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">مراحل التنفيذ</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">إدارة مراحل تنفيذ المشاريع الإنشائية النشطة</div>
+        </div>
+        <button class="btn btn-primary" data-modal-trigger="add-stage-modal">+ مرحلة جديدة</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث عن مرحلة..." data-live-search="#stages-list"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="status" data-filter-value="notstarted">لم تبدأ</button>
+            <button data-filter="status" data-filter-value="inprogress">قيد التنفيذ</button>
+            <button data-filter="status" data-filter-value="completed">مكتملة</button>
+            <button data-filter="status" data-filter-value="delayed">متأخرة</button>
+            <button data-filter="status" data-filter-value="review">تحتاج مراجعة</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="stages-list" style="display:flex; flex-direction:column; gap:14px;" data-stagger>
+
+        <a href="stage-details.html" class="panel" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="completed" data-search-text="التأسيس والحفر">
+          <div style="width:44px; height:44px; border-radius:12px; background:var(--success-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">التأسيس والحفر</div><div class="text-micro">برج الواحة الذكي · أولوية عالية</div></div>
+          <div style="width:140px;"><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:100%; background:var(--success); border-radius:999px;"></div></div></div>
+          <span class="badge badge-success">مكتملة</span>
+        </a>
+
+        <a href="stage-details.html" class="panel" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="inprogress" data-search-text="الهيكل الخرساني">
+          <div style="width:44px; height:44px; border-radius:12px; background:var(--primary-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">الهيكل الخرساني</div><div class="text-micro">برج الواحة الذكي · أولوية عالية</div></div>
+          <div style="width:140px;"><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:92%; background:var(--primary); border-radius:999px;"></div></div></div>
+          <span class="badge badge-info">قيد التنفيذ</span>
+        </a>
+
+        <a href="stage-details.html" class="panel" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="delayed" data-search-text="الهيكل الخرساني مستشفى النور">
+          <div style="width:44px; height:44px; border-radius:12px; background:var(--warning-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">الهيكل الخرساني</div><div class="text-micro">مجمع مستشفى النور · أولوية عاجلة</div></div>
+          <div style="width:140px;"><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:55%; background:var(--warning); border-radius:999px;"></div></div></div>
+          <span class="badge badge-warning">متأخرة</span>
+        </a>
+
+        <a href="stage-details.html" class="panel" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="review" data-search-text="التشطيبات الداخلية">
+          <div style="width:44px; height:44px; border-radius:12px; background:var(--accent-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">التشطيبات الداخلية</div><div class="text-micro">برج الواحة الذكي · أولوية متوسطة</div></div>
+          <div style="width:140px;"><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:61%; background:var(--warning); border-radius:999px;"></div></div></div>
+          <span class="badge badge-warning">تحتاج مراجعة</span>
+        </a>
+
+        <a href="stage-details.html" class="panel" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="notstarted" data-search-text="التسليم النهائي">
+          <div style="width:44px; height:44px; border-radius:12px; background:var(--surface-alt); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--coolgray);"><circle cx="12" cy="12" r="9"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">التسليم النهائي</div><div class="text-micro">مجمع سكني الشمال · أولوية منخفضة</div></div>
+          <div style="width:140px;"><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:0%; background:var(--border-strong); border-radius:999px;"></div></div></div>
+          <span class="badge badge-neutral">لم تبدأ</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="add-stage-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">إضافة مرحلة جديدة</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>اسم المرحلة</label><input type="text" placeholder="مثال: أعمال العزل المائي"></div>
+    <div class="field"><label>المشروع</label><select><option>برج الواحة الذكي</option><option>مجمع مستشفى النور</option></select></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="field"><label>تاريخ البداية</label><input type="date"></div>
+      <div class="field"><label>الأولوية</label><select><option>عالية</option><option>متوسطة</option><option>منخفضة</option></select></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="add-stage-submit">إضافة المرحلة</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "مراحل التنفيذ", group: "التنقّل", url: "stages.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('add-stage-submit')?.addEventListener('click', () => {
+      document.getElementById('add-stage-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم إضافة المرحلة بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

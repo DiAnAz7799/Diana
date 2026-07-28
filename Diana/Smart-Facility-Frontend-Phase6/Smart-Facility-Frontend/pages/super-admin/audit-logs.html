@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>سجل التدقيق — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-audit"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"سجل التدقيق","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">سجل التدقيق</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">سجل كامل لجميع الإجراءات الحساسة المُنفَّذة عبر المنصة</div>
+      </div>
+
+      <div class="panel" style="margin-bottom:16px; padding:14px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:260px; flex:1;">
+            <input type="text" placeholder="ابحث بالمستخدم أو الإجراء..." data-live-search="#audit-table-body">
+          </div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="type" data-filter-value="create">إنشاء</button>
+            <button data-filter="type" data-filter-value="update">تعديل</button>
+            <button data-filter="type" data-filter-value="delete">حذف</button>
+            <button data-filter="type" data-filter-value="access">دخول</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>المستخدم</th><th>الإجراء</th><th>الهدف</th><th>النوع</th><th>الوقت</th><th></th></tr></thead>
+            <tbody id="audit-table-body">
+
+              <tr data-searchable data-search-text="سارة العتيبي حذف مستخدم" data-filterable data-filter-type="delete">
+                <td>سارة العتيبي</td><td>حذف حساب مستخدم</td><td>مستخدم: عمر الزهراني</td><td><span class="badge badge-critical">حذف</span></td><td>اليوم 09:14</td>
+                <td><span data-audit-detail style="cursor:pointer; color:var(--primary-dark); font-size:11.5px; font-weight:700;">التفاصيل</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="خالد الشمري تعديل مشروع" data-filterable data-filter-type="update">
+                <td>خالد الشمري</td><td>تعديل حالة مشروع</td><td>مشروع: برج الواحة الذكي</td><td><span class="badge badge-warning">تعديل</span></td><td>اليوم 08:52</td>
+                <td><span data-audit-detail style="cursor:pointer; color:var(--primary-dark); font-size:11.5px; font-weight:700;">التفاصيل</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="سارة العتيبي إنشاء مشروع" data-filterable data-filter-type="create">
+                <td>سارة العتيبي</td><td>إنشاء مشروع جديد</td><td>مشروع: مجمع مكاتب الخليج</td><td><span class="badge badge-success">إنشاء</span></td><td>أمس 16:30</td>
+                <td><span data-audit-detail style="cursor:pointer; color:var(--primary-dark); font-size:11.5px; font-weight:700;">التفاصيل</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="فيصل العنزي دخول" data-filterable data-filter-type="access">
+                <td>فيصل العنزي</td><td>تسجيل دخول من جهاز جديد</td><td>الجلسة: 192.168.--.--</td><td><span class="badge badge-info">دخول</span></td><td>أمس 07:05</td>
+                <td><span data-audit-detail style="cursor:pointer; color:var(--primary-dark); font-size:11.5px; font-weight:700;">التفاصيل</span></td>
+              </tr>
+
+              <tr data-searchable data-search-text="سارة العتيبي تعديل صلاحيات" data-filterable data-filter-type="update">
+                <td>سارة العتيبي</td><td>تعديل مصفوفة الصلاحيات</td><td>الدور: مدير تشغيل</td><td><span class="badge badge-warning">تعديل</span></td><td>26 يوليو 14:20</td>
+                <td><span data-audit-detail style="cursor:pointer; color:var(--primary-dark); font-size:11.5px; font-weight:700;">التفاصيل</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Audit detail modal ---------- -->
+<div class="modal-backdrop" id="audit-detail-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">تفاصيل الإجراء</div>
+      <div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+    </div>
+    <div class="settings-row"><span class="settings-row-label">المستخدم</span><span class="text-body-sm">سارة العتيبي</span></div>
+    <div class="settings-row"><span class="settings-row-label">عنوان IP</span><span class="text-body-sm" dir="ltr">192.168.14.22</span></div>
+    <div class="settings-row"><span class="settings-row-label">الجهاز</span><span class="text-body-sm">Chrome — Windows</span></div>
+    <div class="settings-row"><span class="settings-row-label">الوقت الكامل</span><span class="text-body-sm">28 يوليو 2026 — 09:14:32</span></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إغلاق</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "سجل التدقيق", group: "النظام", url: "audit-logs.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-audit-detail]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('audit-detail-modal').classList.add('is-open');
+      });
+    });
+  });
+</script>
+</body>
+</html>

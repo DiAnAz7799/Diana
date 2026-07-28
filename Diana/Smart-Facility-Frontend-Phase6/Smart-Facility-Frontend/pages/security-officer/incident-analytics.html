@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تحليلات الحوادث — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<style>
+  .heat-grid{ display:grid; grid-template-columns:100px repeat(7,1fr); gap:4px; }
+  .heat-label{ font-size:10.5px; color:var(--text-faint); display:flex; align-items:center; }
+  .heat-cell{ height:28px; border-radius:6px; }
+</style>
+</head>
+<body data-role="security_officer" data-active-page="security-analytics"
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"تحليلات الحوادث","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">تحليلات الحوادث</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">تحليل الاتجاهات ومقارنة الأداء الأمني عبر المنشآت</div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">اتجاه الحوادث الشهري</div><div class="panel-sub">آخر 6 أشهر</div></div></div>
+          <div data-chart='{"type":"area","values":[64,58,71,52,49,46],"color":"var(--critical)"}'></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">تحليل الشدة</div></div></div>
+            <div class="donut-wrap" style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center;">
+              <div data-chart='{"type":"donut","segments":[{"value":14,"color":"var(--success)"},{"value":41,"color":"var(--primary)"},{"value":27,"color":"var(--warning)"},{"value":18,"color":"var(--critical)"}],"centerValue":57,"centerLabel":"حادثة"}'></div>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div class="legend-item"><span class="legend-dot" style="background:var(--critical);"></span>حرج — 18%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--warning);"></span>عالي — 27%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--primary);"></span>متوسط — 41%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--success);"></span>منخفض — 14%</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">زمن الاستجابة عبر المنشآت</div></div></div>
+            <div style="display:grid; grid-template-columns:150px 1fr 50px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">برج الواحة الذكي</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:90%; background:var(--success); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">1.8 د</div></div>
+            <div style="display:grid; grid-template-columns:150px 1fr 50px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">مصنع الرياض الصناعي</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:65%; background:var(--warning); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">3.2 د</div></div>
+            <div style="display:grid; grid-template-columns:150px 1fr 50px; align-items:center; gap:10px;"><div style="font-size:12px; font-weight:600;">مركز البيانات الذكي</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:82%; background:var(--success); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">2.1 د</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">خريطة كثافة الحوادث الأسبوعية</div><div class="panel-sub">حسب اليوم والمنشأة</div></div></div>
+          <div class="heat-grid" style="margin-bottom:8px;">
+            <div class="heat-label"></div>
+            <div class="heat-label" style="justify-content:center;">أحد</div><div class="heat-label" style="justify-content:center;">اثنين</div><div class="heat-label" style="justify-content:center;">ثلاثاء</div><div class="heat-label" style="justify-content:center;">أربعاء</div><div class="heat-label" style="justify-content:center;">خميس</div><div class="heat-label" style="justify-content:center;">جمعة</div><div class="heat-label" style="justify-content:center;">سبت</div>
+          </div>
+          <div class="heat-grid" style="margin-bottom:6px;">
+            <div class="heat-label">برج الواحة</div>
+            <div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--warning-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--critical-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--surface-alt);"></div>
+          </div>
+          <div class="heat-grid" style="margin-bottom:6px;">
+            <div class="heat-label">مصنع الرياض</div>
+            <div class="heat-cell" style="background:var(--warning-tint);"></div><div class="heat-cell" style="background:var(--critical-tint);"></div><div class="heat-cell" style="background:var(--warning-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--warning-tint);"></div><div class="heat-cell" style="background:var(--critical-tint);"></div><div class="heat-cell" style="background:var(--warning-tint);"></div>
+          </div>
+          <div class="heat-grid">
+            <div class="heat-label">مركز البيانات</div>
+            <div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--surface-alt);"></div><div class="heat-cell" style="background:var(--warning-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--success-tint);"></div><div class="heat-cell" style="background:var(--surface-alt);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">الملخص التنفيذي</div></div></div>
+          <p class="text-body-sm text-muted" style="line-height:1.9;">
+            انخفض عدد الحوادث الأمنية المسجّلة بنسبة 28% خلال الأشهر الستة الماضية، مدفوعًا بتحسّن زمن الاستجابة ونشر كاميرات إضافية في المناطق عالية الخطورة. يظل مصنع الرياض الصناعي المنشأة الأعلى في معدل الحوادث، وتحديدًا خلال أيام الثلاثاء والجمعة، ما يستدعي مراجعة جدول نوبات فريق الأمن الميداني في تلك المنشأة.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "تحليلات الحوادث", group: "التنقّل", url: "incident-analytics.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

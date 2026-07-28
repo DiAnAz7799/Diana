@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الصيانة التصحيحية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-corrective"
+      data-search-placeholder="ابحث في الإصلاحات..."
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"الصيانة التصحيحية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">الصيانة التصحيحية</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">إصلاحات الأعطال غير المخطط لها ومتابعة زمن الاستجابة والحل</div>
+      </div>
+
+      <div class="grid-kpi-4" style="margin-bottom:20px;">
+        <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">متوسط زمن الاستجابة</div><div class="kpi-value">22 دقيقة</div></div></div><div class="kpi-foot" style="color:#0F7A54;">أسرع بـ 12% عن الشهر الماضي</div></div>
+        <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">متوسط زمن الحل</div><div class="kpi-value">3.4 ساعة</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--warning-tint); --k-color:var(--warning);"><div class="kpi-card-top"><div><div class="kpi-label">إصلاحات مفتوحة</div><div class="kpi-value">9</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">إصلاحات متكررة</div><div class="kpi-value">3</div></div></div><div class="kpi-foot" style="color:var(--critical);">تتطلب تحليل السبب الجذري</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><div class="panel-title">سجل الإصلاحات الأخيرة</div></div></div>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>الأصل</th><th>مصدر العطل</th><th>الفني</th><th>زمن الاستجابة</th><th>زمن الحل</th><th>الحالة</th></tr></thead>
+            <tbody>
+              <tr><td>مبرّد رئيسي — غرفة الخوادم</td><td>ارتفاع درجة الحرارة</td><td>سعيد المطيري</td><td>15 دقيقة</td><td>—</td><td><span class="badge badge-critical">جاري العمل</span></td></tr>
+              <tr><td>مصعد ركاب رقم 3</td><td>اهتزاز غير طبيعي</td><td>أحمد باوزير</td><td>30 دقيقة</td><td>2.1 ساعة</td><td><span class="badge badge-success">تم الحل</span></td></tr>
+              <tr><td>مضخة مياه رئيسية</td><td>انخفاض الضغط</td><td>سعيد المطيري</td><td>18 دقيقة</td><td>1.5 ساعة</td><td><span class="badge badge-success">تم الحل</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "الصيانة التصحيحية", group: "التنقّل", url: "corrective-maintenance.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

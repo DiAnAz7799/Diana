@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>لوحة التحكم الإنشائية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-dashboard"
+      data-search-placeholder="ابحث عن مشروع، مرحلة، مادة..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":null},{"label":"لوحة التحكم الإنشائية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">لوحة التحكم الإنشائية</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">نظرة شاملة على تنفيذ المشاريع الإنشائية الجارية تحت إشرافك</div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a href="daily-reports.html" class="btn btn-ghost">
+            <svg class="gi" width="15" height="15" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15V10M12 15V7M16 15v-3.5"/></svg>
+            تقرير يومي جديد
+          </a>
+          <a href="stages.html" class="btn btn-primary">+ مرحلة جديدة</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-kpi-4">
+          <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">مشاريع إنشائية نشطة</div><div class="kpi-value" data-counter="14">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg></div></div><div class="kpi-foot" style="color:var(--text-muted);">موزّعة على 5 مدن</div></div>
+          <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">نسبة الإنجاز الإجمالية</div><div class="kpi-value" data-counter="71" data-counter-suffix="%">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M9 12l2 2 4-4.5"/></svg></div></div><div class="kpi-bar"><span style="width:71%;"></span></div></div>
+          <div class="kpi-card" style="--k-tint:var(--warning-tint); --k-color:var(--warning);"><div class="kpi-card-top"><div><div class="kpi-label">مراحل متأخرة</div><div class="kpi-value" data-counter="5">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div></div><div class="kpi-foot" style="color:var(--warning);">تتطلب متابعة عاجلة</div></div>
+          <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">توفر المواد</div><div class="kpi-value" data-counter="83" data-counter-suffix="%">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 3v9m0 9v-9m-8-4.5L12 12l8-4.5"/></svg></div></div><div class="kpi-bar"><span style="width:83%;"></span></div></div>
+          <div class="kpi-card" style="--k-tint:var(--accent-tint); --k-color:var(--accent-dark);"><div class="kpi-card-top"><div><div class="kpi-label">متوسط نتيجة الجودة</div><div class="kpi-value" data-counter="87">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div></div><div class="kpi-bar"><span style="width:87%;"></span></div></div>
+          <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">موافقات معلّقة</div><div class="kpi-value" data-counter="9">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3" rx="1"/></svg></div></div><div class="kpi-foot" style="color:var(--critical);">تحتاج قرارك اليوم</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">نظرة عامة على تقدم الإنشاءات</div><div class="panel-sub">المخطط مقابل الفعلي — 14 مشروعًا</div></div></div>
+            <div data-chart='{"type":"area","values":[38,44,49,55,61,68],"color":"var(--primary-dark)"}'></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">نسبة إنجاز المراحل</div><div class="panel-sub">برج الواحة الذكي</div></div></div>
+            <div style="margin-bottom:14px;"><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">التأسيس والحفر</span><span style="font-size:12px; color:var(--text-muted);">100%</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:100%; background:var(--success); border-radius:999px;"></div></div></div>
+            <div style="margin-bottom:14px;"><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">الهيكل الخرساني</span><span style="font-size:12px; color:var(--text-muted);">92%</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:92%; background:var(--success); border-radius:999px;"></div></div></div>
+            <div style="margin-bottom:14px;"><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">الأعمال الكهروميكانيكية</span><span style="font-size:12px; color:var(--text-muted);">68%</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:68%; background:var(--primary); border-radius:999px;"></div></div></div>
+            <div><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">التشطيبات الداخلية</span><span style="font-size:12px; color:var(--text-muted);">41%</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:41%; background:var(--warning); border-radius:999px;"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">توفر المواد الحرجة</div></div></div>
+            <div style="display:grid; grid-template-columns:130px 1fr 40px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">حديد التسليح</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:38%; background:var(--critical); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">38%</div></div>
+            <div style="display:grid; grid-template-columns:130px 1fr 40px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">الأسمنت</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:72%; background:var(--warning); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">72%</div></div>
+            <div style="display:grid; grid-template-columns:130px 1fr 40px; align-items:center; gap:10px;"><div style="font-size:12px; font-weight:600;">كابلات كهربائية</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:90%; background:var(--success); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">90%</div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">نتيجة الجودة</div></div></div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <svg width="140" height="140" viewBox="0 0 150 150"><circle cx="75" cy="75" r="62" fill="none" stroke="var(--surface-alt)" stroke-width="14"/><circle cx="75" cy="75" r="62" fill="none" stroke="var(--accent)" stroke-width="14" stroke-linecap="round" stroke-dasharray="389.6" stroke-dashoffset="50.6" transform="rotate(-90 75 75)"/></svg>
+              <div style="font-size:26px; font-weight:800; font-family:var(--font-display); margin-top:-56px;">87</div>
+              <div style="font-size:11px; color:var(--text-faint); margin-bottom:6px;">من 100 — تقييم ممتاز</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">إجراءات معلّقة</div></div></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--border);">
+              <div style="width:36px; height:36px; border-radius:10px; background:var(--critical-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><rect x="6" y="4" width="12" height="17" rx="2"/></svg></div>
+              <div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">طلب توريد حديد تسليح — 40 طن</div><div style="font-size:11px; color:var(--text-faint);">مقدَّم منذ يومين · أولوية عالية</div></div>
+              <a href="material-requests.html" class="btn btn-ghost" style="padding:6px 10px; font-size:11px;">مراجعة</a>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px; padding:13px 0;">
+              <div style="width:36px; height:36px; border-radius:10px; background:var(--accent-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/></svg></div>
+              <div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">مراجعة فحص جودة — الهيكل الخرساني</div><div style="font-size:11px; color:var(--text-faint);">المفتش: عبدالله القحطاني · نتيجة 91/100</div></div>
+              <a href="quality-inspections.html" class="btn btn-ghost" style="padding:6px 10px; font-size:11px;">مراجعة</a>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">آخر الأنشطة</div></div></div>
+            <div class="timeline">
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">تم اعتماد فحص جودة الهيكل الخرساني</div><div class="tl-meta">منذ 25 دقيقة</div></div>
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><path d="M4 17l5-5 4 4 7-8"/></svg></div><div class="tl-title">تحديث نسبة إنجاز الأعمال الكهروميكانيكية إلى 68%</div><div class="tl-meta">منذ ساعتين</div></div>
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/></svg></div><div class="tl-title">انخفاض مخزون حديد التسليح دون الحد الأدنى</div><div class="tl-meta">منذ 6 ساعات</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">المشاريع النشطة تحت إشرافك</div>
+        <div class="entity-grid">
+          <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;">
+            <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">على المسار</span></div>
+            <div class="entity-card-body"><div class="entity-card-title">برج الواحة الذكي</div><div class="entity-card-meta">الرياض · التشطيبات</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:86%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">86%</span></div></div>
+          </a>
+          <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;">
+            <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-warning entity-card-badge">متأخر</span></div>
+            <div class="entity-card-body"><div class="entity-card-title">مجمع مستشفى النور</div><div class="entity-card-meta">جدة · الهيكل الخرساني</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:55%; background:var(--warning);"></span></div><div class="entity-card-foot"><span class="text-micro">55%</span></div></div>
+          </a>
+          <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;">
+            <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">جاهز للتسليم</span></div>
+            <div class="entity-card-body"><div class="entity-card-title">مركز البيانات الذكي</div><div class="entity-card-meta">الرياض · التسليم</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:97%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">97%</span></div></div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [
+    { label: "لوحة التحكم الإنشائية", group: "التنقّل", url: "dashboard.html" },
+    { label: "المشاريع الإنشائية", group: "التنقّل", url: "projects.html" },
+    { label: "مراحل التنفيذ", group: "التنقّل", url: "stages.html" },
+    { label: "متابعة التقدم", group: "التنقّل", url: "progress.html" },
+    { label: "إدارة المواد", group: "التنقّل", url: "materials.html" },
+    { label: "طلبات المواد", group: "التنقّل", url: "material-requests.html" },
+    { label: "فحوصات الجودة", group: "التنقّل", url: "quality-inspections.html" },
+    { label: "التقارير اليومية", group: "التنقّل", url: "daily-reports.html" }
+  ];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

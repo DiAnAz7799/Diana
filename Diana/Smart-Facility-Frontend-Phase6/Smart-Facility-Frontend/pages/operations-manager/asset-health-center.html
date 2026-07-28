@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مركز صحة الأصول — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-asset-health"
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"مركز صحة الأصول","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">مركز صحة الأصول</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">نظرة ذكية شاملة على حالة الأصول ومخاطرها عبر جميع المنشآت</div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">النتيجة الإجمالية لصحة الأصول</div></div></div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <svg width="160" height="160" viewBox="0 0 160 160"><circle cx="80" cy="80" r="68" fill="none" stroke="var(--surface-alt)" stroke-width="16"/><circle cx="80" cy="80" r="68" fill="none" stroke="var(--success)" stroke-width="16" stroke-linecap="round" stroke-dasharray="427" stroke-dashoffset="38.4" transform="rotate(-90 80 80)"/></svg>
+              <div style="font-size:32px; font-weight:800; font-family:var(--font-display); margin-top:-98px;">91%</div>
+              <div class="text-micro" style="margin-bottom:10px;">من 1,842 أصلاً مُراقَبًا</div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">نظرة عامة على الحالة</div></div></div>
+            <div class="settings-row"><span class="settings-row-label">سليمة</span><b style="color:var(--success);">1,363</b></div>
+            <div class="settings-row"><span class="settings-row-label">تحذير</span><b style="color:var(--warning);">276</b></div>
+            <div class="settings-row"><span class="settings-row-label">حرجة</span><b style="color:var(--critical);">129</b></div>
+            <div class="settings-row"><span class="settings-row-label">غير متصلة</span><b style="color:var(--text-faint);">74</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">اتجاه صحة الأصول</div><div class="panel-sub">آخر 6 أشهر</div></div></div>
+          <div data-chart='{"type":"area","values":[84,86,87,89,90,91],"color":"var(--success)"}'></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">الأصول الحرجة — تتطلب إجراءً فوريًا</div></div></div>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead><tr><th>الأصل</th><th>المنشأة</th><th>نتيجة الصحة</th><th>العمر الإنتاجي المتبقي</th><th>مؤشر المخاطرة</th></tr></thead>
+              <tbody>
+                <tr><td>مبرّد رئيسي — غرفة الخوادم</td><td>مركز البيانات الذكي</td><td style="color:var(--critical); font-weight:700;">54</td><td>14 شهرًا</td><td><span class="badge badge-critical">مرتفع</span></td></tr>
+                <tr><td>مصعد ركاب رقم 3</td><td>برج الواحة الذكي</td><td style="color:var(--warning); font-weight:700;">68</td><td>26 شهرًا</td><td><span class="badge badge-warning">متوسط</span></td></tr>
+                <tr><td>مولد كهربائي احتياطي</td><td>مصنع الرياض الصناعي</td><td style="color:var(--warning); font-weight:700;">71</td><td>18 شهرًا</td><td><span class="badge badge-warning">متوسط</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "مركز صحة الأصول", group: "التنقّل", url: "asset-health-center.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

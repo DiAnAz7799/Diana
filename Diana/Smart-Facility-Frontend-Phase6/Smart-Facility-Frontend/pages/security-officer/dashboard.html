@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>لوحة التحكم الأمنية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<style>
+  .status-banner{ display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; background:linear-gradient(120deg, var(--success-tint) 0%, var(--surface) 60%); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px 24px; box-shadow:var(--shadow-sm); }
+  .status-orb{ position:relative; width:52px; height:52px; border-radius:50%; background:var(--success-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .status-orb::before{ content:""; position:absolute; inset:-6px; border-radius:50%; border:2px solid var(--success); opacity:.5; animation:soft-pulse 2s ease-in-out infinite; }
+</style>
+</head>
+<body data-role="security_officer" data-active-page="security-dashboard"
+      data-search-placeholder="ابحث عن تنبيه، حادثة، موقع..."
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":null},{"label":"لوحة التحكم الأمنية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">لوحة التحكم الأمنية</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">مركز عمليات أمنية حيّ لمراقبة التنبيهات والحوادث وتنسيق الاستجابة عبر جميع المنشآت</div>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <a href="security-reports.html" class="btn btn-ghost">
+            <svg class="gi" width="15" height="15" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15V10M12 15V7M16 15v-3.5"/></svg>
+            تقرير أمني
+          </a>
+          <a href="incidents.html" class="btn btn-primary">+ بلاغ حادثة</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="status-banner">
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div class="status-orb"><svg viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+            <div><div style="font-size:16px; font-weight:800; font-family:var(--font-display); color:#0F7A54;">الحالة الأمنية: مستقرة</div><div style="font-size:12px; color:var(--text-muted); margin-top:2px;">لا توجد حالات طوارئ نشطة حاليًا · آخر تحديث قبل 30 ثانية</div></div>
+          </div>
+          <div style="display:flex; gap:28px; flex-wrap:wrap;">
+            <div><div style="font-size:19px; font-weight:800; font-family:var(--font-display);">3</div><div class="text-micro">تنبيهات نشطة</div></div>
+            <div><div style="font-size:19px; font-weight:800; font-family:var(--font-display);">0</div><div class="text-micro">حالات طوارئ</div></div>
+            <div><div style="font-size:19px; font-weight:800; font-family:var(--font-display);">96%</div><div class="text-micro">التزام SLA</div></div>
+            <div><div style="font-size:19px; font-weight:800; font-family:var(--font-display);">2.4 د</div><div class="text-micro">متوسط الاستجابة</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-kpi-4">
+          <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">تنبيهات نشطة الآن</div><div class="kpi-value" data-counter="3">0</div></div></div><div class="kpi-foot" style="color:var(--critical);">يتطلب مراجعة</div></div>
+          <div class="kpi-card" style="--k-tint:var(--warning-tint); --k-color:var(--warning);"><div class="kpi-card-top"><div><div class="kpi-label">حوادث حرجة مفتوحة</div><div class="kpi-value" data-counter="2">0</div></div></div><div class="kpi-foot" style="color:var(--warning);">قيد التحقيق</div></div>
+          <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">حوادث محلولة (الشهر)</div><div class="kpi-value" data-counter="57">0</div></div></div><div class="kpi-foot" style="color:#0F7A54;">+11% عن الشهر الماضي</div></div>
+          <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">متوسط زمن الاستجابة</div><div class="kpi-value">2.4 د</div></div></div><div class="kpi-foot" style="color:#0F7A54;">أسرع بـ 18 ثانية</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">توزيع التنبيهات</div><div class="panel-sub">اليوم — 18 تنبيهًا</div></div></div>
+            <div class="donut-wrap" style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center;">
+              <div data-chart='{"type":"donut","segments":[{"value":8,"color":"var(--warning)"},{"value":4,"color":"var(--critical)"},{"value":3,"color":"var(--primary)"},{"value":3,"color":"var(--accent)"}],"centerValue":18,"centerLabel":"تنبيهًا"}'></div>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div class="legend-item"><span class="legend-dot" style="background:var(--warning);"></span>حركة غير معتادة — 8</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--critical);"></span>اقتحام — 4</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--primary);"></span>دخول غير مصرح — 3</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--accent);"></span>حريق ودخان — 3</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">توزيع شدة الحوادث</div></div></div>
+            <div style="display:grid; grid-template-columns:90px 1fr 34px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">حرج</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:14%; background:var(--critical); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">2</div></div>
+            <div style="display:grid; grid-template-columns:90px 1fr 34px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">عالي</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:27%; background:var(--warning); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">6</div></div>
+            <div style="display:grid; grid-template-columns:90px 1fr 34px; align-items:center; gap:10px; margin-bottom:14px;"><div style="font-size:12px; font-weight:600;">متوسط</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:41%; background:var(--primary); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">9</div></div>
+            <div style="display:grid; grid-template-columns:90px 1fr 34px; align-items:center; gap:10px;"><div style="font-size:12px; font-weight:600;">منخفض</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:23%; background:var(--success); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">5</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">السجل الزمني للأحداث</div></div></div>
+            <div class="timeline">
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg></div><div class="tl-title">تنبيه اقتحام — مصنع الرياض الصناعي</div><div class="tl-meta">منذ 4 دقائق</div></div>
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">تم إغلاق الحادثة #INC-0847 — كشف دخان كاذب</div><div class="tl-meta">منذ ساعة</div></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">إجراءات أمنية سريعة</div></div></div>
+            <div class="qa-grid">
+              <a href="incidents.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--critical-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="8.5"/></svg></div><div class="qa-label">بلاغ حادثة</div></a>
+              <a href="emergency-monitoring.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--warning-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg></div><div class="qa-label">إعلان طوارئ</div></a>
+              <a href="camera-monitoring.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--primary-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div><div class="qa-label">مراقبة الكاميرات</div></a>
+              <a href="security-reports.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--info-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:#0E7490;"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div><div class="qa-label">تصدير تقرير</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [
+    { label: "لوحة التحكم الأمنية", group: "التنقّل", url: "dashboard.html" },
+    { label: "التنبيهات الأمنية الحيّة", group: "التنقّل", url: "alerts.html" },
+    { label: "سجل التنبيهات", group: "التنقّل", url: "alert-history.html" },
+    { label: "مركز مراقبة الكاميرات", group: "التنقّل", url: "camera-monitoring.html" },
+    { label: "المراقبة الطارئة", group: "التنقّل", url: "emergency-monitoring.html" },
+    { label: "إدارة الحوادث", group: "التنقّل", url: "incidents.html" },
+    { label: "مركز الاستجابة", group: "التنقّل", url: "response-center.html" },
+    { label: "تحليلات الحوادث", group: "التنقّل", url: "incident-analytics.html" },
+    { label: "التقارير الأمنية", group: "التنقّل", url: "security-reports.html" },
+    { label: "الوثائق والسلامة", group: "التنقّل", url: "safety-documentation.html" }
+  ];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

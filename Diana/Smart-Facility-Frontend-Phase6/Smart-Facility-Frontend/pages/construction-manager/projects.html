@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>المشاريع الإنشائية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-projects"
+      data-search-placeholder="ابحث عن مشروع..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"المشاريع الإنشائية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">المشاريع الإنشائية</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">المشاريع الجارية تحت إشرافك المباشر — 14 مشروعًا نشطًا</div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;">
+            <input type="text" placeholder="ابحث عن مشروع..." data-live-search="#cm-projects-grid">
+          </div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="status" data-filter-value="ontrack">على المسار</button>
+            <button data-filter="status" data-filter-value="delayed">متأخر</button>
+            <button data-filter="status" data-filter-value="ready">جاهز للتسليم</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="entity-grid" id="cm-projects-grid" data-stagger>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="ontrack" data-search-text="برج الواحة الذكي">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">على المسار</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">برج الواحة الذكي</div><div class="entity-card-meta">الرياض · المرحلة: التشطيبات الداخلية</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:86%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">86% مكتمل</span><span class="text-micro">30 نوفمبر 2026</span></div></div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="delayed" data-search-text="مجمع مستشفى النور">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-warning entity-card-badge">متأخر</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مجمع مستشفى النور</div><div class="entity-card-meta">جدة · المرحلة: الهيكل الخرساني</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:55%; background:var(--warning);"></span></div><div class="entity-card-foot"><span class="text-micro">55% مكتمل</span><span class="text-micro">15 مارس 2027</span></div></div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="ontrack" data-search-text="مجمع سكني الشمال">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">على المسار</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مجمع سكني الشمال</div><div class="entity-card-meta">الدمام · المرحلة: الكهروميكانيكية</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:68%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">68% مكتمل</span><span class="text-micro">20 يناير 2027</span></div></div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="ready" data-search-text="مركز البيانات الذكي">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">جاهز للتسليم</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مركز البيانات الذكي</div><div class="entity-card-meta">الرياض · المرحلة: التسليم النهائي</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:97%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">97% مكتمل</span><span class="text-micro">10 أغسطس 2026</span></div></div>
+        </a>
+
+        <a href="project-details.html" class="entity-card" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="ontrack" data-search-text="مجمع مكاتب الخليج">
+          <div class="entity-card-media"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg><span class="badge badge-success entity-card-badge">على المسار</span></div>
+          <div class="entity-card-body"><div class="entity-card-title">مجمع مكاتب الخليج التجاري</div><div class="entity-card-meta">الخبر · المرحلة: التأسيس والحفر</div><div class="kpi-bar" style="margin-top:12px;"><span style="width:22%; background:var(--success);"></span></div><div class="entity-card-foot"><span class="text-micro">22% مكتمل</span><span class="text-micro">5 يونيو 2027</span></div></div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "المشاريع الإنشائية", group: "التنقّل", url: "projects.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

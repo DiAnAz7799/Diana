@@ -1,0 +1,50 @@
+<!--
+  components/alerts.html
+  PATTERN LIBRARY. Banner-style alert, distinct from toasts (transient,
+  corner-anchored) and badges (inline, single-word). Copy the markup you
+  need — all styling comes from .alert / .alert-critical / etc in
+  assets/css/components.css. Dismiss behavior is wired automatically by
+  assets/js/app.js::initAlerts() for any [data-alert-dismiss] button.
+-->
+
+<section style="padding:24px; display:flex; flex-direction:column; gap:14px; max-width:460px;">
+
+  <div class="alert alert-critical" role="alert">
+    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+    <div class="alert-body">
+      <div class="alert-title">بيانات الدخول غير صحيحة</div>
+      <div class="alert-desc">تحقق من البريد الإلكتروني وكلمة المرور ثم حاول مرة أخرى.</div>
+    </div>
+    <div class="alert-close" data-alert-dismiss>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" role="alert">
+    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/><path d="M12 9v5"/></svg>
+    <div class="alert-body">
+      <div class="alert-title">انتهت صلاحية هذا الرابط</div>
+      <div class="alert-desc">روابط إعادة تعيين كلمة المرور صالحة لمدة 24 ساعة فقط.</div>
+    </div>
+    <div class="alert-close" data-alert-dismiss>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </div>
+  </div>
+
+  <div class="alert alert-success" role="alert">
+    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>
+    <div class="alert-body">
+      <div class="alert-title">تم إرسال رابط إعادة التعيين</div>
+      <div class="alert-desc">تحقق من بريدك الإلكتروني واتبع التعليمات.</div>
+    </div>
+  </div>
+
+  <div class="alert alert-info" role="alert">
+    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+    <div class="alert-body">
+      <div class="alert-title">تنبيه معلوماتي</div>
+      <div class="alert-desc">نص توضيحي إضافي يظهر هنا.</div>
+    </div>
+  </div>
+
+</section>

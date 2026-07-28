@@ -1,0 +1,77 @@
+/* ==========================================================================
+   AUTH.CSS
+   Layout only. All colors/type/spacing/shadow/motion still come from
+   variables.css; all buttons/fields/alerts still come from components.css.
+   This file exists solely because the split-screen auth layout is not part
+   of the sidebar/topbar application shell and has nowhere else to live.
+   ========================================================================== */
+
+.auth-shell{ display: flex; min-height: 100vh; }
+
+/* ---------- Brand panel (hidden < 900px) ---------- */
+.auth-brand-panel{
+  flex: 0 0 44%; position: relative; overflow: hidden; display: flex; flex-direction: column;
+  justify-content: space-between; padding: var(--space-10);
+  background:
+    radial-gradient(900px 600px at 15% 15%, var(--primary-tint) 0%, rgba(221,243,255,0) 60%),
+    radial-gradient(800px 600px at 85% 85%, var(--accent-tint) 0%, rgba(243,232,255,0) 60%),
+    var(--surface);
+  border-inline-end: 1px solid var(--border);
+}
+.auth-brand-mark{ display: flex; align-items: center; gap: 12px; }
+.auth-brand-mark-name{ font-family: var(--font-display); font-weight: 800; font-size: 16px; }
+.auth-brand-mark-sub{ font-size: 11px; color: var(--text-faint); }
+
+.auth-brand-mid{ max-width: 380px; }
+.auth-brand-heading{ font-family: var(--font-display); font-size: 26px; font-weight: 800; line-height: 1.35; margin-bottom: var(--space-3); }
+.auth-brand-desc{ font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: var(--space-6); }
+
+.auth-feature-list{ display: flex; flex-direction: column; gap: var(--space-4); }
+.auth-feature{ display: flex; align-items: flex-start; gap: 12px; }
+.auth-feature-icon{ width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-xs); }
+.auth-feature-icon svg{ width: 18px; height: 18px; }
+.auth-feature-title{ font-size: 13px; font-weight: 700; }
+.auth-feature-desc{ font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+.auth-brand-foot{ font-size: 11.5px; color: var(--text-faint); }
+
+@media (max-width: 900px){ .auth-brand-panel{ display: none; } }
+
+/* ---------- Form panel ---------- */
+.auth-form-panel{ flex: 1; display: flex; align-items: center; justify-content: center; padding: var(--space-6); }
+.auth-card{ width: 100%; max-width: 400px; }
+
+.auth-mobile-mark{ display: none; align-items: center; gap: 10px; margin-bottom: var(--space-6); }
+@media (max-width: 900px){ .auth-mobile-mark{ display: flex; } }
+
+.auth-card-head{ margin-bottom: var(--space-6); }
+.auth-card-title{ font-family: var(--font-display); font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+.auth-card-desc{ font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+.auth-form{ display: flex; flex-direction: column; }
+.auth-form .btn-primary{ width: 100%; justify-content: center; padding: 12px; margin-top: var(--space-2); }
+
+.auth-row-between{ display: flex; align-items: center; justify-content: space-between; margin: -6px 0 var(--space-4); font-size: 12.5px; }
+.auth-checkbox{ display: flex; align-items: center; gap: 8px; color: var(--text-muted); cursor: pointer; user-select: none; }
+.auth-checkbox input{ width: 16px; height: 16px; accent-color: var(--primary-dark); cursor: pointer; }
+.auth-link{ color: var(--primary-dark); font-weight: 700; }
+.auth-link:hover{ text-decoration: underline; }
+
+.auth-card-foot{ margin-top: var(--space-6); text-align: center; font-size: 12.5px; color: var(--text-muted); }
+
+/* ---------- Success state (email sent / password reset complete) ---------- */
+.auth-success{ text-align: center; }
+.auth-success-orb{
+  width: 68px; height: 68px; margin: 0 auto var(--space-5); border-radius: 50%;
+  background: var(--success-tint); display: flex; align-items: center; justify-content: center;
+}
+.auth-success-orb svg{ width: 30px; height: 30px; stroke: var(--success-dark); }
+
+/* ---------- Password strength meter ---------- */
+.pw-strength{ display: flex; gap: 4px; margin-top: 8px; }
+.pw-strength-seg{ flex: 1; height: 4px; border-radius: 999px; background: var(--surface-alt); transition: background var(--duration-base); }
+.pw-strength-label{ font-size: 11px; color: var(--text-faint); margin-top: 6px; }
+
+/* ---------- Divider ---------- */
+.auth-divider{ display: flex; align-items: center; gap: 12px; margin: var(--space-5) 0; color: var(--text-faint); font-size: 11.5px; }
+.auth-divider::before, .auth-divider::after{ content: ""; flex: 1; height: 1px; background: var(--border); }

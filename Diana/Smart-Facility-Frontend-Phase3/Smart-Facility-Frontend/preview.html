@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>فحص التكامل — Phase 1</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/design-system.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-dashboard"
+      data-search-placeholder="ابحث عن مشروع، مرحلة، مادة..."
+      data-breadcrumbs='[{"label":"فحص التكامل","url":null},{"label":"Phase 1","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:24px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 class="page-title" style="font-size:24px; font-weight:800; margin:0;">فحص تكامل Phase 1</h1>
+          <div class="page-desc" style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">
+            هذه الصفحة ليست جزءًا من المنتج — تتحقق من أن نظام include.js، وتصيير القائمة الجانبية،
+            والمكوّنات المشتركة تعمل معًا قبل بدء بناء الصفحات الفعلية في Phase 2.
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="window.SFLMS.showToast({type:'success', title:'التكامل يعمل بنجاح', desc:'تم تحميل جميع المكوّنات والوحدات البرمجية.'})">
+          اختبار الإشعار المنبثق
+        </button>
+      </div>
+
+      <div class="section">
+        <div class="section-label">حالة الفحص</div>
+        <div class="panel">
+          <ul style="margin:0; padding-inline-start:20px; font-size:13.5px; line-height:2.1; color:var(--text-muted);">
+            <li>الشريط الجانبي مُحمَّل عبر <code>include.js</code> والقائمة مُصيَّرة من <code>nav-config.js</code> لدور "مدير الإنشاءات" ✓</li>
+            <li>الشريط العلوي وقائمة الملف الشخصي والإشعارات مُحمَّلة ✓</li>
+            <li>مسار التنقّل (Breadcrumbs) مُصيَّر من <code>data-breadcrumbs</code> على &lt;body&gt; ✓</li>
+            <li>زر الإشعار أعلاه يستخدم <code>window.SFLMS.showToast()</code> من <code>notifications.js</code></li>
+            <li>اضغط <kbd style="font-family:monospace; background:var(--surface-alt); border:1px solid var(--border); border-radius:4px; padding:2px 6px; font-size:11px;">Ctrl+K</kbd> لاختبار لوحة الأوامر</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">مثال KPI متحرك (assets/js/animations.js)</div>
+        <div class="kpi-card" style="max-width:220px; --k-tint:var(--primary-tint); --k-color:var(--primary-dark);">
+          <div class="kpi-card-top">
+            <div>
+              <div class="kpi-label">إجمالي المشاريع</div>
+              <div class="kpi-value" data-counter="128">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="components/notifications.html"></div>
+<div data-include="components/modals.html"></div>
+
+<script>
+  // Command palette needs a search index — normally set per-page like this.
+  window.SFLMS_SEARCH_INDEX = [
+    { label: "لوحة التحكم الإنشائية", group: "التنقّل", url: "pages/construction-manager/dashboard.html" },
+    { label: "المشاريع الإنشائية", group: "التنقّل", url: "pages/construction-manager/projects.html" },
+  ];
+</script>
+<script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

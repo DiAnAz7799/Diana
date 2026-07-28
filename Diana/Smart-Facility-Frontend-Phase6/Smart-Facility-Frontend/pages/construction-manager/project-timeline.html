@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الجدول الزمني — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<style>
+  .tl-months{ display:grid; grid-template-columns:180px repeat(6,1fr); gap:4px; margin-bottom:10px; }
+  .tl-months span{ font-size:10.5px; color:var(--text-faint); text-align:center; }
+  .tl-proj-row{ display:grid; grid-template-columns:180px repeat(6,1fr); gap:4px; align-items:center; margin-bottom:10px; }
+  .tl-proj-name{ font-size:12px; font-weight:700; }
+  .tl-bar-cell{ height:26px; background:var(--surface-alt); border-radius:6px; position:relative; overflow:hidden; }
+  .tl-bar-fill{ position:absolute; top:2px; bottom:2px; border-radius:5px; }
+</style>
+</head>
+<body data-role="construction_manager" data-active-page="construction-timeline"
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"الجدول الزمني","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">الجدول الزمني للمشاريع</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">نظرة زمنية شاملة على جميع المشاريع الإنشائية النشطة</div>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; overflow-x:auto;">
+        <div style="min-width:760px;">
+          <div class="tl-months"><span></span><span>فبراير</span><span>مارس</span><span>أبريل</span><span>مايو</span><span>يونيو</span><span>يوليو</span></div>
+
+          <div class="tl-proj-row">
+            <div class="tl-proj-name">برج الواحة الذكي</div>
+            <div class="tl-bar-cell" style="grid-column:span 6;"><div class="tl-bar-fill" style="right:8%; left:2%; background:var(--success);"></div></div>
+          </div>
+          <div class="tl-proj-row">
+            <div class="tl-proj-name">مجمع مستشفى النور</div>
+            <div class="tl-bar-cell" style="grid-column:span 6;"><div class="tl-bar-fill" style="right:15%; left:22%; background:var(--warning);"></div></div>
+          </div>
+          <div class="tl-proj-row">
+            <div class="tl-proj-name">مجمع سكني الشمال</div>
+            <div class="tl-bar-cell" style="grid-column:span 6;"><div class="tl-bar-fill" style="right:35%; left:10%; background:var(--primary);"></div></div>
+          </div>
+          <div class="tl-proj-row">
+            <div class="tl-proj-name">مركز البيانات الذكي</div>
+            <div class="tl-bar-cell" style="grid-column:span 6;"><div class="tl-bar-fill" style="right:2%; left:2%; background:var(--success);"></div></div>
+          </div>
+          <div class="tl-proj-row">
+            <div class="tl-proj-name">مجمع مكاتب الخليج</div>
+            <div class="tl-bar-cell" style="grid-column:span 6;"><div class="tl-bar-fill" style="right:55%; left:50%; background:var(--accent);"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">المعالم القادمة</div></div></div>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div><div class="tl-title">تسليم مركز البيانات الذكي رسميًا</div><div class="tl-meta">10 أغسطس 2026</div></div>
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div><div class="tl-title">اكتمال الهيكل الخرساني — مجمع سكني الشمال</div><div class="tl-meta">15 سبتمبر 2026</div></div>
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div><div class="tl-title">بدء أعمال التشطيبات — برج الواحة الذكي</div><div class="tl-meta">1 أكتوبر 2026</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "الجدول الزمني", group: "التنقّل", url: "project-timeline.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

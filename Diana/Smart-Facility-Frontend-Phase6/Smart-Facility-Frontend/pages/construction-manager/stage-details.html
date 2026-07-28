@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الهيكل الخرساني — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-stages"
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"مراحل التنفيذ","url":"stages.html"},{"label":"الهيكل الخرساني","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter" style="max-width:940px;">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="panel" style="margin-bottom:20px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <h1 style="font-size:21px; font-weight:800; margin:0;">الهيكل الخرساني</h1>
+              <span class="badge badge-info">قيد التنفيذ</span>
+            </div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px;">برج الواحة الذكي · أولوية عالية · بدأت في 1 يونيو 2025</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-critical">
+              <svg class="gi" width="14" height="14" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+              رفض
+            </button>
+            <button class="btn btn-primary" id="approve-stage-btn">
+              <svg class="gi" width="14" height="14" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              اعتماد المرحلة
+            </button>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">نسبة الإنجاز</span><span style="font-size:12px; color:var(--text-muted);">92%</span></div>
+          <div style="height:10px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:92%; background:var(--success); border-radius:999px;"></div></div>
+        </div>
+      </div>
+
+      <div class="grid-panels">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">وصف المرحلة</div></div></div>
+          <p class="text-body-sm text-muted" style="line-height:1.9;">تشمل هذه المرحلة صب الأعمدة والجسور الخرسانية للطوابق من 1 إلى 22، بالإضافة إلى أعمال القشرة الخارجية للمبنى. تم اعتماد اختبارات مقاومة الخرسانة لجميع الطوابق حتى الطابق 18.</p>
+
+          <div class="panel-head" style="margin-top:20px;"><div><div class="panel-title">تحديث التقدم</div></div></div>
+          <div class="field"><label>نسبة الإنجاز الجديدة</label><input type="range" min="0" max="100" value="92" id="stage-progress-range" style="width:100%;"></div>
+          <div class="field"><label>ملاحظات التحديث</label><textarea rows="3" placeholder="أضف ملاحظة حول التحديث..."></textarea></div>
+          <button class="btn btn-ghost" id="update-progress-btn">حفظ التحديث</button>
+        </div>
+
+        <div>
+          <div class="panel" style="margin-bottom:16px;">
+            <div class="panel-head"><div><div class="panel-title">فحوصات الجودة المرتبطة</div></div></div>
+            <div class="settings-row"><span class="settings-row-label">فحص الأعمدة — طوابق 1-10</span><span class="badge badge-success">معتمد</span></div>
+            <div class="settings-row"><span class="settings-row-label">فحص الجسور — طوابق 11-18</span><span class="badge badge-warning">قيد المراجعة</span></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">سجل النشاط</div></div></div>
+            <div class="timeline">
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><path d="M4 17l5-5 4 4 7-8"/></svg></div><div class="tl-title">تحديث نسبة الإنجاز إلى 92%</div><div class="tl-meta">منذ يومين</div></div>
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">اعتماد فحص جودة الأعمدة</div><div class="tl-meta">منذ 4 أيام</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "مراحل التنفيذ", group: "التنقّل", url: "stages.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('approve-stage-btn')?.addEventListener('click', () => {
+      window.SFLMS?.showToast({ type: 'success', title: 'تم اعتماد المرحلة بنجاح' });
+    });
+    document.getElementById('update-progress-btn')?.addEventListener('click', () => {
+      window.SFLMS?.showToast({ type: 'success', title: 'تم حفظ تحديث التقدم' });
+    });
+  });
+</script>
+</body>
+</html>

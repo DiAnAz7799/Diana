@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>طلبات المواد — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-material-requests"
+      data-search-placeholder="ابحث عن طلب..."
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"طلبات المواد","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">طلبات المواد</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">متابعة طلبات توريد المواد وحالتها</div>
+        </div>
+        <a href="create-material-request.html" class="btn btn-primary">+ طلب جديد</a>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث..." data-live-search="#mr-list"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="status" data-filter-value="pending">قيد الانتظار</button>
+            <button data-filter="status" data-filter-value="approved">موافَق عليه</button>
+            <button data-filter="status" data-filter-value="rejected">مرفوض</button>
+            <button data-filter="status" data-filter-value="completed">مكتمل</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mr-list" style="display:flex; flex-direction:column; gap:12px;" data-stagger>
+
+        <div class="panel" style="display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="pending" data-search-text="حديد التسليح">
+          <div style="width:40px; height:40px; border-radius:10px; background:var(--critical-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><rect x="6" y="4" width="12" height="17" rx="2"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">طلب توريد حديد تسليح — 40 طن</div><div class="text-micro">برج الواحة الذكي · مقدَّم منذ يومين · أولوية عالية</div></div>
+          <span class="badge badge-warning">قيد الانتظار</span>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-ghost mr-approve" style="padding:6px 10px; font-size:11.5px;">موافقة</button>
+            <button class="btn btn-ghost mr-reject" style="padding:6px 10px; font-size:11.5px; color:var(--critical);">رفض</button>
+          </div>
+        </div>
+
+        <div class="panel" style="display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="pending" data-search-text="كابلات كهربائية">
+          <div style="width:40px; height:40px; border-radius:10px; background:var(--warning-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><rect x="6" y="4" width="12" height="17" rx="2"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">طلب توريد كابلات كهربائية — 30 لفة</div><div class="text-micro">مجمع سكني الشمال · مقدَّم منذ يوم واحد · أولوية متوسطة</div></div>
+          <span class="badge badge-warning">قيد الانتظار</span>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-ghost mr-approve" style="padding:6px 10px; font-size:11.5px;">موافقة</button>
+            <button class="btn btn-ghost mr-reject" style="padding:6px 10px; font-size:11.5px; color:var(--critical);">رفض</button>
+          </div>
+        </div>
+
+        <div class="panel" style="display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="approved" data-search-text="مواد العزل">
+          <div style="width:40px; height:40px; border-radius:10px; background:var(--success-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">طلب توريد مواد عزل مائي — 800 م²</div><div class="text-micro">برج الواحة الذكي · تمت الموافقة منذ 3 أيام</div></div>
+          <span class="badge badge-success">موافَق عليه</span>
+        </div>
+
+        <div class="panel" style="display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="completed" data-search-text="أسمنت">
+          <div style="width:40px; height:40px; border-radius:10px; background:var(--surface-alt); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--coolgray);"><path d="M5 13l4 4L19 7"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">طلب توريد أسمنت — 200 طن</div><div class="text-micro">مركز البيانات الذكي · تم التسليم منذ أسبوع</div></div>
+          <span class="badge badge-neutral">مكتمل</span>
+        </div>
+
+        <div class="panel" style="display:flex; align-items:center; gap:16px;" data-filterable data-filter-status="rejected" data-search-text="بلاط">
+          <div style="width:40px; height:40px; border-radius:10px; background:var(--critical-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+          <div style="flex:1; min-width:180px;"><div style="font-weight:700; font-size:13.5px;">طلب توريد بلاط رخامي — 1200 م²</div><div class="text-micro">مجمع مستشفى النور · تم الرفض — يتجاوز الميزانية المعتمدة</div></div>
+          <span class="badge badge-critical">مرفوض</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [
+    { label: "طلبات المواد", group: "التنقّل", url: "material-requests.html" },
+    { label: "إنشاء طلب مواد", group: "التنقّل", url: "create-material-request.html" }
+  ];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.mr-approve').forEach(btn => btn.addEventListener('click', () => window.SFLMS?.showToast({ type: 'success', title: 'تمت الموافقة على الطلب' })));
+    document.querySelectorAll('.mr-reject').forEach(btn => btn.addEventListener('click', () => window.SFLMS?.showToast({ type: 'critical', title: 'تم رفض الطلب' })));
+  });
+</script>
+</body>
+</html>

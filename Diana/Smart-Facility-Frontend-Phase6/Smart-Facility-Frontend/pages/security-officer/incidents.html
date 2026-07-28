@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>إدارة الحوادث — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-incidents"
+      data-search-placeholder="ابحث عن حادثة..."
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"إدارة الحوادث","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">إدارة الحوادث</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">جميع الحوادث الأمنية المسجّلة — 22 حادثة مفتوحة</div></div>
+        <button class="btn btn-primary" data-modal-trigger="new-incident-modal">+ بلاغ حادثة</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث..." data-live-search="#inc-grid"></div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="status" data-filter-value="new">جديدة</button>
+            <button data-filter="status" data-filter-value="investigating">قيد التحقيق</button>
+            <button data-filter="status" data-filter-value="action">تتطلب إجراءً</button>
+            <button data-filter="status" data-filter-value="resolved">محلولة</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="entity-grid" id="inc-grid" data-stagger>
+
+        <a href="incident-details.html" class="panel" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="investigating" data-search-text="اقتحام مصنع الرياض">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;"><span class="badge badge-critical">حرج</span><span class="text-micro" dir="ltr">INC-0851</span></div>
+          <div style="font-weight:700; font-size:13.5px;">اقتحام مدخل المستودع</div>
+          <div class="text-micro" style="margin-top:2px;">مصنع الرياض الصناعي</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="badge badge-info">قيد التحقيق</span><span class="text-micro">فيصل العنزي</span></div>
+        </a>
+
+        <a href="incident-details.html" class="panel" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="action" data-search-text="كابلات مصعد">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;"><span class="badge badge-warning">عالي</span><span class="text-micro" dir="ltr">INC-0849</span></div>
+          <div style="font-weight:700; font-size:13.5px;">تلاعب مشتبه به بلوحة تحكم المصعد</div>
+          <div class="text-micro" style="margin-top:2px;">برج الواحة الذكي</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="badge badge-warning">تتطلب إجراءً</span><span class="text-micro">فيصل العنزي</span></div>
+        </a>
+
+        <a href="incident-details.html" class="panel" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="new" data-search-text="دخان مركز البيانات">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;"><span class="badge badge-info">متوسط</span><span class="text-micro" dir="ltr">INC-0850</span></div>
+          <div style="font-weight:700; font-size:13.5px;">كشف دخان — غرفة الخوادم</div>
+          <div class="text-micro" style="margin-top:2px;">مركز البيانات الذكي</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="badge badge-neutral">جديدة</span><span class="text-micro">غير مُعيَّنة</span></div>
+        </a>
+
+        <a href="incident-details.html" class="panel" style="text-decoration:none; color:inherit;" data-filterable data-filter-status="resolved" data-search-text="دخان كاذب مركز البيانات">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;"><span class="badge badge-neutral">منخفض</span><span class="text-micro" dir="ltr">INC-0847</span></div>
+          <div style="font-weight:700; font-size:13.5px;">كشف دخان كاذب — أُغلقت</div>
+          <div class="text-micro" style="margin-top:2px;">مركز البيانات الذكي</div>
+          <div style="display:flex; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid var(--border);"><span class="badge badge-success">محلولة</span><span class="text-micro">فيصل العنزي</span></div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="new-incident-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">بلاغ حادثة جديدة</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>نوع الحادثة</label><select><option>اقتحام</option><option>حريق/دخان</option><option>دخول غير مصرح</option><option>عطل أمني</option></select></div>
+    <div class="field"><label>المنشأة</label><select><option>برج الواحة الذكي</option><option>مصنع الرياض الصناعي</option><option>مركز البيانات الذكي</option></select></div>
+    <div class="field"><label>الوصف</label><textarea rows="3" placeholder="اشرح تفاصيل الحادثة..."></textarea></div>
+    <div class="field"><label>الشدة</label><select><option>منخفض</option><option>متوسط</option><option>عالي</option><option>حرج</option></select></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="new-incident-submit">إنشاء البلاغ</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "إدارة الحوادث", group: "التنقّل", url: "incidents.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('new-incident-submit')?.addEventListener('click', () => {
+      document.getElementById('new-incident-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم إنشاء بلاغ الحادثة بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* ==========================================================================
+   DESIGN-SYSTEM.CSS
+   Base resets, typography, and layout primitives.
+   Loaded after variables.css and Tailwind, before components.css.
+   ========================================================================== */
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ direction: rtl; }
+
+body{
+  margin: 0;
+  background:
+    var(--bg-base)
+    radial-gradient(1100px 520px at 92% -8%, #E4F5FE 0%, rgba(228,245,254,0) 60%),
+    radial-gradient(900px 460px at -6% 12%, #F5EEFF 0%, rgba(245,238,255,0) 55%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .display{ font-family: var(--font-display); margin: 0; }
+p{ margin: 0; }
+a{ color: inherit; text-decoration: none; }
+button{ font-family: inherit; }
+img{ max-width: 100%; display: block; }
+
+/* ---------- Focus ring — never remove outline, only restyle it ---------- */
+:focus-visible{
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-xs);
+}
+
+/* ---------- Type scale utility classes ---------- */
+.text-display{ font-family: var(--font-display); font-size: var(--fs-display); font-weight: var(--fw-extrabold); line-height: var(--lh-tight); }
+.text-h1{ font-family: var(--font-display); font-size: var(--fs-h1); font-weight: var(--fw-extrabold); }
+.text-h2{ font-family: var(--font-display); font-size: var(--fs-h2); font-weight: var(--fw-bold); }
+.text-h3{ font-family: var(--font-display); font-size: var(--fs-h3); font-weight: var(--fw-bold); }
+.text-body{ font-size: var(--fs-body); }
+.text-body-sm{ font-size: var(--fs-body-sm); }
+.text-caption{ font-size: var(--fs-caption); color: var(--text-muted); }
+.text-micro{ font-size: var(--fs-micro); color: var(--text-faint); }
+.text-muted{ color: var(--text-muted); }
+.text-faint{ color: var(--text-faint); }
+
+/* ---------- Layout shell ---------- */
+.app-shell{ display: flex; min-height: 100vh; }
+
+.app-main{ flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+.app-content{
+  padding: var(--space-6) var(--space-7) var(--space-12);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section{ margin-bottom: var(--space-8); }
+
+.section-label{
+  font-size: var(--fs-caption); font-weight: var(--fw-bold); color: var(--primary-dark);
+  text-transform: uppercase; letter-spacing: .04em; margin-bottom: var(--space-3);
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.section-label::after{ content: ""; flex: 1; height: 1px; background: var(--border); }
+
+/* ---------- Grid utilities (Tailwind covers most layout;
+   these are the app-specific responsive grids used across dashboards) ---------- */
+.grid-kpi-4{ display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.grid-kpi-3{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.grid-panels{ display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); }
+
+@media (max-width: 1200px){
+  .grid-kpi-4{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 1100px){
+  .grid-panels{ grid-template-columns: 1fr; }
+}
+@media (max-width: 560px){
+  .grid-kpi-4, .grid-kpi-3{ grid-template-columns: 1fr; }
+}
+
+/* ---------- Icon grammar (shared across every SVG icon in the system) ----------
+   Grammar: 24x24 grid, 1.6px rounded stroke, cool-gray-blue line color,
+   one purple "connection node" accent dot per icon (crimson for critical/security). */
+svg.gi{ stroke: var(--coolgray); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.node{ fill: var(--accent); stroke: none; }
+.node-critical{ fill: var(--critical); stroke: none; }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>سجل التنبيهات — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-alert-history"
+      data-search-placeholder="ابحث في السجل..."
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"سجل التنبيهات","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">سجل التنبيهات</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">أرشيف كامل للتنبيهات الأمنية السابقة عبر جميع المنشآت</div>
+      </div>
+
+      <div class="grid-kpi-4" style="margin-bottom:20px;">
+        <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">إجمالي التنبيهات (الشهر)</div><div class="kpi-value" data-counter="486">0</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">تنبيهات حرجة</div><div class="kpi-value" data-counter="34">0</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">نسبة الإنذارات الكاذبة</div><div class="kpi-value" data-counter="12" data-counter-suffix="%">0</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--accent-tint); --k-color:var(--accent-dark);"><div class="kpi-card-top"><div><div class="kpi-label">حُوّلت إلى حوادث</div><div class="kpi-value" data-counter="58">0</div></div></div></div>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;"><input type="text" placeholder="ابحث..." data-live-search="#history-table-body"></div>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <input type="date" style="border:1px solid var(--border); border-radius:8px; padding:8px 12px; font-size:12.5px;">
+            <span class="text-micro">إلى</span>
+            <input type="date" style="border:1px solid var(--border); border-radius:8px; padding:8px 12px; font-size:12.5px;">
+          </div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="category" data-filter-value="fire">حريق/دخان</button>
+            <button data-filter="category" data-filter-value="intrusion">اقتحام</button>
+            <button data-filter="category" data-filter-value="motion">حركة</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>التنبيه</th><th>الفئة</th><th>المنشأة</th><th>الشدة</th><th>الوقت</th><th>الحالة</th></tr></thead>
+            <tbody id="history-table-body">
+              <tr data-searchable data-search-text="اقتحام مصنع الرياض" data-filterable data-filter-category="intrusion">
+                <td>تنبيه اقتحام — مدخل المستودع</td><td>اقتحام</td><td>مصنع الرياض الصناعي</td><td><span class="badge badge-critical">حرج</span></td><td>اليوم 08:52</td><td><span class="badge" style="background:var(--critical-tint); color:var(--critical-dark);">مباشر</span></td>
+              </tr>
+              <tr data-searchable data-search-text="دخان مركز البيانات" data-filterable data-filter-category="fire">
+                <td>كشف دخان — غرفة الخوادم</td><td>حريق/دخان</td><td>مركز البيانات الذكي</td><td><span class="badge badge-info">متوسط</span></td><td>أمس 14:20</td><td><span class="badge badge-success">مغلق</span></td>
+              </tr>
+              <tr data-searchable data-search-text="حركة برج الواحة" data-filterable data-filter-category="motion">
+                <td>حركة غير معتادة — الطابق الثالث</td><td>حركة</td><td>برج الواحة الذكي</td><td><span class="badge badge-warning">عالي</span></td><td>أمس 11:05</td><td><span class="badge badge-success">مغلق</span></td>
+              </tr>
+              <tr data-searchable data-search-text="دخول غير مصرح مستشفى النور" data-filterable data-filter-category="intrusion">
+                <td>محاولة دخول غير مصرح</td><td>اقتحام</td><td>مستشفى النور</td><td><span class="badge badge-info">متوسط</span></td><td>26 يوليو 09:40</td><td><span class="badge badge-success">مغلق</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "سجل التنبيهات", group: "التنقّل", url: "alert-history.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

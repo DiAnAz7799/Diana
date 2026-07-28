@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>برج الواحة الذكي — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-facilities"
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"المنشآت","url":"facilities.html"},{"label":"برج الواحة الذكي","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="panel" style="margin-bottom:20px; display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+        <div style="width:88px; height:88px; border-radius:var(--radius-lg); flex-shrink:0; background:linear-gradient(135deg,var(--primary-tint),var(--accent-tint)); display:flex; align-items:center; justify-content:center;"><svg class="gi" width="38" height="38" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg></div>
+        <div style="flex:1; min-width:220px;">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;"><h1 style="font-size:21px; font-weight:800; margin:0;">برج الواحة الذكي</h1><span class="badge badge-success">تشغيلي بالكامل</span></div>
+          <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px;">مبنى تجاري · الرياض، حي العليا · FAC-2026-014</div>
+          <div style="display:flex; gap:20px; margin-top:10px; flex-wrap:wrap;">
+            <div><span class="text-micro">عدد الأصول</span><div style="font-size:12.5px; font-weight:700;">128 أصلاً</div></div>
+            <div><span class="text-micro">أوامر صيانة مفتوحة</span><div style="font-size:12.5px; font-weight:700;">6</div></div>
+            <div><span class="text-micro">آخر فحص تشغيلي</span><div style="font-size:12.5px; font-weight:700;">25 يوليو 2026</div></div>
+          </div>
+        </div>
+        <div class="proj-ring" style="position:relative; width:70px; height:70px;">
+          <svg width="70" height="70"><circle cx="35" cy="35" r="29" stroke="var(--surface-alt)" stroke-width="6" fill="none"/><circle cx="35" cy="35" r="29" stroke="var(--success)" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="182" stroke-dashoffset="15" style="transform:rotate(-90deg); transform-origin:center;"/></svg>
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; font-family:var(--font-display);">92%</div>
+        </div>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs-bar">
+          <div class="tab-trigger is-active" data-tab-trigger="overview">نظرة عامة</div>
+          <div class="tab-trigger" data-tab-trigger="assets">الأصول</div>
+          <div class="tab-trigger" data-tab-trigger="maintenance">الصيانة</div>
+          <div class="tab-trigger" data-tab-trigger="faults">الأعطال</div>
+          <div class="tab-trigger" data-tab-trigger="reports">التقارير</div>
+          <div class="tab-trigger" data-tab-trigger="documents">الوثائق</div>
+          <div class="tab-trigger" data-tab-trigger="activity">سجل النشاط</div>
+        </div>
+
+        <div class="tab-panel is-active" data-tab-panel="overview">
+          <div class="grid-panels">
+            <div class="panel"><div class="panel-head"><div><div class="panel-title">نظرة عامة</div></div></div><p class="text-body-sm text-muted" style="line-height:1.9;">برج مكاتب ذكي مكوّن من 22 طابقًا يعمل بكامل طاقته التشغيلية، مزوّد بأنظمة إدارة مبنى ذكية (BMS) تراقب استهلاك الطاقة والمياه والتهوية في الزمن الحقيقي.</p></div>
+            <div class="panel"><div class="panel-head"><div><div class="panel-title">توزيع حالة الأصول</div></div></div>
+              <div class="settings-row"><span class="settings-row-label">سليمة</span><b style="color:var(--success);">108</b></div>
+              <div class="settings-row"><span class="settings-row-label">تحذير</span><b style="color:var(--warning);">15</b></div>
+              <div class="settings-row"><span class="settings-row-label">حرجة</span><b style="color:var(--critical);">5</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="assets">
+          <div class="table-card"><table class="data-table"><thead><tr><th>الأصل</th><th>النوع</th><th>الحالة</th><th>آخر صيانة</th></tr></thead><tbody>
+            <tr><td>وحدة تكييف مركزية — الطابق 12</td><td>تكييف</td><td><span class="badge badge-success">سليم</span></td><td>10 يوليو 2026</td></tr>
+            <tr><td>مصعد ركاب رقم 3</td><td>مصاعد</td><td><span class="badge badge-warning">تحذير</span></td><td>2 يوليو 2026</td></tr>
+          </tbody></table></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="maintenance">
+          <div class="panel"><div class="settings-row"><span class="settings-row-label">#WO-2229 — صيانة وقائية للمصاعد</span><span class="badge badge-warning">قيد التنفيذ</span></div></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="faults">
+          <div class="state-card"><div class="state-icon-box"><svg class="gi" width="26" height="26" viewBox="0 0 24 24"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg></div><div class="state-title">لا توجد أعطال مفتوحة حاليًا</div></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="reports">
+          <div class="state-card"><div class="state-icon-box"><svg class="gi" width="26" height="26" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div><div class="state-title">لا توجد تقارير لهذه المنشأة بعد</div><a href="operational-reports.html" class="btn btn-primary">التقارير التشغيلية</a></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="documents">
+          <div class="state-card"><div class="state-icon-box"><svg class="gi" width="26" height="26" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/></svg></div><div class="state-title">لا توجد وثائق مرفوعة بعد</div></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="activity">
+          <div class="panel"><div class="timeline">
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">اكتمال الفحص التشغيلي الدوري</div><div class="tl-meta">منذ 3 أيام</div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "المنشآت", group: "التنقّل", url: "facilities.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

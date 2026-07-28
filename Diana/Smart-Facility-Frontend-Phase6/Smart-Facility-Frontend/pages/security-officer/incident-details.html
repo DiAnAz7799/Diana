@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>INC-0851 — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-incidents"
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"إدارة الحوادث","url":"incidents.html"},{"label":"INC-0851","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="panel" style="margin-bottom:20px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+          <div>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;"><h1 style="font-size:20px; font-weight:800; margin:0;" dir="ltr">INC-0851</h1><span class="badge badge-critical">حرج</span><span class="badge badge-info">قيد التحقيق</span></div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px;">اقتحام مدخل المستودع · مصنع الرياض الصناعي · 28 يوليو 2026، 08:52</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-ghost">إعادة تعيين</button>
+            <button class="btn btn-primary" id="close-incident-btn">
+              <svg class="gi" width="14" height="14" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              إغلاق الحادثة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs-bar">
+          <div class="tab-trigger is-active" data-tab-trigger="timeline">السجل الزمني</div>
+          <div class="tab-trigger" data-tab-trigger="notes">ملاحظات التحقيق</div>
+          <div class="tab-trigger" data-tab-trigger="evidence">الأدلة والمرفقات</div>
+          <div class="tab-trigger" data-tab-trigger="actions">إجراءات الاستجابة</div>
+          <div class="tab-trigger" data-tab-trigger="resolution">ملخص الحل</div>
+        </div>
+
+        <div class="tab-panel is-active" data-tab-panel="timeline">
+          <div class="panel"><div class="timeline">
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="4.5"/></svg></div><div class="tl-title">تم تحويل التنبيه ALT-9042 إلى حادثة رسمية</div><div class="tl-meta">منذ 4 دقائق</div></div>
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="4.5"/></svg></div><div class="tl-title">تعيين فيصل العنزي كمسؤول عن الحادثة</div><div class="tl-meta">منذ 3 دقائق</div></div>
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><circle cx="12" cy="12" r="4.5"/></svg></div><div class="tl-title">إرسال فريق الأمن الميداني للموقع</div><div class="tl-meta">منذ دقيقتين</div></div>
+          </div></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="notes">
+          <div class="panel">
+            <p class="text-body-sm text-muted" style="line-height:1.9; margin-bottom:16px;">تم رصد شخصين غير مصرح لهما بالدخول عبر بوابة المستودع الشرقية. الفريق الميداني في طريقه للتحقق من الموقع وتأمين المنطقة المحيطة. لم يتم تأكيد أي أضرار أو سرقة حتى الآن.</p>
+            <div class="field"><label>إضافة ملاحظة تحقيق</label><textarea rows="3" placeholder="أضف ملاحظة جديدة..."></textarea></div>
+            <button class="btn btn-ghost" id="add-note-btn">إضافة الملاحظة</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="evidence">
+          <div class="panel">
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px;">
+              <div style="aspect-ratio:4/3; border-radius:10px; background:linear-gradient(135deg,var(--critical-tint),var(--surface-alt)); display:flex; align-items:center; justify-content:center;"><svg class="gi" width="18" height="18" viewBox="0 0 24 24" style="opacity:.5;"><rect x="3" y="5" width="18" height="14" rx="2"/></svg></div>
+              <div style="aspect-ratio:4/3; border-radius:10px; background:linear-gradient(135deg,var(--critical-tint),var(--surface-alt)); display:flex; align-items:center; justify-content:center;"><svg class="gi" width="18" height="18" viewBox="0 0 24 24" style="opacity:.5;"><rect x="3" y="5" width="18" height="14" rx="2"/></svg></div>
+            </div>
+            <div style="border:2px dashed var(--border-strong); border-radius:var(--radius-md); padding:20px; text-align:center; background:var(--surface-alt); cursor:pointer;">
+              <svg class="gi" width="24" height="24" viewBox="0 0 24 24" style="margin:0 auto 6px; display:block;"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+              <div class="text-micro">اسحب أدلة إضافية أو اضغط للرفع</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="actions">
+          <div class="panel">
+            <div class="settings-row"><label class="auth-checkbox" style="gap:10px;"><input type="checkbox" checked> إرسال فريق الأمن الميداني</label></div>
+            <div class="settings-row"><label class="auth-checkbox" style="gap:10px;"><input type="checkbox" checked> تأمين محيط الحادثة</label></div>
+            <div class="settings-row"><label class="auth-checkbox" style="gap:10px;"><input type="checkbox"> مراجعة تسجيلات الكاميرات المحيطة</label></div>
+            <div class="settings-row"><label class="auth-checkbox" style="gap:10px;"><input type="checkbox"> إخطار إدارة المنشأة</label></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="resolution">
+          <div class="panel">
+            <div class="field"><label>ملخص الحل</label><textarea rows="4" placeholder="اكتب ملخص إغلاق الحادثة بعد اكتمال التحقيق..."></textarea></div>
+            <button class="btn btn-primary" id="save-resolution-btn">حفظ الملخص</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "إدارة الحوادث", group: "التنقّل", url: "incidents.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('close-incident-btn')?.addEventListener('click', () => window.SFLMS?.showToast({ type: 'success', title: 'تم إغلاق الحادثة بنجاح' }));
+    document.getElementById('add-note-btn')?.addEventListener('click', () => window.SFLMS?.showToast({ type: 'success', title: 'تمت إضافة الملاحظة' }));
+    document.getElementById('save-resolution-btn')?.addEventListener('click', () => window.SFLMS?.showToast({ type: 'success', title: 'تم حفظ ملخص الحل' }));
+  });
+</script>
+</body>
+</html>

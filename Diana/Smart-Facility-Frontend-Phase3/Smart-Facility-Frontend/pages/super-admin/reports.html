@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مركز التقارير — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-reports"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"مركز التقارير","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">مركز التقارير</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">إنشاء وتصدير تقارير تفصيلية عبر جميع وحدات المنصة</div>
+      </div>
+
+      <div class="entity-grid" style="margin-bottom:28px;">
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--primary-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg></div><div class="panel-title">تقرير المشاريع</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">ملخص شامل لحالة جميع المشاريع الإنشائية ونسب الإنجاز</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--accent-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div><div class="panel-title">تقرير الجودة والإنشاءات</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">نتائج فحوصات الجودة ومراحل التنفيذ عبر المشاريع</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--success-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"/><path d="M5 7l7 4 7-4M12 11v10"/></svg></div><div class="panel-title">تقرير الأصول والصيانة</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">صحة الأصول، أوامر الصيانة، ومعدلات الاستجابة</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--critical-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/><path d="M12 9v5"/></svg></div><div class="panel-title">تقرير الحوادث الأمنية</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">التنبيهات والحوادث الأمنية مع مؤشرات الاستجابة</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--warning-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 3v9m0 9v-9m-8-4.5L12 12l8-4.5"/></svg></div><div class="panel-title">تقرير المواد</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">استهلاك المواد، مستويات المخزون، وطلبات التوريد</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--info-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:#0E7490;"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-4 2.7-6 5.5-6s4.9 2 5.5 6"/></svg></div><div class="panel-title">تقرير المستخدمين</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">نشاط المستخدمين والصلاحيات عبر الأدوار الأربعة</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div><div class="panel-title">التقارير المُصدَرة مؤخرًا</div></div>
+          <div data-filter-bar data-filter-mode="server">
+            <button data-filter="range" data-filter-value="week">هذا الأسبوع</button>
+            <button data-filter="range" data-filter-value="month">هذا الشهر</button>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>اسم التقرير</th><th>النوع</th><th>تم الإنشاء بواسطة</th><th>التاريخ</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>تقرير المشاريع التنفيذي — يوليو 2026</td><td><span class="badge badge-info">مشاريع</span></td><td>سارة العتيبي</td><td>26 يوليو 2026</td><td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;">تنزيل</button></td></tr>
+              <tr><td>تقرير الجودة الفصلي — الربع الثاني</td><td><span class="badge" style="background:var(--accent-tint); color:var(--accent-dark);">جودة</span></td><td>عبدالله القحطاني</td><td>15 يوليو 2026</td><td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;">تنزيل</button></td></tr>
+              <tr><td>تقرير الحوادث الأمنية — يونيو 2026</td><td><span class="badge badge-critical">أمن</span></td><td>فيصل العنزي</td><td>2 يوليو 2026</td><td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;">تنزيل</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "مركز التقارير", group: "التقارير", url: "reports.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

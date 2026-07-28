@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>التقارير الأمنية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-reports"
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"التقارير الأمنية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">التقارير الأمنية</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">مركز تصدير التقارير الأمنية التفصيلية</div>
+      </div>
+
+      <div class="entity-grid" style="margin-bottom:28px;">
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--critical-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="8.5"/></svg></div><div class="panel-title">تقرير الحوادث</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">جميع الحوادث المسجّلة مع حالتها ووقت الحل</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--warning-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg></div><div class="panel-title">تقرير التنبيهات</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">إحصائيات التنبيهات حسب النوع والمنشأة</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+        <div class="panel"><div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;"><div class="kpi-icon" style="background:var(--primary-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div><div class="panel-title">تقرير أداء الاستجابة</div></div><div class="text-body-sm text-muted" style="margin-bottom:14px;">معدلات زمن الاستجابة والالتزام بمعايير SLA</div><div style="display:flex; gap:8px;"><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">PDF</button><button class="btn btn-ghost" style="flex:1; justify-content:center; font-size:12px;">Excel</button></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><div class="panel-title">التقارير المُصدَرة مؤخرًا</div></div></div>
+        <div class="table-scroll"><table class="data-table"><thead><tr><th>التقرير</th><th>النوع</th><th>التاريخ</th><th></th></tr></thead><tbody>
+          <tr><td>تقرير الحوادث الأمنية — يوليو 2026</td><td><span class="badge badge-critical">حوادث</span></td><td>26 يوليو</td><td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11px;">تنزيل</button></td></tr>
+          <tr><td>تقرير أداء الاستجابة — الربع الثاني</td><td><span class="badge badge-info">أداء</span></td><td>15 يوليو</td><td><button class="btn btn-ghost" style="padding:6px 10px; font-size:11px;">تنزيل</button></td></tr>
+        </tbody></table></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "التقارير الأمنية", group: "التنقّل", url: "security-reports.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

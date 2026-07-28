@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الصيانة الوقائية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-preventive"
+      data-search-placeholder="ابحث في خطط الصيانة..."
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"الصيانة الوقائية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">الصيانة الوقائية</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">خطط الصيانة الدورية المجدولة للأصول الحرجة</div></div>
+        <button class="btn btn-primary" data-modal-trigger="new-plan-modal">+ خطة صيانة جديدة</button>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>الأصل</th><th>التكرار</th><th>آخر تنفيذ</th><th>الموعد القادم</th><th>الحالة</th></tr></thead>
+            <tbody>
+              <tr><td>وحدة تكييف مركزية — الطابق 12</td><td>كل 3 أشهر</td><td>10 مايو 2026</td><td>10 أغسطس 2026</td><td><span class="badge badge-success">مجدولة</span></td></tr>
+              <tr><td>مصعد ركاب رقم 3</td><td>شهريًا</td><td>2 يوليو 2026</td><td>2 أغسطس 2026</td><td><span class="badge badge-warning">مستحقة قريبًا</span></td></tr>
+              <tr><td>مبرّد رئيسي — غرفة الخوادم</td><td>كل شهرين</td><td>10 يونيو 2026</td><td>10 أغسطس 2026</td><td><span class="badge badge-success">مجدولة</span></td></tr>
+              <tr><td>مولد كهربائي احتياطي</td><td>كل 6 أشهر</td><td>9 مارس 2026</td><td>9 سبتمبر 2026</td><td><span class="badge badge-success">مجدولة</span></td></tr>
+              <tr><td>مضخة مياه رئيسية</td><td>شهريًا</td><td>28 يونيو 2026</td><td>28 يوليو 2026</td><td><span class="badge badge-critical">متأخرة</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">المهام القادمة هذا الأسبوع</div></div></div>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div><div class="tl-title">صيانة وقائية للمصاعد — برج الواحة الذكي</div><div class="tl-meta">2 أغسطس 2026 · أحمد باوزير</div></div>
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="8.5"/><path d="M12 6v6l4 2"/></svg></div><div class="tl-title">صيانة مضخة المياه — متأخرة</div><div class="tl-meta">كانت مستحقة 28 يوليو</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="new-plan-modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">خطة صيانة وقائية جديدة</div><div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div></div>
+    <div class="field"><label>الأصل</label><select><option>وحدة تكييف مركزية</option><option>مصعد ركاب رقم 3</option></select></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="field"><label>التكرار</label><select><option>أسبوعيًا</option><option>شهريًا</option><option>كل 3 أشهر</option><option>كل 6 أشهر</option></select></div>
+      <div class="field"><label>أول موعد تنفيذ</label><input type="date"></div>
+    </div>
+    <div class="field"><label>الفني المسؤول</label><select><option>سعيد المطيري</option><option>أحمد باوزير</option></select></div>
+    <div class="modal-foot"><button class="btn btn-ghost" data-modal-close>إلغاء</button><button class="btn btn-primary" id="new-plan-submit">حفظ الخطة</button></div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "الصيانة الوقائية", group: "التنقّل", url: "preventive-maintenance.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('new-plan-submit')?.addEventListener('click', () => {
+      document.getElementById('new-plan-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم حفظ خطة الصيانة' });
+    });
+  });
+</script>
+</body>
+</html>

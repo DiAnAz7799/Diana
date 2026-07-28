@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الأدوار والصلاحيات — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-roles"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"الأدوار والصلاحيات","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">الأدوار والصلاحيات</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">تحكّم دقيق في صلاحيات كل دور عبر وحدات المنصة</div>
+      </div>
+
+      <div class="entity-grid" style="grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); margin-bottom:24px;">
+        <div class="panel" style="text-align:center; padding:20px;"><div class="badge badge-info" style="margin-bottom:8px;">المدير التنفيذي</div><div style="font-size:20px; font-weight:800; font-family:var(--font-display);">1</div><div class="text-micro">مستخدم</div></div>
+        <div class="panel" style="text-align:center; padding:20px;"><div class="badge" style="background:var(--accent-tint); color:var(--accent-dark); margin-bottom:8px;">مدير إنشاءات</div><div style="font-size:20px; font-weight:800; font-family:var(--font-display);">18</div><div class="text-micro">مستخدمًا</div></div>
+        <div class="panel" style="text-align:center; padding:20px;"><div class="badge" style="background:var(--success-tint); color:var(--success-dark); margin-bottom:8px;">مدير تشغيل</div><div style="font-size:20px; font-weight:800; font-family:var(--font-display);">24</div><div class="text-micro">مستخدمًا</div></div>
+        <div class="panel" style="text-align:center; padding:20px;"><div class="badge badge-critical" style="margin-bottom:8px;">ضابط أمن</div><div style="font-size:20px; font-weight:800; font-family:var(--font-display);">12</div><div class="text-micro">مستخدمًا</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><div><div class="panel-title">مصفوفة الصلاحيات</div><div class="panel-sub">اضغط أي خلية لتبديل الصلاحية — التغييرات تُحفظ تلقائيًا</div></div></div>
+        <div class="table-scroll">
+          <table class="perm-matrix">
+            <thead><tr><th>الصلاحية</th><th>المدير التنفيذي</th><th>مدير إنشاءات</th><th>مدير تشغيل</th><th>ضابط أمن</th></tr></thead>
+            <tbody>
+              <tr><td>عرض لوحة القيادة التنفيذية</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td></tr>
+              <tr><td>إدارة المشاريع الإنشائية</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td></tr>
+              <tr><td>إدارة الأصول والصيانة</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td></tr>
+              <tr><td>إدارة التنبيهات والحوادث الأمنية</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td></tr>
+              <tr><td>إدارة المستخدمين والصلاحيات</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td></tr>
+              <tr><td>تصدير التقارير التنفيذية</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td></tr>
+              <tr><td>تعديل إعدادات النظام العامة</td><td><span class="perm-check is-checked" data-perm-toggle><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td><td><span class="perm-check" data-perm-toggle></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "الأدوار والصلاحيات", group: "المستخدمون", url: "roles-permissions.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-perm-toggle]').forEach(cell => {
+      cell.addEventListener('click', () => {
+        const nowChecked = cell.classList.toggle('is-checked');
+        cell.innerHTML = nowChecked ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>' : '';
+        window.SFLMS?.showToast({ type: 'success', title: 'تم تحديث الصلاحية', duration: 2000 });
+      });
+    });
+  });
+</script>
+</body>
+</html>

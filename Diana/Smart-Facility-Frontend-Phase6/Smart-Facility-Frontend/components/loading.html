@@ -1,0 +1,34 @@
+<!--
+  components/loading.html
+  PATTERN LIBRARY. .skeleton is a plain utility class from components.css —
+  give it a height/width and it shimmers. Use for any content still loading.
+-->
+
+<section style="padding:24px; display:flex; flex-direction:column; gap:24px;">
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">Text skeleton</h3>
+    <div class="skeleton" style="height:16px; width:60%; margin-bottom:10px;"></div>
+    <div class="skeleton" style="height:12px; width:90%; margin-bottom:8px;"></div>
+    <div class="skeleton" style="height:12px; width:80%; margin-bottom:8px;"></div>
+    <div class="skeleton" style="height:12px; width:40%;"></div>
+  </div>
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">KPI card skeleton</h3>
+    <div class="kpi-card" data-state="loading" style="max-width:220px;">
+      <div class="kpi-card-top">
+        <div>
+          <div class="kpi-label">إجمالي المشاريع</div>
+          <div class="kpi-value" style="width:60px; height:25px;">128</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-h3" style="margin-bottom:10px;">Button loading state</h3>
+    <button class="btn btn-primary is-loading">جارِ الحفظ</button>
+  </div>
+
+</section>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تقويم الصيانة — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+<style>
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px; }
+  .cal-dow{ text-align:center; font-size:11px; font-weight:700; color:var(--text-faint); padding-bottom:8px; }
+  .cal-cell{ min-height:84px; border:1px solid var(--border); border-radius:10px; padding:6px; background:var(--surface); }
+  .cal-cell.is-muted{ background:var(--surface-alt); opacity:.5; }
+  .cal-cell.is-today{ border-color:var(--primary); box-shadow:0 0 0 1px var(--primary); }
+  .cal-date{ font-size:11px; font-weight:700; margin-bottom:4px; }
+  .cal-event{ font-size:9.5px; font-weight:700; padding:2px 5px; border-radius:5px; margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+</style>
+</head>
+<body data-role="operations_manager" data-active-page="operations-calendar"
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"تقويم الصيانة","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div><h1 style="font-size:24px; font-weight:800; margin:0;">تقويم الصيانة</h1><div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">جدولة أعمال الصيانة الوقائية والتصحيحية</div></div>
+        <div class="view-toggle">
+          <div class="view-toggle-btn is-active" data-cal-view="month">شهري</div>
+          <div class="view-toggle-btn" data-cal-view="week">أسبوعي</div>
+        </div>
+      </div>
+
+      <div class="grid-panels" style="grid-template-columns:1fr 300px;">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">يوليو 2026</div></div>
+            <div style="display:flex; gap:6px;"><button class="btn-icon"><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button><button class="btn-icon"><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button></div>
+          </div>
+
+          <div class="cal-grid">
+            <div class="cal-dow">أحد</div><div class="cal-dow">اثنين</div><div class="cal-dow">ثلاثاء</div><div class="cal-dow">أربعاء</div><div class="cal-dow">خميس</div><div class="cal-dow">جمعة</div><div class="cal-dow">سبت</div>
+
+            <div class="cal-cell is-muted"><div class="cal-date">28</div></div>
+            <div class="cal-cell is-muted"><div class="cal-date">29</div></div>
+            <div class="cal-cell is-muted"><div class="cal-date">30</div></div>
+            <div class="cal-cell"><div class="cal-date">1</div></div>
+            <div class="cal-cell"><div class="cal-date">2</div><div class="cal-event badge-success" style="background:var(--success-tint); color:var(--success-dark);">صيانة مصعد</div></div>
+            <div class="cal-cell"><div class="cal-date">3</div></div>
+            <div class="cal-cell"><div class="cal-date">4</div></div>
+
+            <div class="cal-cell"><div class="cal-date">5</div></div>
+            <div class="cal-cell"><div class="cal-date">6</div></div>
+            <div class="cal-cell"><div class="cal-date">7</div></div>
+            <div class="cal-cell"><div class="cal-date">8</div></div>
+            <div class="cal-cell"><div class="cal-date">9</div></div>
+            <div class="cal-cell"><div class="cal-date">10</div><div class="cal-event" style="background:var(--primary-tint); color:var(--primary-dark);">صيانة مبرّد</div></div>
+            <div class="cal-cell"><div class="cal-date">11</div></div>
+
+            <div class="cal-cell is-today"><div class="cal-date">28</div><div class="cal-event" style="background:var(--critical-tint); color:var(--critical-dark);">مضخة متأخرة</div></div>
+            <div class="cal-cell"><div class="cal-date">29</div></div>
+            <div class="cal-cell"><div class="cal-date">30</div></div>
+            <div class="cal-cell"><div class="cal-date">31</div></div>
+            <div class="cal-cell is-muted"><div class="cal-date">1</div></div>
+            <div class="cal-cell is-muted"><div class="cal-date">2</div></div>
+            <div class="cal-cell is-muted"><div class="cal-date">3</div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel" style="margin-bottom:16px;">
+            <div class="panel-head"><div><div class="panel-title">المهام القادمة</div></div></div>
+            <div class="settings-row"><div><div class="settings-row-label">صيانة مصعد رقم 3</div><div class="settings-row-desc">2 أغسطس · أحمد باوزير</div></div></div>
+            <div class="settings-row"><div><div class="settings-row-label">صيانة مبرّد رئيسي</div><div class="settings-row-desc">10 أغسطس · سعيد المطيري</div></div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">دليل الألوان</div></div></div>
+            <div class="legend-item" style="margin-bottom:8px;"><span class="legend-dot" style="background:var(--success);"></span>صيانة وقائية مجدولة</div>
+            <div class="legend-item" style="margin-bottom:8px;"><span class="legend-dot" style="background:var(--primary);"></span>صيانة عامة</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--critical);"></span>متأخرة — تتطلب إجراءً</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "تقويم الصيانة", group: "التنقّل", url: "maintenance-calendar.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-cal-view]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-cal-view]').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        window.SFLMS?.showToast({ type: 'info', title: btn.dataset.calView === 'week' ? 'عرض أسبوعي' : 'عرض شهري', duration: 1500 });
+      });
+    });
+    document.querySelectorAll('.cal-cell').forEach(cell => {
+      cell.addEventListener('click', () => cell.style.borderColor = 'var(--primary)');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مبرّد رئيسي — غرفة الخوادم — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-assets"
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":"dashboard.html"},{"label":"إدارة الأصول","url":"assets.html"},{"label":"مبرّد رئيسي — غرفة الخوادم","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="panel" style="margin-bottom:20px; display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+        <div style="width:80px; height:80px; border-radius:var(--radius-lg); flex-shrink:0; background:var(--critical-tint); display:flex; align-items:center; justify-content:center;"><svg class="gi" width="34" height="34" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"/><path d="M5 7l7 4 7-4M12 11v10"/></svg></div>
+        <div style="flex:1; min-width:220px;">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;"><h1 style="font-size:20px; font-weight:800; margin:0;">مبرّد رئيسي — غرفة الخوادم</h1><span class="badge badge-critical">حرج</span></div>
+          <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px;" dir="ltr">AST-4402 · مركز البيانات الذكي</div>
+          <div style="display:flex; gap:20px; margin-top:10px; flex-wrap:wrap;">
+            <div><span class="text-micro">تاريخ التركيب</span><div style="font-size:12.5px; font-weight:700;">18 مارس 2021</div></div>
+            <div><span class="text-micro">تاريخ بدء التشغيل</span><div style="font-size:12.5px; font-weight:700;">2 أبريل 2021</div></div>
+            <div><span class="text-micro">آخر صيانة</span><div style="font-size:12.5px; font-weight:700;">10 يونيو 2026</div></div>
+          </div>
+        </div>
+        <a href="maintenance-orders.html" class="btn btn-primary">+ أمر صيانة</a>
+      </div>
+
+      <div class="grid-kpi-4" style="margin-bottom:20px;">
+        <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">نتيجة الصحة</div><div class="kpi-value">54</div></div></div><div class="kpi-bar"><span style="width:54%; background:var(--critical);"></span></div></div>
+        <div class="kpi-card" style="--k-tint:var(--warning-tint); --k-color:var(--warning);"><div class="kpi-card-top"><div><div class="kpi-label">العمر الإنتاجي المتبقي</div><div class="kpi-value">14 شهرًا</div></div></div><div class="kpi-foot" style="color:var(--warning);">يقترب من نهاية العمر الافتراضي</div></div>
+        <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">معدل الاستخدام</div><div class="kpi-value">98%</div></div></div><div class="kpi-bar"><span style="width:98%;"></span></div></div>
+        <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">أعطال هذا العام</div><div class="kpi-value">6</div></div></div><div class="kpi-foot" style="color:var(--critical);">أعلى من المعدل الطبيعي</div></div>
+      </div>
+
+      <div class="grid-panels">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">سجل الصيانة</div></div></div>
+          <div class="table-scroll"><table class="data-table"><thead><tr><th>التاريخ</th><th>النوع</th><th>الفني</th><th>الحالة</th></tr></thead><tbody>
+            <tr><td>10 يونيو 2026</td><td>تصحيحية</td><td>سعيد المطيري</td><td><span class="badge badge-success">مكتملة</span></td></tr>
+            <tr><td>15 مارس 2026</td><td>وقائية</td><td>سعيد المطيري</td><td><span class="badge badge-success">مكتملة</span></td></tr>
+            <tr><td>2 يناير 2026</td><td>تصحيحية</td><td>أحمد باوزير</td><td><span class="badge badge-success">مكتملة</span></td></tr>
+          </tbody></table></div>
+        </div>
+        <div>
+          <div class="panel" style="margin-bottom:16px;">
+            <div class="panel-head"><div><div class="panel-title">سجل الأعطال</div></div></div>
+            <div class="settings-row"><span class="settings-row-label">ارتفاع درجة الحرارة</span><span class="badge badge-critical">مفتوح</span></div>
+            <div class="settings-row"><span class="settings-row-label">تسريب سائل تبريد</span><span class="badge badge-neutral">محلول</span></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">الموقع</div></div></div>
+            <div class="text-body-sm text-muted">مركز البيانات الذكي — الطابق السفلي، غرفة الخوادم الرئيسية، الوحدة B-14</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "إدارة الأصول", group: "التنقّل", url: "assets.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

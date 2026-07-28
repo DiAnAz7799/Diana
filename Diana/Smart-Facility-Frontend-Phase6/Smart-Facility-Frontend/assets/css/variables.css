@@ -1,0 +1,121 @@
+/* ==========================================================================
+   VARIABLES.CSS
+   Smart Facility Lifecycle Management System — Design Tokens
+   Premium Light Smart Facility Palette (approved)
+   Every token here is the single source of truth. No component file should
+   hard-code a color, spacing, radius, shadow, or duration — reference a
+   variable instead so the whole system can be retuned from this one file.
+   ========================================================================== */
+
+:root{
+
+  /* ---------- COLOR / SURFACES ---------- */
+  --bg-base:#F9FCFF;
+  --surface:#FFFFFF;
+  --surface-alt:#F1F5F9;      /* Gray 100 */
+  --border:#E5E7EB;           /* Gray 200 */
+  --border-strong:#CBD5E1;    /* Gray 400 */
+
+  /* ---------- COLOR / PRIMARY (Smart Sky Blue) ---------- */
+  --primary:#6EC6F4;
+  --primary-light:#67E8F9;    /* Smart Cyan, tech accent */
+  --primary-dark:#2E8BC0;     /* derived — hover / active-text contrast */
+  --primary-tint:#DDF3FF;
+
+  /* ---------- COLOR / ACCENT (Soft Premium Purple) ---------- */
+  --accent:#A78BFA;
+  --accent-dark:#8B5CF6;      /* derived — hover / active-text contrast */
+  --accent-tint:#F3E8FF;
+
+  /* ---------- COLOR / ICON GRAMMAR NEUTRALS ---------- */
+  --babyblue:#67E8F9;         /* secondary icon stroke detail / live-data */
+  --coolgray:#64748B;
+  --coolgray-soft:#CBD5E1;
+
+  /* ---------- COLOR / TEXT ---------- */
+  --text:#1E293B;
+  --text-muted:#64748B;
+  --text-faint:#94A3B8;
+  --text-inverse:#FFFFFF;
+
+  /* ---------- COLOR / STATUS (soft, non-aggressive) ---------- */
+  --success:#34D399;      --success-tint:#E4FBF2;      --success-dark:#0F7A54;
+  --warning:#FBBF24;      --warning-tint:#FEF6E0;      --warning-dark:#92600A;
+  --critical:#FB7185;     --critical-tint:#FFEEF0;     --critical-dark:#B3384A;
+  --info:#67E8F9;         --info-tint:#E8FBFE;         --info-dark:#0E7490;
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display:'Cairo', sans-serif;      /* headings, KPI values, brand */
+  --font-body:'IBM Plex Sans Arabic', sans-serif; /* body, UI, data */
+  --font-mono:'IBM Plex Sans Arabic', monospace;  /* IDs / codes, LTR context */
+
+  --fs-display: 28px;
+  --fs-h1: 24px;
+  --fs-h2: 20px;
+  --fs-h3: 16px;
+  --fs-body: 14px;
+  --fs-body-sm: 13px;
+  --fs-caption: 12px;
+  --fs-micro: 11px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* ---------- SPACING SCALE (4px base) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---------- RADIUS SYSTEM ---------- */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* ---------- SHADOW SYSTEM (sky-blue tinted, soft) ---------- */
+  --shadow-xs: 0 1px 2px rgba(110,198,244,0.08);
+  --shadow-sm: 0 1px 3px rgba(110,198,244,0.10);
+  --shadow-md: 0 10px 28px -10px rgba(110,198,244,0.22);
+  --shadow-lg: 0 18px 44px -14px rgba(110,198,244,0.26);
+  --shadow-focus: 0 0 0 3px var(--primary-tint);
+
+  /* ---------- MOTION TOKENS ---------- */
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 280ms;
+  --duration-slower: 400ms;
+  --ease-standard: cubic-bezier(.4,0,.2,1);
+  --ease-out: cubic-bezier(0,0,.2,1);
+  --ease-in: cubic-bezier(.4,0,1,1);
+
+  /* ---------- Z-INDEX SCALE ---------- */
+  --z-sidebar: 20;
+  --z-topbar: 15;
+  --z-dropdown: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 41;
+  --z-toast: 50;
+  --z-command-palette: 60;
+
+  /* ---------- LAYOUT ---------- */
+  --sidebar-width: 264px;
+  --sidebar-width-collapsed: 84px;
+  --topbar-height: 68px;
+  --content-max-width: 1400px;
+}

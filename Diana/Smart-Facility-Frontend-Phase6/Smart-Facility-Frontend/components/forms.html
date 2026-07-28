@@ -1,0 +1,41 @@
+<!--
+  components/forms.html
+  PATTERN LIBRARY. Every field variant uses the same .field wrapper from
+  assets/css/components.css — copy the markup, wire the `name`/`value`
+  attributes to your backend when connected.
+-->
+
+<section style="padding:24px; max-width:420px; display:flex; flex-direction:column; gap:4px;">
+
+  <div class="field">
+    <label for="f-text">اسم المشروع</label>
+    <input type="text" id="f-text" name="project_name" placeholder="مثال: برج الواحة الذكي">
+  </div>
+
+  <div class="field has-error">
+    <label for="f-error">البريد الإلكتروني</label>
+    <input type="email" id="f-error" name="email" value="not-an-email">
+    <div class="error-msg" style="display:block;">أدخل بريدًا إلكترونيًا صالحًا.</div>
+  </div>
+
+  <div class="field">
+    <label for="f-select">نوع المنشأة</label>
+    <select id="f-select" name="facility_type">
+      <option>مبنى تجاري</option>
+      <option>منشأة صحية</option>
+      <option>منشأة صناعية</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="f-textarea">ملاحظات</label>
+    <textarea id="f-textarea" name="notes" rows="4" placeholder="أضف أي تفاصيل إضافية..."></textarea>
+    <div class="hint">اختياري — الحد الأقصى 500 حرف.</div>
+  </div>
+
+  <div class="field">
+    <label for="f-disabled">رقم المشروع</label>
+    <input type="text" id="f-disabled" value="PRJ-2026-0042" disabled>
+  </div>
+
+</section>

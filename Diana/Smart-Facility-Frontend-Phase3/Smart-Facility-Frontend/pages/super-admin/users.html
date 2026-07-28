@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>المستخدمون — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-users"
+      data-search-placeholder="ابحث عن مستخدم..."
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"المستخدمون","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">المستخدمون</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">إدارة حسابات المستخدمين وأدوارهم عبر المنصة — 214 مستخدمًا نشطًا</div>
+        </div>
+        <button class="btn btn-primary" data-modal-trigger="add-user-modal">+ إضافة مستخدم</button>
+      </div>
+
+      <div class="panel" style="margin-bottom:20px; padding:16px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:280px; flex:1;">
+            <input type="text" placeholder="ابحث بالاسم أو البريد الإلكتروني..." data-live-search="#users-table-body">
+          </div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="role" data-filter-value="super_admin">المدير التنفيذي</button>
+            <button data-filter="role" data-filter-value="construction">مدير إنشاءات</button>
+            <button data-filter="role" data-filter-value="operations">مدير تشغيل</button>
+            <button data-filter="role" data-filter-value="security">ضابط أمن</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="data-table">
+            <thead><tr><th>المستخدم</th><th>الدور</th><th>البريد الإلكتروني</th><th>الحالة</th><th>آخر دخول</th><th></th></tr></thead>
+            <tbody id="users-table-body">
+
+              <tr data-searchable data-search-text="سارة العتيبي" data-filterable data-filter-role="super_admin" onclick="window.location.href='user-details.html'" style="cursor:pointer;">
+                <td style="display:flex; align-items:center; gap:10px;"><div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:700;">سع</div>سارة العتيبي</td>
+                <td><span class="badge badge-info">المدير التنفيذي</span></td>
+                <td dir="ltr" style="text-align:left;">sara.alotaibi@sflms.sa</td>
+                <td><span class="badge badge-success">نشط</span></td>
+                <td>منذ 5 دقائق</td>
+                <td>⋯</td>
+              </tr>
+
+              <tr data-searchable data-search-text="خالد الشمري" data-filterable data-filter-role="construction" onclick="window.location.href='user-details.html'" style="cursor:pointer;">
+                <td style="display:flex; align-items:center; gap:10px;"><div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:700;">خش</div>خالد الشمري</td>
+                <td><span class="badge" style="background:var(--accent-tint); color:var(--accent-dark);">مدير إنشاءات</span></td>
+                <td dir="ltr" style="text-align:left;">khalid.alshamri@sflms.sa</td>
+                <td><span class="badge badge-success">نشط</span></td>
+                <td>منذ 20 دقيقة</td>
+                <td>⋯</td>
+              </tr>
+
+              <tr data-searchable data-search-text="ريم الدوسري" data-filterable data-filter-role="operations" onclick="window.location.href='user-details.html'" style="cursor:pointer;">
+                <td style="display:flex; align-items:center; gap:10px;"><div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:700;">رد</div>ريم الدوسري</td>
+                <td><span class="badge" style="background:var(--success-tint); color:var(--success-dark);">مدير تشغيل</span></td>
+                <td dir="ltr" style="text-align:left;">reem.aldosari@sflms.sa</td>
+                <td><span class="badge badge-success">نشط</span></td>
+                <td>منذ ساعة</td>
+                <td>⋯</td>
+              </tr>
+
+              <tr data-searchable data-search-text="فيصل العنزي" data-filterable data-filter-role="security" onclick="window.location.href='user-details.html'" style="cursor:pointer;">
+                <td style="display:flex; align-items:center; gap:10px;"><div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:700;">فع</div>فيصل العنزي</td>
+                <td><span class="badge badge-critical">ضابط أمن</span></td>
+                <td dir="ltr" style="text-align:left;">faisal.alanazi@sflms.sa</td>
+                <td><span class="badge badge-success">نشط</span></td>
+                <td>منذ 12 دقيقة</td>
+                <td>⋯</td>
+              </tr>
+
+              <tr data-searchable data-search-text="منى الحربي" data-filterable data-filter-role="construction" onclick="window.location.href='user-details.html'" style="cursor:pointer;">
+                <td style="display:flex; align-items:center; gap:10px;"><div style="width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:11px; font-weight:700;">مح</div>منى الحربي</td>
+                <td><span class="badge" style="background:var(--accent-tint); color:var(--accent-dark);">مدير إنشاءات</span></td>
+                <td dir="ltr" style="text-align:left;">mona.alharbi@sflms.sa</td>
+                <td><span class="badge badge-neutral">موقوف</span></td>
+                <td>منذ 9 أيام</td>
+                <td>⋯</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ---------- Add user modal ---------- -->
+<div class="modal-backdrop" id="add-user-modal">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">إضافة مستخدم جديد</div>
+      <div class="modal-close" data-modal-close><svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+    </div>
+    <div class="field"><label>الاسم الكامل</label><input type="text" placeholder="مثال: محمد السبيعي"></div>
+    <div class="field"><label>البريد الإلكتروني</label><input type="email" placeholder="example@sflms.sa"></div>
+    <div class="field"><label>الدور</label>
+      <select><option>المدير التنفيذي</option><option>مدير إنشاءات</option><option>مدير تشغيل</option><option>ضابط أمن</option></select>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" data-modal-close>إلغاء</button>
+      <button class="btn btn-primary" id="add-user-submit">إضافة المستخدم</button>
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "المستخدمون", group: "المستخدمون", url: "users.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('add-user-submit')?.addEventListener('click', () => {
+      document.getElementById('add-user-modal').classList.remove('is-open');
+      window.SFLMS?.showToast({ type: 'success', title: 'تم إضافة المستخدم بنجاح' });
+    });
+  });
+</script>
+</body>
+</html>

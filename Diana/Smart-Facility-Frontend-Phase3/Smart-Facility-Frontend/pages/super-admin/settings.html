@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>إعدادات النظام — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-settings"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"إعدادات النظام","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">إعدادات النظام</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">تخصيص إعدادات المنصة العامة والأمان والتكاملات</div>
+      </div>
+
+      <div class="settings-shell">
+        <nav class="settings-nav">
+          <div class="settings-nav-item is-active" data-settings-nav="general"><svg class="gi" viewBox="0 0 24 24"><path d="M4 7h10M4 12h16M4 17h7"/><circle cx="16" cy="7" r="2.1" fill="var(--primary-tint)" stroke="var(--primary)"/><circle cx="9" cy="17" r="2.1" fill="var(--accent-tint)" stroke="var(--accent)"/></svg>عام</div>
+          <div class="settings-nav-item" data-settings-nav="appearance"><svg class="gi" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="var(--surface-alt)"/></svg>المظهر</div>
+          <div class="settings-nav-item" data-settings-nav="security"><svg class="gi" viewBox="0 0 24 24"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg>الأمان</div>
+          <div class="settings-nav-item" data-settings-nav="notifications"><svg class="gi" viewBox="0 0 24 24"><path d="M6 10a6 6 0 0 1 12 0v4l2 3H4l2-3v-4z"/></svg>الإشعارات</div>
+          <div class="settings-nav-item" data-settings-nav="roles"><svg class="gi" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c.6-4 2.7-6 5.5-6s4.9 2 5.5 6"/></svg>الأدوار</div>
+          <div class="settings-nav-item" data-settings-nav="integrations"><svg class="gi" viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="17" r="3"/><path d="M9.5 9.5l5 5"/></svg>التكاملات</div>
+          <div class="settings-nav-item" data-settings-nav="system-info"><svg class="gi" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>معلومات النظام</div>
+        </nav>
+
+        <div>
+          <div class="settings-section is-active" data-settings-section="general">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">الإعدادات العامة</div></div></div>
+              <div class="field"><label>اسم المؤسسة</label><input type="text" value="شركة الإنشاءات الذكية المتقدمة"></div>
+              <div class="field"><label>المنطقة الزمنية</label><select><option>توقيت الرياض (GMT+3)</option></select></div>
+              <div class="settings-row"><div><div class="settings-row-label">اللغة الافتراضية</div><div class="settings-row-desc">تُطبَّق على جميع المستخدمين الجدد</div></div><select style="max-width:160px;"><option>العربية</option><option>English</option></select></div>
+              <button class="btn btn-primary" style="margin-top:16px;">حفظ التغييرات</button>
+            </div>
+          </div>
+
+          <div class="settings-section" data-settings-section="appearance">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">المظهر</div></div></div>
+              <div class="settings-row"><div><div class="settings-row-label">الوضع الداكن</div><div class="settings-row-desc">غير متاح حاليًا — الهوية البصرية المعتمدة فاتحة فقط</div></div><label class="switch"><input type="checkbox" disabled><span class="switch-track"></span></label></div>
+              <div class="settings-row"><div><div class="settings-row-label">تصغير القائمة الجانبية تلقائيًا</div><div class="settings-row-desc">على الشاشات الأصغر من 1280px</div></div><label class="switch"><input type="checkbox" checked><span class="switch-track"></span></label></div>
+            </div>
+          </div>
+
+          <div class="settings-section" data-settings-section="security">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">الأمان</div></div></div>
+              <div class="settings-row"><div><div class="settings-row-label">المصادقة الثنائية (2FA)</div><div class="settings-row-desc">إلزامية لجميع المدراء التنفيذيين</div></div><label class="switch"><input type="checkbox" checked><span class="switch-track"></span></label></div>
+              <div class="settings-row"><div><div class="settings-row-label">انتهاء الجلسة تلقائيًا</div><div class="settings-row-desc">بعد 30 دقيقة من عدم النشاط</div></div><label class="switch"><input type="checkbox" checked><span class="switch-track"></span></label></div>
+              <div class="settings-row"><div><div class="settings-row-label">تنبيه عند تسجيل دخول من جهاز جديد</div></div><label class="switch"><input type="checkbox" checked><span class="switch-track"></span></label></div>
+            </div>
+          </div>
+
+          <div class="settings-section" data-settings-section="notifications">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">إعدادات الإشعارات</div></div></div>
+              <div class="settings-row"><div><div class="settings-row-label">تنبيهات البريد الإلكتروني للحوادث الحرجة</div></div><label class="switch"><input type="checkbox" checked><span class="switch-track"></span></label></div>
+              <div class="settings-row"><div><div class="settings-row-label">ملخص أسبوعي عبر البريد الإلكتروني</div></div><label class="switch"><input type="checkbox" checked><span class="switch-track"></span></label></div>
+              <div class="settings-row"><div><div class="settings-row-label">إشعارات فورية للمتصفح</div></div><label class="switch"><input type="checkbox"><span class="switch-track"></span></label></div>
+            </div>
+          </div>
+
+          <div class="settings-section" data-settings-section="roles">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">الأدوار</div><div class="panel-sub">إدارة الصلاحيات التفصيلية من صفحة مخصصة</div></div></div>
+              <a href="roles-permissions.html" class="btn btn-primary">فتح مصفوفة الصلاحيات</a>
+            </div>
+          </div>
+
+          <div class="settings-section" data-settings-section="integrations">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">التكاملات</div></div></div>
+              <div class="settings-row"><div><div class="settings-row-label">أنظمة المراقبة الذكية (IoT)</div><div class="settings-row-desc">312 جهازًا متصلاً</div></div><span class="badge badge-success">متصل</span></div>
+              <div class="settings-row"><div><div class="settings-row-label">بوابة البريد الإلكتروني</div></div><span class="badge badge-success">متصل</span></div>
+              <div class="settings-row"><div><div class="settings-row-label">نظام تخطيط موارد المؤسسة (ERP)</div></div><span class="badge badge-neutral">غير متصل</span></div>
+            </div>
+          </div>
+
+          <div class="settings-section" data-settings-section="system-info">
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">معلومات النظام</div></div></div>
+              <div class="settings-row"><span class="settings-row-label">إصدار المنصة</span><span class="text-body-sm" dir="ltr">v2.4.1</span></div>
+              <div class="settings-row"><span class="settings-row-label">آخر تحديث</span><span class="text-body-sm">15 يوليو 2026</span></div>
+              <div class="settings-row"><span class="settings-row-label">عدد المنشآت المسجّلة</span><span class="text-body-sm">46 منشأة</span></div>
+              <div class="settings-row"><span class="settings-row-label">إجمالي المستخدمين</span><span class="text-body-sm">214 مستخدمًا</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "إعدادات النظام", group: "النظام", url: "settings.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('[data-settings-nav]');
+    const sections = document.querySelectorAll('[data-settings-section]');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const target = item.dataset.settingsNav;
+        navItems.forEach(n => n.classList.toggle('is-active', n === item));
+        sections.forEach(s => s.classList.toggle('is-active', s.dataset.settingsSection === target));
+      });
+    });
+  });
+</script>
+</body>
+</html>

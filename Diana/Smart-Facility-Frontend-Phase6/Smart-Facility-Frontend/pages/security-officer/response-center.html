@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مركز الاستجابة — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="security_officer" data-active-page="security-response"
+      data-breadcrumbs='[{"label":"ضابط الأمن","url":"dashboard.html"},{"label":"مركز الاستجابة","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">مركز الاستجابة</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">متابعة قائمة الاستجابة والمهام المُسندة لفريق الأمن</div>
+      </div>
+
+      <div class="grid-kpi-4" style="margin-bottom:20px;">
+        <div class="kpi-card" style="--k-tint:var(--warning-tint); --k-color:var(--warning);"><div class="kpi-card-top"><div><div class="kpi-label">مهام قيد الانتظار</div><div class="kpi-value">5</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">مهام قيد التنفيذ</div><div class="kpi-value">3</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">مكتملة اليوم</div><div class="kpi-value">12</div></div></div></div>
+        <div class="kpi-card" style="--k-tint:var(--accent-tint); --k-color:var(--accent-dark);"><div class="kpi-card-top"><div><div class="kpi-label">متوسط زمن الإنجاز</div><div class="kpi-value">28 دقيقة</div></div></div></div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">قائمة الاستجابة</div></div></div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid var(--border);">
+            <label class="auth-checkbox" style="gap:0;"><input type="checkbox"></label>
+            <div style="flex:1;"><div style="font-size:13px; font-weight:700;">تأمين محيط اقتحام المستودع — مصنع الرياض</div><div class="text-micro">مُسندة إلى: فيصل العنزي</div></div>
+            <span class="badge badge-critical">عاجل</span>
+            <span class="badge badge-warning">قيد التنفيذ</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 0; border-bottom:1px solid var(--border);">
+            <label class="auth-checkbox" style="gap:0;"><input type="checkbox"></label>
+            <div style="flex:1;"><div style="font-size:13px; font-weight:700;">مراجعة تسجيلات كاميرا C-114</div><div class="text-micro">مُسندة إلى: منيرة الشهري</div></div>
+            <span class="badge badge-warning">عالي</span>
+            <span class="badge badge-info">قيد الانتظار</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:14px; padding:13px 0;">
+            <label class="auth-checkbox" style="gap:0;"><input type="checkbox" checked></label>
+            <div style="flex:1; opacity:.6;"><div style="font-size:13px; font-weight:700; text-decoration:line-through;">إخطار إدارة مصنع الرياض</div><div class="text-micro">اكتملت منذ 10 دقائق</div></div>
+            <span class="badge badge-success">مكتملة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel-head"><div><div class="panel-title">إحصاءات الاستجابة</div><div class="panel-sub">أداء فريق الأمن هذا الأسبوع</div></div></div>
+          <div data-chart='{"type":"area","values":[85,88,91,94,95,96],"color":"var(--success)"}'></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "مركز الاستجابة", group: "التنقّل", url: "response-center.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!--
+  components/tables.html
+  PATTERN LIBRARY. Copy the structure below; swap <tbody> rows for real data.
+  [data-live-search] + [data-search-text] wire up assets/js/search.js's
+  initInlineSearch() automatically — no extra JS needed per page.
+-->
+
+<section style="padding:24px;">
+
+  <div class="field" style="max-width:280px; margin-bottom:16px;">
+    <input type="text" placeholder="ابحث في الجدول..." data-live-search="#example-table-body">
+  </div>
+
+  <div class="table-card">
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="sortable">اسم المشروع</th>
+            <th>النوع</th>
+            <th>المدير</th>
+            <th>نسبة الإنجاز</th>
+            <th>الحالة</th>
+            <th style="width:40px;"></th>
+          </tr>
+        </thead>
+        <tbody id="example-table-body">
+          <tr data-search-text="برج الواحة الذكي مبنى تجاري خالد الشمري">
+            <td>برج الواحة الذكي</td>
+            <td>مبنى تجاري</td>
+            <td>خالد الشمري</td>
+            <td>82%</td>
+            <td><span class="badge badge-success">قيد التنفيذ</span></td>
+            <td>
+              <div class="dropdown" onclick="event.stopPropagation();">
+                <span data-dropdown-trigger style="cursor:pointer; display:inline-flex;">
+                  <svg class="gi" width="18" height="18" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="var(--coolgray)" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="var(--coolgray)" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="var(--coolgray)" stroke="none"/></svg>
+                </span>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">عرض التفاصيل</a>
+                  <a class="dropdown-item" href="#">تعديل</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item is-danger" href="#" data-modal-trigger="confirm-delete-modal">حذف</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr data-search-text="مجمع مستشفى النور منشأة صحية منى الحربي">
+            <td>مجمع مستشفى النور</td>
+            <td>منشأة صحية</td>
+            <td>منى الحربي</td>
+            <td>45%</td>
+            <td><span class="badge badge-warning">متأخر</span></td>
+            <td>
+              <div class="dropdown" onclick="event.stopPropagation();">
+                <span data-dropdown-trigger style="cursor:pointer; display:inline-flex;">
+                  <svg class="gi" width="18" height="18" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.6" fill="var(--coolgray)" stroke="none"/><circle cx="12" cy="12" r="1.6" fill="var(--coolgray)" stroke="none"/><circle cx="19" cy="12" r="1.6" fill="var(--coolgray)" stroke="none"/></svg>
+                </span>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">عرض التفاصيل</a>
+                  <a class="dropdown-item" href="#">تعديل</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Loading-state row example (skeleton cells) -->
+  <div class="table-card" style="margin-top:16px;">
+    <table class="data-table">
+      <tbody>
+        <tr class="is-loading"><td><span></span></td><td><span></span></td><td><span></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>

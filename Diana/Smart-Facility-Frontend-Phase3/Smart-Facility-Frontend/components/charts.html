@@ -1,0 +1,37 @@
+<!--
+  components/charts.html
+  PATTERN LIBRARY. Charts are rendered by assets/js/charts.js's
+  initDeclarativeCharts(), called once by app.js — any element with
+  [data-chart='{...json...}'] on the page gets rendered automatically.
+  No chart library is used, per the technology constraints.
+-->
+
+<section style="padding:24px; display:flex; flex-direction:column; gap:24px;">
+
+  <div class="panel" style="max-width:560px;">
+    <div class="panel-head">
+      <div>
+        <div class="panel-title">مثال: رسم بياني مساحي</div>
+        <div class="panel-sub">قيم تجريبية</div>
+      </div>
+    </div>
+    <div data-chart='{"type":"area","values":[42,48,55,60,66,68],"color":"var(--primary-dark)"}'></div>
+  </div>
+
+  <div class="panel" style="max-width:280px;">
+    <div class="panel-head">
+      <div>
+        <div class="panel-title">مثال: رسم حلقي</div>
+      </div>
+    </div>
+    <div data-chart='{"type":"donut","segments":[{"value":54,"color":"var(--primary)"},{"value":26,"color":"var(--success)"},{"value":14,"color":"var(--warning)"},{"value":6,"color":"var(--critical)"}],"centerValue":128,"centerLabel":"مشروع"}'></div>
+  </div>
+
+  <div class="kpi-card" style="max-width:220px;">
+    <div class="kpi-card-top">
+      <div><div class="kpi-label">نسبة الإنجاز</div></div>
+    </div>
+    <div data-chart='{"type":"ring","percent":68,"color":"var(--primary)"}'></div>
+  </div>
+
+</section>

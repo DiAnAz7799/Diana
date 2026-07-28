@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تسجيل الدخول — نُظم</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/auth.css">
+</head>
+<body>
+
+<div class="auth-shell">
+
+  <div data-include="../../components/auth-brand-panel.html"></div>
+
+  <main class="auth-form-panel">
+    <div class="auth-card anim-fade-in-up">
+
+      <div class="auth-mobile-mark">
+        <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="17" stroke="var(--border)" stroke-width="2.5"/>
+          <path d="M20 3 A17 17 0 0 1 35.4 12.5" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+        <div class="auth-brand-mark-name">نُظم</div>
+      </div>
+
+      <div class="auth-card-head">
+        <div class="auth-card-title">تسجيل الدخول</div>
+        <div class="auth-card-desc">أدخل بيانات حسابك للوصول إلى منصة إدارة دورة حياة المنشآت الذكية.</div>
+      </div>
+
+      <!-- Authentication error alert renders here on failed demo login -->
+      <div data-auth-alert-slot style="margin-bottom:4px;"></div>
+
+      <form class="auth-form" data-login-form novalidate>
+        <div class="field">
+          <label for="login-username">البريد الإلكتروني أو اسم المستخدم</label>
+          <input type="text" id="login-username" name="username" placeholder="example@company.com" autocomplete="username" autofocus>
+        </div>
+
+        <div class="field">
+          <label for="login-password">كلمة المرور</label>
+          <input type="password" id="login-password" name="password" placeholder="••••••••" autocomplete="current-password">
+        </div>
+
+        <div class="auth-row-between">
+          <label class="auth-checkbox">
+            <input type="checkbox" name="remember_me" checked>
+            تذكرني على هذا الجهاز
+          </label>
+          <a href="forgot-password.html" class="auth-link">نسيت كلمة المرور؟</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+      </form>
+
+      <div class="auth-card-foot">
+        تواجه مشكلة في الوصول؟ تواصل مع <span style="color:var(--text); font-weight:700;">مسؤول النظام</span> في مؤسستك.
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module" src="../../assets/js/auth.js"></script>
+</body>
+</html>

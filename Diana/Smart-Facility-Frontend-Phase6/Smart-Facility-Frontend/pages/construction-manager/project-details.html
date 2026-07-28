@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>برج الواحة الذكي — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-projects"
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"المشاريع الإنشائية","url":"projects.html"},{"label":"برج الواحة الذكي","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="panel" style="margin-bottom:20px; display:flex; gap:20px; flex-wrap:wrap; align-items:center;">
+        <div style="width:88px; height:88px; border-radius:var(--radius-lg); flex-shrink:0; background:linear-gradient(135deg,var(--primary-tint),var(--accent-tint)); display:flex; align-items:center; justify-content:center;">
+          <svg class="gi" width="38" height="38" viewBox="0 0 24 24"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg>
+        </div>
+        <div style="flex:1; min-width:220px;">
+          <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+            <h1 style="font-size:21px; font-weight:800; margin:0;">برج الواحة الذكي</h1>
+            <span class="badge badge-success">على المسار</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--text-muted); margin-top:4px;">مبنى تجاري · الرياض · PRJ-2026-0011 · المرحلة الحالية: التشطيبات الداخلية</div>
+          <div style="display:flex; gap:20px; margin-top:10px; flex-wrap:wrap;">
+            <div><span class="text-micro">تاريخ البداية</span><div style="font-size:12.5px; font-weight:700;">1 مارس 2025</div></div>
+            <div><span class="text-micro">الانتهاء المتوقع</span><div style="font-size:12.5px; font-weight:700;">30 نوفمبر 2026</div></div>
+            <div><span class="text-micro">نتيجة الجودة</span><div style="font-size:12.5px; font-weight:700; color:var(--success);">91/100</div></div>
+          </div>
+        </div>
+        <div class="proj-ring" style="position:relative; width:70px; height:70px;">
+          <svg width="70" height="70"><circle cx="35" cy="35" r="29" stroke="var(--surface-alt)" stroke-width="6" fill="none"/><circle cx="35" cy="35" r="29" stroke="var(--success)" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="182" stroke-dashoffset="25" style="transform:rotate(-90deg); transform-origin:center;"/></svg>
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; font-family:var(--font-display);">86%</div>
+        </div>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs-bar">
+          <div class="tab-trigger is-active" data-tab-trigger="overview">نظرة عامة</div>
+          <div class="tab-trigger" data-tab-trigger="stages">المراحل</div>
+          <div class="tab-trigger" data-tab-trigger="progress">التقدم</div>
+          <div class="tab-trigger" data-tab-trigger="materials">المواد</div>
+          <div class="tab-trigger" data-tab-trigger="quality">الجودة</div>
+          <div class="tab-trigger" data-tab-trigger="reports">التقارير</div>
+          <div class="tab-trigger" data-tab-trigger="documents">الوثائق</div>
+          <div class="tab-trigger" data-tab-trigger="activity">سجل النشاط</div>
+        </div>
+
+        <div class="tab-panel is-active" data-tab-panel="overview">
+          <div class="grid-panels">
+            <div class="panel"><div class="panel-head"><div><div class="panel-title">وصف المشروع</div></div></div><p class="text-body-sm text-muted" style="line-height:1.9;">برج مكاتب ذكي مكوّن من 22 طابقًا، يخضع حاليًا لمرحلة التشطيبات الداخلية بعد اكتمال الهيكل الإنشائي والأعمال الكهروميكانيكية بنسبة عالية. الجدول الزمني يسير وفق الخطة المعتمدة.</p></div>
+            <div class="panel"><div class="panel-head"><div><div class="panel-title">مؤشرات سريعة</div></div></div>
+              <div class="settings-row"><span class="settings-row-label">فحوصات جودة معتمدة</span><b>42</b></div>
+              <div class="settings-row"><span class="settings-row-label">طلبات مواد معلّقة</span><b style="color:var(--warning);">2</b></div>
+              <div class="settings-row"><span class="settings-row-label">تقارير يومية هذا الشهر</span><b>26</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="stages">
+          <div class="panel">
+            <div style="margin-bottom:16px;"><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">التأسيس والحفر</span><span class="badge badge-success">مكتملة</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:100%; background:var(--success); border-radius:999px;"></div></div></div>
+            <div style="margin-bottom:16px;"><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">الهيكل الخرساني</span><span class="badge badge-success">مكتملة</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:92%; background:var(--success); border-radius:999px;"></div></div></div>
+            <div style="margin-bottom:16px;"><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">الأعمال الكهروميكانيكية</span><span class="badge badge-info">قيد التنفيذ</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:88%; background:var(--primary); border-radius:999px;"></div></div></div>
+            <div><div style="display:flex; justify-content:space-between; margin-bottom:6px;"><span style="font-size:12.5px; font-weight:700;">التشطيبات الداخلية</span><span class="badge badge-warning">قيد المراجعة</span></div><div style="height:9px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:61%; background:var(--warning); border-radius:999px;"></div></div></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="progress">
+          <div class="panel"><div class="panel-head"><div><div class="panel-title">تقدّم الإنجاز عبر الزمن</div></div></div><div data-chart='{"type":"area","values":[10,25,40,55,68,86],"color":"var(--primary-dark)"}'></div></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="materials">
+          <div class="panel"><div class="panel-head"><div><div class="panel-title">حالة المواد</div></div></div>
+            <div style="display:grid; grid-template-columns:130px 1fr 40px; align-items:center; gap:10px;"><div style="font-size:12px; font-weight:600;">بلاط وتشطيبات</div><div style="height:8px; background:var(--surface-alt); border-radius:999px;"><div style="height:100%; width:60%; background:var(--primary); border-radius:999px;"></div></div><div style="font-size:11.5px; font-weight:700;">60%</div></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="quality">
+          <div class="panel"><div class="table-scroll"><table class="data-table"><thead><tr><th>المرحلة</th><th>المفتش</th><th>النتيجة</th><th>الحالة</th></tr></thead><tbody>
+            <tr><td>الهيكل الخرساني</td><td>عبدالله القحطاني</td><td>91/100</td><td><span class="badge badge-success">معتمد</span></td></tr>
+          </tbody></table></div></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="reports">
+          <div class="state-card"><div class="state-icon-box"><svg class="gi" width="26" height="26" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div><div class="state-title">لا توجد تقارير مُصدَرة اليوم</div><a href="daily-reports.html" class="btn btn-primary">التقارير اليومية</a></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="documents">
+          <div class="state-card"><div class="state-icon-box"><svg class="gi" width="26" height="26" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5z"/></svg></div><div class="state-title">لا توجد وثائق مرفوعة بعد</div><a href="documents.html" class="btn btn-primary">إدارة الوثائق</a></div>
+        </div>
+
+        <div class="tab-panel" data-tab-panel="activity">
+          <div class="panel"><div class="timeline">
+            <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">تم اعتماد فحص جودة الهيكل الخرساني</div><div class="tl-meta">منذ يومين</div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "المشاريع الإنشائية", group: "التنقّل", url: "projects.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>طلب مواد جديد — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="construction_manager" data-active-page="construction-material-requests"
+      data-breadcrumbs='[{"label":"مدير الإنشاءات","url":"dashboard.html"},{"label":"طلبات المواد","url":"material-requests.html"},{"label":"طلب جديد","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter" style="max-width:640px;">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">طلب مواد جديد</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">سيتم إرسال الطلب إلى مدير التشغيل للمراجعة والموافقة</div>
+      </div>
+
+      <form data-mr-form novalidate>
+        <div class="panel">
+          <div class="field"><label for="mr-project">المشروع *</label><select id="mr-project" required><option value="">اختر المشروع...</option><option>برج الواحة الذكي</option><option>مجمع مستشفى النور</option><option>مجمع سكني الشمال</option></select></div>
+          <div class="field"><label for="mr-material">اسم المادة *</label><input type="text" id="mr-material" placeholder="مثال: حديد تسليح 16مم" required></div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="field"><label for="mr-qty">الكمية المطلوبة *</label><input type="number" id="mr-qty" placeholder="0" required></div>
+            <div class="field"><label for="mr-unit">الوحدة *</label><input type="text" id="mr-unit" placeholder="طن / م² / لفة" required></div>
+          </div>
+          <div class="field"><label for="mr-priority">الأولوية</label><select id="mr-priority"><option>عالية</option><option>متوسطة</option><option>منخفضة</option></select></div>
+          <div class="field"><label for="mr-reason">سبب الطلب</label><textarea id="mr-reason" rows="4" placeholder="اشرح سبب الحاجة لهذه المواد..."></textarea></div>
+          <div class="field"><label for="mr-date">التاريخ المطلوب للتوريد</label><input type="date" id="mr-date"></div>
+
+          <div style="display:flex; gap:10px; margin-top:8px;">
+            <button type="submit" class="btn btn-primary" data-loading-on-submit>إرسال الطلب</button>
+            <a href="material-requests.html" class="btn btn-ghost">إلغاء</a>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>window.SFLMS_SEARCH_INDEX = [{ label: "طلبات المواد", group: "التنقّل", url: "material-requests.html" }];</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('[data-mr-form]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('[data-loading-on-submit]');
+      btn.classList.add('is-loading');
+      setTimeout(() => {
+        window.SFLMS?.showToast({ type: 'success', title: 'تم إرسال طلب المواد بنجاح' });
+        setTimeout(() => window.location.href = 'material-requests.html', 900);
+      }, 700);
+    });
+  });
+</script>
+</body>
+</html>

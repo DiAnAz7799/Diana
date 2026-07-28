@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تعديل المشروع — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-projects"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"المشاريع","url":"projects.html"},{"label":"برج الواحة الذكي","url":"project-details.html"},{"label":"تعديل","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter" style="max-width:900px;">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">تعديل المشروع</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">برج الواحة الذكي — PRJ-2026-0011</div>
+      </div>
+
+      <form data-edit-project-form novalidate>
+        <div class="grid-panels" style="grid-template-columns: 1fr 340px;">
+
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">معلومات المشروع الأساسية</div></div></div>
+
+            <div class="field">
+              <label for="ep-name">اسم المشروع *</label>
+              <input type="text" id="ep-name" name="project_name" value="برج الواحة الذكي" required>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="field">
+                <label for="ep-type">نوع المنشأة *</label>
+                <select id="ep-type" name="facility_type" required>
+                  <option selected>مبنى تجاري</option>
+                  <option>منشأة صحية</option>
+                  <option>منشأة صناعية</option>
+                  <option>مبنى سكني</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ep-location">الموقع *</label>
+                <input type="text" id="ep-location" name="location" value="الرياض، حي العليا" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="ep-desc">وصف المشروع</label>
+              <textarea id="ep-desc" name="description" rows="4">برج مكاتب ذكي مكوّن من 22 طابقًا، مزوّد بأنظمة مراقبة بيئية وأمنية متكاملة، ويستهدف شهادة LEED الذهبية.</textarea>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="field">
+                <label for="ep-start">تاريخ البداية *</label>
+                <input type="date" id="ep-start" name="start_date" value="2025-03-01" required>
+              </div>
+              <div class="field">
+                <label for="ep-end">تاريخ الانتهاء المتوقع *</label>
+                <input type="date" id="ep-end" name="expected_end_date" value="2026-11-30" required>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="field">
+                <label for="ep-status">حالة المشروع</label>
+                <select id="ep-status" name="status">
+                  <option selected>قيد التنفيذ</option>
+                  <option>متأخر</option>
+                  <option>مكتمل</option>
+                  <option>متوقف</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ep-manager">مدير الإنشاءات المسؤول *</label>
+                <select id="ep-manager" name="construction_manager" required>
+                  <option selected>خالد الشمري</option>
+                  <option>منى الحربي</option>
+                  <option>عبدالله القحطاني</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="margin-bottom:16px;">
+              <div class="panel-head"><div><div class="panel-title">صورة المشروع</div></div></div>
+              <div style="border-radius:var(--radius-md); overflow:hidden; height:120px; background:linear-gradient(135deg,var(--primary-tint),var(--accent-tint)); display:flex; align-items:center; justify-content:center;">
+                <svg class="gi" width="34" height="34" viewBox="0 0 24 24"><rect x="4" y="8" width="13" height="11" rx="2"/><rect x="7" y="5" width="13" height="11" rx="2"/></svg>
+              </div>
+              <button type="button" class="btn btn-ghost" style="width:100%; justify-content:center; margin-top:10px;">استبدال الصورة</button>
+            </div>
+
+            <div class="panel" style="margin-bottom:16px;">
+              <div class="panel-head"><div><div class="panel-title">إجراءات</div></div></div>
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:10px;" data-loading-on-submit>حفظ التغييرات</button>
+              <a href="project-details.html" class="btn btn-ghost" style="width:100%; justify-content:center;">إلغاء</a>
+            </div>
+
+            <div class="panel" style="border-color:var(--critical); background:var(--critical-tint);">
+              <div class="panel-title" style="color:var(--critical-dark); margin-bottom:6px;">منطقة الخطر</div>
+              <div style="font-size:12px; color:var(--critical-dark); margin-bottom:12px; line-height:1.7;">حذف المشروع نهائي ولا يمكن التراجع عنه، بما يشمل جميع المراحل والتقارير المرتبطة.</div>
+              <button type="button" class="btn btn-critical" style="width:100%; justify-content:center;" data-modal-trigger="confirm-delete-modal">حذف المشروع</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "المشاريع", group: "المشاريع", url: "projects.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('[data-edit-project-form]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('[data-loading-on-submit]');
+      btn.classList.add('is-loading');
+      setTimeout(() => {
+        window.SFLMS?.showToast({ type: 'success', title: 'تم حفظ التغييرات بنجاح' });
+        setTimeout(() => window.location.href = 'project-details.html', 900);
+      }, 700);
+    });
+    document.getElementById('confirm-delete-submit')?.addEventListener('click', () => {
+      window.SFLMS?.showToast({ type: 'critical', title: 'تم حذف المشروع' });
+      setTimeout(() => window.location.href = 'projects.html', 900);
+    });
+  });
+</script>
+</body>
+</html>

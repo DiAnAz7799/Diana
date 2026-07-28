@@ -1,0 +1,57 @@
+<!--
+  components/auth-brand-panel.html
+  Fetchable partial (not a pattern-library reference) — identical on every
+  authentication page, so it qualifies as genuinely shared markup like
+  sidebar.html/navbar.html. Loaded via:
+    <div data-include="../../components/auth-brand-panel.html"></div>
+-->
+<aside class="auth-brand-panel">
+  <div class="auth-brand-mark">
+    <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="17" stroke="var(--border)" stroke-width="2.5"/>
+      <path d="M20 3 A17 17 0 0 1 35.4 12.5" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M35.4 12.5 A17 17 0 0 1 33 30.5" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <path d="M33 30.5 A17 17 0 0 1 15 36.6" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <rect x="14" y="15" width="12" height="11" rx="1.5" fill="var(--primary)" opacity="0.15"/>
+      <rect x="16.5" y="17.5" width="3" height="3" fill="var(--primary)"/>
+      <rect x="20.5" y="17.5" width="3" height="3" fill="var(--primary)"/>
+      <rect x="16.5" y="21.5" width="3" height="3" fill="var(--accent)"/>
+      <rect x="20.5" y="21.5" width="3" height="3" fill="var(--primary)"/>
+    </svg>
+    <div>
+      <div class="auth-brand-mark-name">نُظم</div>
+      <div class="auth-brand-mark-sub">Smart Facility Lifecycle</div>
+    </div>
+  </div>
+
+  <div class="auth-brand-mid anim-fade-in-up">
+    <div class="auth-brand-heading">منصة واحدة لإدارة دورة حياة منشآتك الذكية بالكامل</div>
+    <div class="auth-brand-desc">من الإنشاء إلى التشغيل والأمان — تحكّم تنفيذي كامل عبر أربعة أدوار متخصصة، ببيانات حيّة ومؤشرات دقيقة.</div>
+
+    <div class="auth-feature-list">
+      <div class="auth-feature">
+        <div class="auth-feature-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><circle cx="12" cy="12" r="4.5"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3"/></svg></div>
+        <div>
+          <div class="auth-feature-title">مراقبة ذكية وتنبيهات لحظية</div>
+          <div class="auth-feature-desc">تتبّع صحة الأصول والمنشآت في الزمن الحقيقي</div>
+        </div>
+      </div>
+      <div class="auth-feature">
+        <div class="auth-feature-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4.5"/></svg></div>
+        <div>
+          <div class="auth-feature-title">صيانة تنبؤية ومراقبة جودة</div>
+          <div class="auth-feature-desc">من مرحلة الإنشاء وحتى التشغيل طويل الأمد</div>
+        </div>
+      </div>
+      <div class="auth-feature">
+        <div class="auth-feature-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/><path d="M12 9v5"/></svg></div>
+        <div>
+          <div class="auth-feature-title">أمان متكامل واستجابة سريعة</div>
+          <div class="auth-feature-desc">مركز عمليات أمنية بمعايير مؤسسية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-brand-foot">© 2026 نُظم — جميع الحقوق محفوظة</div>
+</aside>

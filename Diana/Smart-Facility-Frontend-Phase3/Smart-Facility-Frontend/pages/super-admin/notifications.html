@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الإشعارات — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-notifications"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"الإشعارات","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter" style="max-width:820px;">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">مركز الإشعارات</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">جميع التنبيهات والتحديثات عبر أدوار المنصة الأربعة</div>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-ghost" id="notif-page-mark-all">تعليم الكل كمقروء</button>
+          <button class="btn btn-ghost">
+            <svg class="gi" width="14" height="14" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m2 0v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6"/></svg>
+            حذف المحدد
+          </button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:16px; padding:14px 18px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+          <div class="field" style="margin:0; max-width:260px; flex:1;">
+            <input type="text" placeholder="ابحث في الإشعارات..." data-live-search="#notif-page-list">
+          </div>
+          <div data-filter-bar data-filter-mode="client" data-filter-scope="[data-filterable]">
+            <button data-filter="category" data-filter-value="security">أمن</button>
+            <button data-filter="category" data-filter-value="maintenance">صيانة</button>
+            <button data-filter="category" data-filter-value="project">مشاريع</button>
+            <button data-filter="category" data-filter-value="system">نظام</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="notif-page-list">
+
+        <div class="notif-row is-unread" data-searchable data-search-text="تنبيه اقتحام مصنع الرياض" data-filterable data-filter-category="security" style="align-items:center;">
+          <input type="checkbox" style="width:16px; height:16px; margin-inline-end:4px;">
+          <div class="notif-row-bar" style="background:var(--critical);"></div>
+          <div style="flex:1;"><div class="notif-row-title" style="font-size:13px;">تنبيه اقتحام — مدخل المستودع، مصنع الرياض الصناعي</div><div style="font-size:11.5px; color:var(--text-faint); margin-top:2px;">منذ 4 دقائق · فيصل العنزي</div></div>
+          <span class="badge badge-critical">عاجل</span>
+        </div>
+
+        <div class="notif-row is-unread" data-searchable data-search-text="صيانة وقائية مصاعد" data-filterable data-filter-category="maintenance" style="align-items:center;">
+          <input type="checkbox" style="width:16px; height:16px; margin-inline-end:4px;">
+          <div class="notif-row-bar" style="background:var(--warning);"></div>
+          <div style="flex:1;"><div class="notif-row-title" style="font-size:13px;">تذكير: صيانة وقائية مستحقة خلال 3 أيام — المصاعد</div><div style="font-size:11.5px; color:var(--text-faint); margin-top:2px;">منذ ساعة</div></div>
+          <span class="badge badge-warning">متوسط</span>
+        </div>
+
+        <div class="notif-row" data-searchable data-search-text="اعتماد مرحلة إنشائية" data-filterable data-filter-category="project" style="align-items:center;">
+          <input type="checkbox" style="width:16px; height:16px; margin-inline-end:4px;">
+          <div class="notif-row-bar" style="background:var(--success);"></div>
+          <div style="flex:1;"><div class="notif-row-title" style="font-size:13px;">تم اعتماد المرحلة الإنشائية الثالثة — برج الواحة الذكي</div><div style="font-size:11.5px; color:var(--text-faint); margin-top:2px;">منذ 3 ساعات · خالد الشمري</div></div>
+          <span class="badge badge-neutral">عادي</span>
+        </div>
+
+        <div class="notif-row" data-searchable data-search-text="تحديث نظام حساسات" data-filterable data-filter-category="system" style="align-items:center;">
+          <input type="checkbox" style="width:16px; height:16px; margin-inline-end:4px;">
+          <div class="notif-row-bar" style="background:var(--primary);"></div>
+          <div style="flex:1;"><div class="notif-row-title" style="font-size:13px;">تحديث نظام: إضافة 12 حساس جديد لمجمع الشمال</div><div style="font-size:11.5px; color:var(--text-faint); margin-top:2px;">منذ يوم واحد</div></div>
+          <span class="badge badge-neutral">عادي</span>
+        </div>
+
+        <div class="notif-row" data-searchable data-search-text="إغلاق عطل مضخة" data-filterable data-filter-category="maintenance" style="align-items:center;">
+          <input type="checkbox" style="width:16px; height:16px; margin-inline-end:4px;">
+          <div class="notif-row-bar" style="background:var(--success);"></div>
+          <div style="flex:1;"><div class="notif-row-title" style="font-size:13px;">تم إغلاق عطل مضخة المياه بنجاح</div><div style="font-size:11.5px; color:var(--text-faint); margin-top:2px;">منذ يومين</div></div>
+          <span class="badge badge-neutral">عادي</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "الإشعارات", group: "النظام", url: "notifications.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('notif-page-mark-all')?.addEventListener('click', () => {
+      document.querySelectorAll('#notif-page-list .notif-row.is-unread').forEach(r => r.classList.remove('is-unread'));
+      window.SFLMS?.showToast({ type: 'success', title: 'تم تعليم جميع الإشعارات كمقروءة' });
+    });
+  });
+</script>
+</body>
+</html>

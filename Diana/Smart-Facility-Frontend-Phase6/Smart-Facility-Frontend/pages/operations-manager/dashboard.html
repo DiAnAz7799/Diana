@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>لوحة التشغيل الرئيسية — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="operations_manager" data-active-page="operations-dashboard"
+      data-search-placeholder="ابحث عن منشأة، أصل، أمر صيانة..."
+      data-breadcrumbs='[{"label":"مدير التشغيل","url":null},{"label":"لوحة التشغيل الرئيسية","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:14px;">
+        <div>
+          <h1 style="font-size:24px; font-weight:800; margin:0;">لوحة التشغيل الرئيسية</h1>
+          <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">مركز تحكم تشغيلي ذكي لمراقبة صحة المنشآت والأصول والصيانة في الزمن الحقيقي</div>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <a href="operational-reports.html" class="btn btn-ghost">
+            <svg class="gi" width="15" height="15" viewBox="0 0 24 24"><path d="M12 3v13m0 0l-4.5-4.5M12 16l4.5-4.5"/><path d="M4 20h16"/></svg>
+            تقرير تشغيلي
+          </a>
+          <a href="maintenance-orders.html" class="btn btn-primary">+ أمر صيانة جديد</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-kpi-4">
+          <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">إجمالي المنشآت</div><div class="kpi-value" data-counter="46">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M4 11h16M9 6v-2m6 2v-2"/></svg></div></div><div class="kpi-foot" style="color:#0F7A54;">98.2% نسبة التشغيل</div></div>
+          <div class="kpi-card" style="--k-tint:var(--accent-tint); --k-color:var(--accent-dark);"><div class="kpi-card-top"><div><div class="kpi-label">الأصول النشطة</div><div class="kpi-value" data-counter="1842">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"/><path d="M5 7l7 4 7-4M12 11v10"/></svg></div></div><div class="kpi-foot" style="color:var(--text-muted);">عبر 46 منشأة</div></div>
+          <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">نتيجة صحة الأصول</div><div class="kpi-value" data-counter="91" data-counter-suffix="%">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><circle cx="12" cy="12" r="7"/><path d="M12 8v4l2.5 2.5"/></svg></div></div><div class="kpi-bar"><span style="width:91%;"></span></div></div>
+          <div class="kpi-card" style="--k-tint:var(--warning-tint); --k-color:var(--warning);"><div class="kpi-card-top"><div><div class="kpi-label">أوامر صيانة مفتوحة</div><div class="kpi-value" data-counter="132">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="4.5"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3"/></svg></div></div><div class="kpi-foot" style="color:var(--warning);">18 متأخرة عن الموعد</div></div>
+          <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">أعطال حرجة</div><div class="kpi-value" data-counter="7">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/><path d="M12 9v5"/></svg></div></div><div class="kpi-foot" style="color:var(--critical);">يتطلب استجابة فورية</div></div>
+          <div class="kpi-card" style="--k-tint:var(--success-tint); --k-color:var(--success);"><div class="kpi-card-top"><div><div class="kpi-label">صيانة منجزة (الشهر)</div><div class="kpi-value" data-counter="284">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M4 12a8 8 0 0 1 14-5"/><path d="M20 12a8 8 0 0 1-14 5"/></svg></div></div><div class="kpi-foot" style="color:#0F7A54;">+9% عن الشهر الماضي</div></div>
+          <div class="kpi-card" style="--k-tint:var(--critical-tint); --k-color:var(--critical);"><div class="kpi-card-top"><div><div class="kpi-label">حوادث تشغيلية</div><div class="kpi-value" data-counter="4">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5 13.4 10 20 12l-6.6 2-1.4 6.5L10.6 14 4 12l6.6-2z"/></svg></div></div><div class="kpi-foot" style="color:#0F7A54;">-2 عن الأسبوع الماضي</div></div>
+          <div class="kpi-card" style="--k-tint:var(--primary-tint); --k-color:var(--primary-dark);"><div class="kpi-card-top"><div><div class="kpi-label">كفاءة التشغيل</div><div class="kpi-value" data-counter="94" data-counter-suffix="%">0</div></div><div class="kpi-icon"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--primary-dark);"><path d="M4 12l4-4 4 4 4-6 4 3"/></svg></div></div><div class="kpi-bar"><span style="width:94%;"></span></div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">أداء الصيانة</div><div class="panel-sub">مجدولة مقابل منجزة — آخر 6 أشهر</div></div></div>
+            <div data-chart='{"type":"area","values":[32,38,45,52,61,71],"color":"var(--success)"}'></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">حلقة صحة الأصول</div><div class="panel-sub">توزيع 1,842 أصلاً</div></div></div>
+            <div class="donut-wrap" style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center;">
+              <div data-chart='{"type":"donut","segments":[{"value":74,"color":"var(--success)"},{"value":15,"color":"var(--warning)"},{"value":7,"color":"var(--critical)"},{"value":4,"color":"var(--coolgray-soft)"}],"centerValue":"91%","centerLabel":"سليمة"}'></div>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                <div class="legend-item"><span class="legend-dot" style="background:var(--success);"></span>سليمة — 74%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--warning);"></span>تحذير — 15%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--critical);"></span>حرجة — 7%</div>
+                <div class="legend-item"><span class="legend-dot" style="background:var(--coolgray-soft);"></span>غير متصلة — 4%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">أوامر الصيانة المفتوحة</div></div><a href="maintenance-orders.html" class="btn btn-ghost" style="padding:7px 12px; font-size:12px;">عرض الكل</a></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:13px 0; border-bottom:1px solid var(--border);"><div style="width:36px; height:36px; border-radius:10px; background:var(--critical-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><circle cx="12" cy="12" r="4.5"/></svg></div><div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">#WO-2231 — عطل مبرّد رئيسي، مركز البيانات</div><div class="text-micro">سعيد المطيري · طارئة</div></div><span class="badge badge-critical">عاجل</span></div>
+            <div style="display:flex; align-items:center; gap:12px; padding:13px 0;"><div style="width:36px; height:36px; border-radius:10px; background:var(--warning-tint); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="4.5"/></svg></div><div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">#WO-2229 — صيانة وقائية للمصاعد، برج الواحة</div><div class="text-micro">أحمد باوزير · مجدولة</div></div><span class="badge badge-warning">قيد التنفيذ</span></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">الإشعارات الذكية</div></div></div>
+            <div style="display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--border);"><div style="width:4px; background:var(--critical); border-radius:999px;"></div><div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">ارتفاع درجة حرارة غرفة الخوادم — مركز البيانات</div><div class="text-micro">منذ 8 دقائق · حساس IoT #204</div></div></div>
+            <div style="display:flex; gap:12px; padding:12px 0;"><div style="width:4px; background:var(--warning); border-radius:999px;"></div><div style="flex:1;"><div style="font-size:12.5px; font-weight:700;">تذكير: صيانة وقائية مستحقة خلال 3 أيام</div><div class="text-micro">منذ ساعة</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="grid-panels">
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">آخر الأنشطة التشغيلية</div></div></div>
+            <div class="timeline">
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--success);"><path d="M5 13l4 4L19 7"/></svg></div><div class="tl-title">تم إغلاق أمر الصيانة #WO-2218 بنجاح</div><div class="tl-meta">منذ 20 دقيقة</div></div>
+              <div class="tl-item"><div class="tl-dot"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg></div><div class="tl-title">تسجيل عطل حرج جديد — مبرّد رئيسي</div><div class="tl-meta">منذ ساعة واحدة</div></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">إجراءات سريعة</div></div></div>
+            <div class="qa-grid">
+              <a href="maintenance-orders.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--warning-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--warning);"><circle cx="12" cy="12" r="4.5"/></svg></div><div class="qa-label">أمر صيانة</div></a>
+              <a href="assets.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--accent-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--accent-dark);"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"/></svg></div><div class="qa-label">إضافة أصل</div></a>
+              <a href="fault-tracking.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--critical-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:var(--critical);"><path d="M12 3l8.5 3.5v6c0 5.5-3.6 8.5-8.5 10.5-4.9-2-8.5-5-8.5-10.5v-6L12 3z"/></svg></div><div class="qa-label">تسجيل عطل</div></a>
+              <a href="operational-reports.html" class="qa-card" style="text-decoration:none;"><div class="qa-icon" style="background:var(--info-tint);"><svg class="gi" viewBox="0 0 24 24" style="stroke:#0E7490;"><rect x="4" y="4" width="16" height="16" rx="3"/></svg></div><div class="qa-label">تقرير تشغيلي</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-label">حالة المنشآت الرئيسية</div>
+        <div class="strip-grid">
+          <div class="panel" style="display:flex; align-items:center; gap:12px; padding:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--success);"></div><div><div style="font-size:12.5px; font-weight:700;">برج الواحة الذكي</div><div class="text-micro">128 أصلاً · صحة 92%</div></div></div>
+          <div class="panel" style="display:flex; align-items:center; gap:12px; padding:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--warning);"></div><div><div style="font-size:12.5px; font-weight:700;">مصنع الرياض الصناعي</div><div class="text-micro">154 أصلاً · صحة 65%</div></div></div>
+          <div class="panel" style="display:flex; align-items:center; gap:12px; padding:16px;"><div style="width:10px; height:10px; border-radius:50%; background:var(--critical);"></div><div><div style="font-size:12.5px; font-weight:700;">مركز البيانات الذكي</div><div class="text-micro">88 أصلاً · صحة 54%</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [
+    { label: "لوحة التشغيل الرئيسية", group: "التنقّل", url: "dashboard.html" },
+    { label: "المنشآت", group: "التنقّل", url: "facilities.html" },
+    { label: "إدارة الأصول", group: "التنقّل", url: "assets.html" },
+    { label: "مركز صحة الأصول", group: "التنقّل", url: "asset-health-center.html" },
+    { label: "أوامر الصيانة", group: "التنقّل", url: "maintenance-orders.html" },
+    { label: "الصيانة الوقائية", group: "التنقّل", url: "preventive-maintenance.html" },
+    { label: "تقويم الصيانة", group: "التنقّل", url: "maintenance-calendar.html" },
+    { label: "تتبع الأعطال", group: "التنقّل", url: "fault-tracking.html" },
+    { label: "كفاءة أداء المنشآت", group: "التنقّل", url: "facility-performance.html" }
+  ];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+</body>
+</html>

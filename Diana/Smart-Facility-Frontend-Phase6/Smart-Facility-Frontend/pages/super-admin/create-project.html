@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>إنشاء مشروع جديد — نُظم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/variables.css">
+<link rel="stylesheet" href="../../assets/css/design-system.css">
+<link rel="stylesheet" href="../../assets/css/components.css">
+<link rel="stylesheet" href="../../assets/css/animations.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body data-role="super_admin" data-active-page="super-admin-projects"
+      data-breadcrumbs='[{"label":"الرئيسية","url":"dashboard.html"},{"label":"المشاريع","url":"projects.html"},{"label":"مشروع جديد","url":null}]'>
+
+<div class="app-shell">
+  <div data-include="../../components/sidebar.html"></div>
+  <div class="sidebar-scrim" data-sidebar-scrim></div>
+
+  <div class="app-main">
+    <div data-include="../../components/navbar.html"></div>
+
+    <div class="app-content page-transition-enter" style="max-width:900px;">
+      <div data-include="../../components/breadcrumbs.html"></div>
+
+      <div class="page-head" style="margin-bottom:20px;">
+        <h1 style="font-size:24px; font-weight:800; margin:0;">إنشاء مشروع جديد</h1>
+        <div style="color:var(--text-muted); font-size:13.5px; margin-top:4px;">أدخل تفاصيل المشروع لإضافته إلى المنصة وربطه بمدير الإنشاءات المسؤول</div>
+      </div>
+
+      <form data-create-project-form novalidate>
+        <div class="grid-panels" style="grid-template-columns: 1fr 340px;">
+
+          <div class="panel">
+            <div class="panel-head"><div><div class="panel-title">معلومات المشروع الأساسية</div></div></div>
+
+            <div class="field">
+              <label for="cp-name">اسم المشروع *</label>
+              <input type="text" id="cp-name" name="project_name" placeholder="مثال: برج الواحة الذكي" required>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="field">
+                <label for="cp-type">نوع المنشأة *</label>
+                <select id="cp-type" name="facility_type" required>
+                  <option value="">اختر النوع...</option>
+                  <option>مبنى تجاري</option>
+                  <option>منشأة صحية</option>
+                  <option>منشأة صناعية</option>
+                  <option>مبنى سكني</option>
+                  <option>بنية تحتية</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cp-location">الموقع *</label>
+                <input type="text" id="cp-location" name="location" placeholder="مثال: الرياض، حي العليا" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="cp-desc">وصف المشروع</label>
+              <textarea id="cp-desc" name="description" rows="4" placeholder="نبذة عن نطاق المشروع وأهدافه..."></textarea>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="field">
+                <label for="cp-start">تاريخ البداية *</label>
+                <input type="date" id="cp-start" name="start_date" required>
+              </div>
+              <div class="field">
+                <label for="cp-end">تاريخ الانتهاء المتوقع *</label>
+                <input type="date" id="cp-end" name="expected_end_date" required>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="field">
+                <label for="cp-status">حالة المشروع</label>
+                <select id="cp-status" name="status">
+                  <option value="active">قيد التنفيذ</option>
+                  <option value="not_started">لم يبدأ بعد</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cp-manager">مدير الإنشاءات المسؤول *</label>
+                <select id="cp-manager" name="construction_manager" required>
+                  <option value="">اختر مديرًا...</option>
+                  <option>خالد الشمري</option>
+                  <option>منى الحربي</option>
+                  <option>عبدالله القحطاني</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="panel" style="margin-bottom:16px;">
+              <div class="panel-head"><div><div class="panel-title">صورة المشروع</div></div></div>
+              <div style="border:2px dashed var(--border-strong); border-radius:var(--radius-md); padding:28px 16px; text-align:center; background:var(--surface-alt); cursor:pointer;" data-upload-zone>
+                <svg class="gi" width="30" height="30" viewBox="0 0 24 24" style="margin:0 auto 10px; display:block;"><path d="M12 16V4m0 0L7 9m5-5l5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+                <div style="font-size:12.5px; font-weight:700;">اسحب صورة أو اضغط للرفع</div>
+                <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">PNG, JPG حتى 5MB</div>
+                <input type="file" accept="image/*" style="display:none;">
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head"><div><div class="panel-title">إجراءات</div></div></div>
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:10px;" data-loading-on-submit>حفظ وإنشاء المشروع</button>
+              <a href="projects.html" class="btn btn-ghost" style="width:100%; justify-content:center;">إلغاء</a>
+            </div>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div data-include="../../components/notifications.html"></div>
+<div data-include="../../components/modals.html"></div>
+
+<script>
+  window.SFLMS_SEARCH_INDEX = [{ label: "المشاريع", group: "المشاريع", url: "projects.html" }];
+</script>
+<script type="module" src="../../assets/js/app.js"></script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const zone = document.querySelector('[data-upload-zone]');
+    const input = zone?.querySelector('input[type="file"]');
+    zone?.addEventListener('click', () => input.click());
+    input?.addEventListener('change', () => {
+      if (input.files[0]) {
+        zone.querySelector('div:nth-of-type(1)').textContent = input.files[0].name;
+      }
+    });
+
+    const form = document.querySelector('[data-create-project-form]');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('[data-loading-on-submit]');
+      btn.classList.add('is-loading');
+      // DEMO ONLY — replace with a real POST once a backend exists.
+      setTimeout(() => {
+        window.SFLMS?.showToast({ type: 'success', title: 'تم إنشاء المشروع بنجاح', desc: 'جارٍ تحويلك إلى قائمة المشاريع...' });
+        setTimeout(() => window.location.href = 'projects.html', 900);
+      }, 700);
+    });
+  });
+</script>
+</body>
+</html>

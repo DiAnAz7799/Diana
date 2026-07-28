@@ -1,0 +1,46 @@
+<!--
+  components/notifications.html
+  Toast stack (populated at runtime by assets/js/notifications.js::showToast)
+  and the notification drawer opened by the bell icon in navbar.html.
+  Since this is a static site with no server-rendered notification list, the
+  drawer ships with representative sample content — replace [data-notif-list]'s
+  children with real data once connected to a backend.
+-->
+<div class="toast-stack" aria-live="polite"></div>
+
+<div class="notif-drawer" role="dialog" aria-label="مركز الإشعارات">
+  <div class="notif-drawer-head">
+    <div class="text-h3">الإشعارات</div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <button class="btn btn-ghost" style="padding:6px 10px; font-size:11.5px;" data-notif-mark-all-read>تعليم الكل كمقروء</button>
+      <div class="modal-close" data-notif-close>
+        <svg class="gi" width="16" height="16" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </div>
+    </div>
+  </div>
+  <div class="notif-drawer-body" data-notif-list>
+    <div class="notif-row is-unread">
+      <div class="notif-row-bar" style="background:var(--critical);"></div>
+      <div style="flex:1;">
+        <div class="notif-row-title" style="font-size:12.5px; font-weight:700;">تنبيه اقتحام — مصنع الرياض الصناعي</div>
+        <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">منذ 4 دقائق</div>
+      </div>
+      <div class="notif-unread-dot"></div>
+    </div>
+    <div class="notif-row is-unread">
+      <div class="notif-row-bar" style="background:var(--warning);"></div>
+      <div style="flex:1;">
+        <div class="notif-row-title" style="font-size:12.5px; font-weight:700;">تذكير: صيانة وقائية مستحقة خلال 3 أيام</div>
+        <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">منذ ساعة</div>
+      </div>
+      <div class="notif-unread-dot"></div>
+    </div>
+    <div class="notif-row">
+      <div class="notif-row-bar" style="background:var(--success);"></div>
+      <div style="flex:1;">
+        <div class="notif-row-title" style="font-size:12.5px;">تم إغلاق عطل مضخة المياه بنجاح</div>
+        <div style="font-size:11px; color:var(--text-faint); margin-top:2px;">منذ 5 ساعات</div>
+      </div>
+    </div>
+  </div>
+</div>
